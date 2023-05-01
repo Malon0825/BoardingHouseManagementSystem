@@ -77,7 +77,7 @@ namespace ManagementSystem
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
 
-            string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=accounts;";
+            string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
 
             List<User> getAllUsers()
             {
@@ -89,7 +89,7 @@ namespace ManagementSystem
                 string username = textUsername.Text;
                 string password = textPassword.Text;
 
-                MySqlCommand command = new MySqlCommand("SELECT * FROM user WHERE Username = @username AND Password = @password", connection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM accounts WHERE Username = @username AND Password = @password", connection);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);
 

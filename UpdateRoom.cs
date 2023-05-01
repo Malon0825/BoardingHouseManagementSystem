@@ -65,7 +65,7 @@ namespace ManagementSystem
                 }
                 finally
                 {
-                    MessageBox.Show("Successful!!" + Environment.NewLine + "The " + roomName + " has been updated.");
+                    MessageBox.Show("Successful!!" + Environment.NewLine + "The room information has been updated.");
                 }
 
 

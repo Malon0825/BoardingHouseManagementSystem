@@ -34,18 +34,18 @@
             label2 = new Label();
             label3 = new Label();
             panel4 = new Panel();
-            textBox3 = new TextBox();
+            textaddress = new TextBox();
             label4 = new Label();
             panel1 = new Panel();
-            textAddDescription = new TextBox();
+            textemail = new TextBox();
             label1 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton4 = new FontAwesome.Sharp.IconButton();
             panel11 = new Panel();
-            textAddLocation = new TextBox();
+            textage = new TextBox();
             label11 = new Label();
             panel10 = new Panel();
-            textAddName = new TextBox();
+            textname = new TextBox();
             label8 = new Label();
             panel8.SuspendLayout();
             SuspendLayout();
@@ -58,18 +58,18 @@
             panel8.Controls.Add(label2);
             panel8.Controls.Add(label3);
             panel8.Controls.Add(panel4);
-            panel8.Controls.Add(textBox3);
+            panel8.Controls.Add(textaddress);
             panel8.Controls.Add(label4);
             panel8.Controls.Add(panel1);
-            panel8.Controls.Add(textAddDescription);
+            panel8.Controls.Add(textemail);
             panel8.Controls.Add(label1);
             panel8.Controls.Add(iconButton1);
             panel8.Controls.Add(iconButton4);
             panel8.Controls.Add(panel11);
-            panel8.Controls.Add(textAddLocation);
+            panel8.Controls.Add(textage);
             panel8.Controls.Add(label11);
             panel8.Controls.Add(panel10);
-            panel8.Controls.Add(textAddName);
+            panel8.Controls.Add(textname);
             panel8.Controls.Add(label8);
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(0, 0);
@@ -97,6 +97,8 @@
             cbRoomName.Name = "cbRoomName";
             cbRoomName.Size = new Size(357, 33);
             cbRoomName.TabIndex = 29;
+            cbRoomName.SelectedIndexChanged += cbRoomName_SelectedIndexChanged;
+            cbRoomName.DropDownClosed += cbRoomName_DropDownClosed;
             // 
             // label2
             // 
@@ -126,15 +128,15 @@
             panel4.Size = new Size(357, 5);
             panel4.TabIndex = 22;
             // 
-            // textBox3
+            // textaddress
             // 
-            textBox3.BackColor = Color.FromArgb(225, 138, 170);
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(119, 87);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(357, 25);
-            textBox3.TabIndex = 21;
+            textaddress.BackColor = Color.FromArgb(225, 138, 170);
+            textaddress.BorderStyle = BorderStyle.None;
+            textaddress.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textaddress.Location = new Point(119, 87);
+            textaddress.Name = "textaddress";
+            textaddress.Size = new Size(357, 25);
+            textaddress.TabIndex = 21;
             // 
             // label4
             // 
@@ -154,15 +156,15 @@
             panel1.Size = new Size(195, 5);
             panel1.TabIndex = 19;
             // 
-            // textAddDescription
+            // textemail
             // 
-            textAddDescription.BackColor = Color.FromArgb(225, 138, 170);
-            textAddDescription.BorderStyle = BorderStyle.None;
-            textAddDescription.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textAddDescription.Location = new Point(281, 45);
-            textAddDescription.Name = "textAddDescription";
-            textAddDescription.Size = new Size(195, 25);
-            textAddDescription.TabIndex = 18;
+            textemail.BackColor = Color.FromArgb(225, 138, 170);
+            textemail.BorderStyle = BorderStyle.None;
+            textemail.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textemail.Location = new Point(281, 45);
+            textemail.Name = "textemail";
+            textemail.Size = new Size(195, 25);
+            textemail.TabIndex = 18;
             // 
             // label1
             // 
@@ -230,15 +232,17 @@
             panel11.Size = new Size(80, 5);
             panel11.TabIndex = 11;
             // 
-            // textAddLocation
+            // textage
             // 
-            textAddLocation.BackColor = Color.FromArgb(225, 138, 170);
-            textAddLocation.BorderStyle = BorderStyle.None;
-            textAddLocation.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textAddLocation.Location = new Point(119, 45);
-            textAddLocation.Name = "textAddLocation";
-            textAddLocation.Size = new Size(80, 25);
-            textAddLocation.TabIndex = 10;
+            textage.BackColor = Color.FromArgb(225, 138, 170);
+            textage.BorderStyle = BorderStyle.None;
+            textage.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textage.Location = new Point(119, 45);
+            textage.Name = "textage";
+            textage.Size = new Size(80, 25);
+            textage.TabIndex = 10;
+            textage.TextChanged += textage_TextChanged;
+            textage.KeyPress += textage_KeyPress;
             // 
             // label11
             // 
@@ -258,15 +262,15 @@
             panel10.Size = new Size(357, 5);
             panel10.TabIndex = 8;
             // 
-            // textAddName
+            // textname
             // 
-            textAddName.BackColor = Color.FromArgb(225, 138, 170);
-            textAddName.BorderStyle = BorderStyle.None;
-            textAddName.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textAddName.Location = new Point(119, 3);
-            textAddName.Name = "textAddName";
-            textAddName.Size = new Size(357, 25);
-            textAddName.TabIndex = 7;
+            textname.BackColor = Color.FromArgb(225, 138, 170);
+            textname.BorderStyle = BorderStyle.None;
+            textname.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            textname.Location = new Point(119, 3);
+            textname.Name = "textname";
+            textname.Size = new Size(357, 25);
+            textname.TabIndex = 7;
             // 
             // label8
             // 
@@ -297,18 +301,18 @@
         private Label label2;
         private Label label3;
         private Panel panel4;
-        private TextBox textBox3;
+        private TextBox textaddress;
         private Label label4;
         private Panel panel1;
-        private TextBox textAddDescription;
+        private TextBox textemail;
         private Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton4;
         private Panel panel11;
-        private TextBox textAddLocation;
+        private TextBox textage;
         private Label label11;
         private Panel panel10;
-        private TextBox textAddName;
+        private TextBox textname;
         private Label label8;
         private ComboBox cbBedName;
         private ComboBox cbRoomName;

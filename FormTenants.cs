@@ -124,5 +124,87 @@ namespace ManagementSystem
         {
             OpenChildForm(new TennantsDelete());
         }
+
+        private void dataSearchList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+
+            int rowCliked = dataGridView.CurrentRow.Index;
+            String tennantID = dataGridView.Rows[rowCliked].Cells[0].Value.ToString();
+
+            List<Tennant> getAllTennants()
+            {
+                List<Tennant> returnThese = new List<Tennant>();
+
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+
+                MySqlCommand command = new MySqlCommand("SELECT * FROM tennants WHERE ID = @id", connection);
+                command.Parameters.AddWithValue("id", tennantID);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Tennant t = new Tennant
+                        {
+                            ID = reader.GetInt32(0),
+                            TennantName = reader.GetString(1),
+                            TennantAge = reader.GetInt32(2),
+                            TennantEmail = reader.GetString(3),
+                            TennantAddress = reader.GetString(4),
+                            rooms_ID = reader.GetInt32(5),
+                            beds_ID = reader.GetInt32(6),
+
+
+                        };
+
+                        returnThese.Add(t);
+
+                    }
+
+                }
+
+                connection.Close();
+                return returnThese;
+            }
+
+            List<Tennant> tennants = getAllTennants();
+
+            DataTable dataTable2 = new DataTable();
+            dataTable2.Columns.Add("ID");
+            dataTable2.Columns.Add("TennantName");
+            dataTable2.Columns.Add("TennantAge");
+            dataTable2.Columns.Add("TennantEmail");
+            dataTable2.Columns.Add("TennantAddress");
+
+            foreach (Tennant tennant in tennants)
+            {
+                DataRow row = dataTable2.NewRow();
+                row["ID"] = tennant.ID;
+                row["TennantName"] = tennant.TennantName;
+                row["TennantAge"] = tennant.TennantAge;
+                row["TennantEmail"] = tennant.TennantEmail;
+                row["TennantAddress"] = tennant.TennantAddress;
+
+
+                dataTable2.Rows.Add(row);
+            }
+
+            dataBedsList.DataSource = dataTable2;
+
+        }
+    }
+
+    internal class Tennant
+    {
+        public int ID { get; set; }
+        public string TennantName { get; set; }
+        public int TennantAge { get; set; }
+        public string TennantEmail { get; set; }
+        public string TennantAddress { get; set; }
+        public int rooms_ID { get; set; }
+        public int beds_ID { get; set; }
+
     }
 }

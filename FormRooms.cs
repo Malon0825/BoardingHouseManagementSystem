@@ -147,6 +147,17 @@ namespace ManagementSystem
                 }
             }
         }
+        public class Bed
+        {
+            public int ID { get; set; }
+            public string BedName { get; set; }
+            public string Occupancy { get; set; }
+        }
+        public class Tennant
+        {
+            public int ID { get; set; }
+            public string TennantName { get; set; }
+        }
 
         private void dataSearchList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -199,6 +210,111 @@ namespace ManagementSystem
                 labelRoomName.Text = room_name;
 
             }
+
+            // Get Beds Table
+            int rowIDCliked = dataGridView.CurrentRow.Index;
+            String roomid = dataGridView.Rows[rowCliked].Cells[0].Value.ToString();
+
+            List<Bed> getAllBeds()
+            {
+                List<Bed> returnThese = new List<Bed>();
+
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+
+                MySqlCommand command = new MySqlCommand("SELECT * FROM beds WHERE rooms_ID = @roomid", connection);
+                command.Parameters.AddWithValue("roomid", roomid);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Bed b = new Bed
+                        {
+                            ID = reader.GetInt32(0),
+                            BedName = reader.GetString(1),
+                            Occupancy = reader.GetString(2),
+
+                        };
+
+                        returnThese.Add(b);
+
+                    }
+
+                }
+
+                connection.Close();
+                return returnThese;
+            }
+
+            List<Bed> beds = getAllBeds();
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ID");
+            dataTable.Columns.Add("BedName");
+            dataTable.Columns.Add("Occupancy");
+
+            foreach (Bed bed in beds)
+            {
+                DataRow row = dataTable.NewRow();
+                row["ID"] = bed.ID;
+                row["BedName"] = bed.BedName;
+                row["Occupancy"] = bed.Occupancy;
+
+                dataTable.Rows.Add(row);
+            }
+
+            dataBedsList.DataSource = dataTable;
+
+            // Get Tennants Table
+            List<Tennant> getAllTennants()
+            {
+                List<Tennant> returnThese = new List<Tennant>();
+
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+
+                MySqlCommand command = new MySqlCommand("SELECT * FROM tennants WHERE rooms_ID = @roomid", connection);
+                command.Parameters.AddWithValue("roomid", roomid);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Tennant t = new Tennant
+                        {
+                            ID = reader.GetInt32(0),
+                            TennantName = reader.GetString(1),
+
+                        };
+
+                        returnThese.Add(t);
+
+                    }
+
+                }
+
+                connection.Close();
+                return returnThese;
+            }
+
+            List<Tennant> tennants = getAllTennants();
+
+            DataTable dataTable2 = new DataTable();
+            dataTable2.Columns.Add("ID");
+            dataTable2.Columns.Add("TennantName");
+
+            foreach (Tennant tennant in tennants)
+            {
+                DataRow row = dataTable2.NewRow();
+                row["ID"] = tennant.ID;
+                row["TennantName"] = tennant.TennantName;
+  
+
+                dataTable2.Rows.Add(row);
+            }
+
+            dataTennantsList.DataSource = dataTable2;
         }
 
         private void OpenChildForm(Form childForm)
@@ -241,6 +357,17 @@ namespace ManagementSystem
         {
 
         }
+
+        private void buttonDescription_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Description: " + room_description);
+        }
+
+        private void buttonLocation_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Location: " + room_location);
+        }
     }
+
 }
 

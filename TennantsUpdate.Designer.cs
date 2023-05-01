@@ -31,13 +31,13 @@
             label8 = new Label();
             textTennantName = new TextBox();
             panel10 = new Panel();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label3 = new Label();
             label2 = new Label();
             cbRoomName = new ComboBox();
             cbBedName = new ComboBox();
             panel8 = new Panel();
+            iconButton4 = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             textTennantID = new TextBox();
             label1 = new Label();
@@ -71,29 +71,6 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(357, 5);
             panel10.TabIndex = 8;
-            // 
-            // iconButton4
-            // 
-            iconButton4.BackgroundImageLayout = ImageLayout.Center;
-            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Add;
-            iconButton4.IconColor = Color.Black;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 30;
-            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(281, 213);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(97, 36);
-            iconButton4.TabIndex = 15;
-            iconButton4.Text = "Add";
-            iconButton4.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton4.UseVisualStyleBackColor = true;
             // 
             // iconButton1
             // 
@@ -148,6 +125,7 @@
             cbRoomName.Name = "cbRoomName";
             cbRoomName.Size = new Size(357, 33);
             cbRoomName.TabIndex = 29;
+            cbRoomName.DropDownClosed += cbRoomName_DropDownClosed;
             // 
             // cbBedName
             // 
@@ -162,6 +140,7 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(225, 138, 170);
+            panel8.Controls.Add(iconButton4);
             panel8.Controls.Add(panel1);
             panel8.Controls.Add(textTennantID);
             panel8.Controls.Add(label1);
@@ -170,7 +149,6 @@
             panel8.Controls.Add(label2);
             panel8.Controls.Add(label3);
             panel8.Controls.Add(iconButton1);
-            panel8.Controls.Add(iconButton4);
             panel8.Controls.Add(panel10);
             panel8.Controls.Add(textTennantName);
             panel8.Controls.Add(label8);
@@ -179,6 +157,30 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(527, 284);
             panel8.TabIndex = 6;
+            // 
+            // iconButton4
+            // 
+            iconButton4.BackgroundImageLayout = ImageLayout.Center;
+            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.BorderSize = 0;
+            iconButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
+            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatStyle = FlatStyle.Flat;
+            iconButton4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
+            iconButton4.IconColor = Color.Black;
+            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton4.IconSize = 30;
+            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton4.Location = new Point(275, 213);
+            iconButton4.Name = "iconButton4";
+            iconButton4.Size = new Size(114, 36);
+            iconButton4.TabIndex = 34;
+            iconButton4.Text = "Update";
+            iconButton4.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton4.UseVisualStyleBackColor = true;
+            iconButton4.Click += iconButton4_Click_1;
             // 
             // panel1
             // 
@@ -226,7 +228,6 @@
         private Label label8;
         private TextBox textTennantName;
         private Panel panel10;
-        private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label3;
         private Label label2;
@@ -236,5 +237,6 @@
         private Panel panel1;
         private TextBox textTennantID;
         private Label label1;
+        private FontAwesome.Sharp.IconButton iconButton4;
     }
 }
