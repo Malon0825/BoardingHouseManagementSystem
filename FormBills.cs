@@ -21,5 +21,15 @@ namespace ManagementSystem
         {
 
         }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelBedName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
