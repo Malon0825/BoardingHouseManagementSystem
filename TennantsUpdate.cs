@@ -24,7 +24,7 @@ namespace ManagementSystem
             foreach (Room room in rooms)
             {
                 cbRoomName.DataSource = rooms;
-                cbRoomName.DisplayMember = "RoomName";
+                cbRoomName.DisplayMember = "RoomNumber";
                 cbRoomName.ValueMember = "ID";
             }
         }
@@ -47,7 +47,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
 
-            MySqlCommand command = new MySqlCommand("SELECT ID, RoomName FROM rooms", connection);
+            MySqlCommand command = new MySqlCommand("SELECT ID, RoomNumber FROM rooms", connection);
 
             using (MySqlDataReader reader = command.ExecuteReader())
             {
@@ -56,7 +56,7 @@ namespace ManagementSystem
                     Room b = new Room
                     {
                         ID = reader.GetInt32(0),
-                        RoomName = reader.GetString(1),
+                        RoomNumber = reader.GetString(1),
 
                     };
 
@@ -128,17 +128,17 @@ namespace ManagementSystem
         private void iconButton4_Click_1(object sender, EventArgs e)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
-            int selectedBedID = (int)cbBedName.SelectedValue;
+            connection.Open();          
 
             int id;
-            string name = textTennantName.Text;
-            string bedid = selectedBedID.ToString();
+            string name = textTennantName.Text;        
             string roomid = roomID.ToString();
             int occupancy = 1;
 
             if (int.TryParse(textTennantID.Text, out id))
             {
+                int selectedBedID = (int)cbBedName.SelectedValue;
+                string bedid = selectedBedID.ToString();
                 try
                 {
                     string query = "UPDATE `tennants` SET ";
@@ -183,6 +183,7 @@ namespace ManagementSystem
                 finally
                 {
                     MessageBox.Show("Successful!!" + Environment.NewLine + "The tennant information has been updated.");
+                    this.Close();
                 }
 
 

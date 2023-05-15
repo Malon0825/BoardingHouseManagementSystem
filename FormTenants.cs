@@ -33,6 +33,17 @@ namespace ManagementSystem
                 }
             }
         }
+        internal class Tennant
+        {
+            public int ID { get; set; }
+            public string TennantName { get; set; }
+            public int TennantAge { get; set; }
+            public string TennantEmail { get; set; }
+            public string TennantAddress { get; set; }
+            public int rooms_ID { get; set; }
+            public int beds_ID { get; set; }
+
+        }
         private void OpenChildForm(Form childForm)
         {
             childForm.TopLevel = false;
@@ -48,6 +59,16 @@ namespace ManagementSystem
         {
             public int ID { get; set; }
             public string TennantName { get; set; }
+        }
+
+        public class Room
+        {
+            public string RoomName { get; set; }
+        }
+
+        public class Bed
+        {
+            public string BedName { get; set; }
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -187,24 +208,76 @@ namespace ManagementSystem
                 row["TennantEmail"] = tennant.TennantEmail;
                 row["TennantAddress"] = tennant.TennantAddress;
 
-
                 dataTable2.Rows.Add(row);
+
+                int room_id = tennant.rooms_ID;
+                int bed_id = tennant.beds_ID;
+
+                List<Room> getRoom()
+                {
+                    List<Room> returnThese = new List<Room>();
+
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM rooms WHERE ID = @id", connection);
+                    command.Parameters.AddWithValue("id", room_id);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Room r = new Room
+                            {
+                                RoomName = reader.GetString(1),
+                            };
+                            returnThese.Add(r);
+                        }
+                    }
+                    connection.Close();
+                    return returnThese;
+                }
+                List<Room> room = getRoom();
+
+                foreach (Room r in room)
+                {
+                    labelRoom.Text = r.RoomName;
+                }
+
+                List<Bed> getBed()
+                {
+                    List<Bed> returnThese = new List<Bed>();
+
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM beds WHERE ID = @id", connection);
+                    command.Parameters.AddWithValue("id", bed_id);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Bed t = new Bed
+                            {
+                                BedName = reader.GetString(1),
+                            };
+                            returnThese.Add(t);
+                        }
+                    }
+                    connection.Close();
+                    return returnThese;
+                }
+                List<Bed> bed = getBed();
+
+                foreach (Bed b in bed)
+                {
+                    labelBed.Text = b.BedName;
+                }
+
+                dataBedsList.DataSource = dataTable2;
+
             }
-
-            dataBedsList.DataSource = dataTable2;
-
         }
-    }
-
-    internal class Tennant
-    {
-        public int ID { get; set; }
-        public string TennantName { get; set; }
-        public int TennantAge { get; set; }
-        public string TennantEmail { get; set; }
-        public string TennantAddress { get; set; }
-        public int rooms_ID { get; set; }
-        public int beds_ID { get; set; }
-
     }
 }

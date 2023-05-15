@@ -226,9 +226,9 @@
             label8.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(36, 55);
             label8.Name = "label8";
-            label8.Size = new Size(141, 30);
+            label8.Size = new Size(165, 30);
             label8.TabIndex = 5;
-            label8.Text = "Room Name:";
+            label8.Text = "Room Number:";
             // 
             // UpdateRoom
             // 

@@ -22,7 +22,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();
-                string query = "SELECT ID, RoomName FROM rooms";
+                string query = "SELECT ID, RoomNumber FROM rooms";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Execute the query and load the data into a DataTable
@@ -73,7 +73,7 @@ namespace ManagementSystem
                 String searchWildPhrase = "%" + searchTerm + "%";
 
                 MySqlCommand command = new MySqlCommand();
-                command.CommandText = "Select ID, RoomName FROM rooms WHERE RoomName LIKE @search";
+                command.CommandText = "Select ID, RoomNumber FROM rooms WHERE RoomNumber LIKE @search";
                 command.Parameters.AddWithValue("@search", searchWildPhrase);
                 command.Connection = connection;
 
@@ -107,7 +107,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();
-                string query = "SELECT ID, RoomName FROM rooms";
+                string query = "SELECT ID, RoomNumber FROM rooms";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Execute the query and load the data into a DataTable

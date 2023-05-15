@@ -51,7 +51,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
 
-            MySqlCommand command = new MySqlCommand("SELECT ID, RoomName FROM rooms", connection);
+            MySqlCommand command = new MySqlCommand("SELECT ID, RoomNumber FROM rooms", connection);
 
             using (MySqlDataReader reader = command.ExecuteReader())
             {
@@ -60,7 +60,7 @@ namespace ManagementSystem
                     Room b = new Room
                     {
                         ID = reader.GetInt32(0),
-                        RoomName = reader.GetString(1),
+                        RoomNumber = reader.GetString(1),
 
                     };
 
@@ -122,11 +122,11 @@ namespace ManagementSystem
             string age = textage.Text;
             string email = textemail.Text;
             string address = textaddress.Text;
-            int selectedBedID = (int)cbBedName.SelectedValue;
             int occupancy = 1;
 
             if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(age) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(address))
             {
+                int selectedBedID = (int)cbBedName.SelectedValue;
                 try
                 {
                     string query = "INSERT INTO `tennants` (`ID`, `TennantName`, `TennantAge`, `TennantEmail`, `TennantAddress`, `rooms_ID`, `beds_ID`) " +
@@ -165,6 +165,8 @@ namespace ManagementSystem
                     textage.Clear();
                     textemail.Clear();
                     textaddress.Clear();
+                    this.Close();
+
                 }
             }
             else
@@ -173,6 +175,7 @@ namespace ManagementSystem
             }
 
             connection.Close();
+            
         }
 
         private void cbBedName_SelectedIndexChanged(object sender, EventArgs e)

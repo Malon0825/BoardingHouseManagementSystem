@@ -427,7 +427,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(228, 160, 183);
-            panel2.Location = new Point(159, 80);
+            panel2.Location = new Point(170, 82);
             panel2.Name = "panel2";
             panel2.Size = new Size(234, 5);
             panel2.TabIndex = 2;
@@ -437,7 +437,7 @@
             textSearchName.BackColor = Color.FromArgb(225, 138, 170);
             textSearchName.BorderStyle = BorderStyle.None;
             textSearchName.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textSearchName.Location = new Point(159, 49);
+            textSearchName.Location = new Point(170, 51);
             textSearchName.Name = "textSearchName";
             textSearchName.Size = new Size(234, 29);
             textSearchName.TabIndex = 0;
@@ -456,7 +456,7 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 30;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(392, 49);
+            iconButton1.Location = new Point(403, 51);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(108, 36);
             iconButton1.TabIndex = 3;
@@ -472,9 +472,9 @@
             label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(12, 51);
             label1.Name = "label1";
-            label1.Size = new Size(141, 30);
+            label1.Size = new Size(165, 30);
             label1.TabIndex = 1;
-            label1.Text = "Room Name:";
+            label1.Text = "Room Number:";
             // 
             // panel5
             // 

@@ -19,7 +19,7 @@ namespace ManagementSystem
         public class Room
         {
             public int ID { get; set; }
-            public string RoomName { get; set; }
+            public string RoomNumber { get; set; }
 
         }
 
@@ -31,7 +31,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
 
-            MySqlCommand command = new MySqlCommand("SELECT ID, RoomName FROM rooms", connection);
+            MySqlCommand command = new MySqlCommand("SELECT ID, RoomNumber FROM rooms", connection);
 
             using (MySqlDataReader reader = command.ExecuteReader())
             {
@@ -40,7 +40,7 @@ namespace ManagementSystem
                     Room b = new Room
                     {
                         ID = reader.GetInt32(0),
-                        RoomName = reader.GetString(1),
+                        RoomNumber = reader.GetString(1),
 
                     };
 
@@ -64,7 +64,7 @@ namespace ManagementSystem
             foreach (Room room in rooms)
             {
                 cbRoomName.DataSource = rooms;
-                cbRoomName.DisplayMember = "RoomName";
+                cbRoomName.DisplayMember = "RoomNumber";
                 cbRoomName.ValueMember = "ID";
             }
 

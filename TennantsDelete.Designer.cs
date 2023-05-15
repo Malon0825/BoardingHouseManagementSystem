@@ -99,9 +99,10 @@
             label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(74, 101);
             label1.Name = "label1";
-            label1.Size = new Size(104, 30);
+            label1.Size = new Size(126, 30);
             label1.TabIndex = 17;
-            label1.Text = "Room ID:";
+            label1.Text = "Tennant ID:";
+            label1.Click += label1_Click;
             // 
             // iconButton4
             // 

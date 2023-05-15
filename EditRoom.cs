@@ -36,7 +36,7 @@ namespace ManagementSystem
             {
                 try
                 {
-                    string query = "INSERT INTO `rooms` (`ID`, `RoomName`, `RoomLocation`, `RoomDescription`) VALUES(NULL, @roomName, @roomLocation, @roomDescription)";
+                    string query = "INSERT INTO `rooms` (`ID`, `RoomNumber`, `RoomLocation`, `RoomDescription`) VALUES(NULL, @roomName, @roomLocation, @roomDescription)";
                     MySqlCommand command = new MySqlCommand(query, connection);
 
                     command.Parameters.AddWithValue("@roomName", roomName);

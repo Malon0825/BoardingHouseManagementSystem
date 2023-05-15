@@ -37,7 +37,7 @@ namespace ManagementSystem
                     List<string> updates = new List<string>();
                     if (!string.IsNullOrWhiteSpace(roomName))
                     {
-                        updates.Add("`RoomName` = @roomName");
+                        updates.Add("`RoomNumber` = @roomName");
                     }
                     if (!string.IsNullOrWhiteSpace(roomLocation))
                     {

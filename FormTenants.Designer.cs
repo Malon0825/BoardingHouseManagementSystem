@@ -41,6 +41,10 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel7 = new Panel();
+            label4 = new Label();
+            labelBed = new Label();
+            label3 = new Label();
+            labelRoom = new Label();
             dataBedsList = new DataGridView();
             panel11 = new Panel();
             labelBedName = new Label();
@@ -100,6 +104,10 @@
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(225, 138, 170);
+            panel7.Controls.Add(label4);
+            panel7.Controls.Add(labelBed);
+            panel7.Controls.Add(label3);
+            panel7.Controls.Add(labelRoom);
             panel7.Controls.Add(dataBedsList);
             panel7.Controls.Add(panel11);
             panel7.Controls.Add(panel10);
@@ -109,6 +117,52 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(556, 616);
             panel7.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(16, 520);
+            label4.Name = "label4";
+            label4.Size = new Size(70, 37);
+            label4.TabIndex = 15;
+            label4.Text = "Bed:";
+            // 
+            // labelBed
+            // 
+            labelBed.Anchor = AnchorStyles.Top;
+            labelBed.AutoSize = true;
+            labelBed.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            labelBed.ForeColor = Color.White;
+            labelBed.Location = new Point(118, 520);
+            labelBed.Name = "labelBed";
+            labelBed.Size = new Size(143, 37);
+            labelBed.TabIndex = 14;
+            labelBed.Text = "Bed Name";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(16, 473);
+            label3.Name = "label3";
+            label3.Size = new Size(96, 37);
+            label3.TabIndex = 9;
+            label3.Text = "Room:";
+            // 
+            // labelRoom
+            // 
+            labelRoom.Anchor = AnchorStyles.Top;
+            labelRoom.AutoSize = true;
+            labelRoom.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            labelRoom.ForeColor = Color.White;
+            labelRoom.Location = new Point(118, 473);
+            labelRoom.Name = "labelRoom";
+            labelRoom.Size = new Size(197, 37);
+            labelRoom.TabIndex = 7;
+            labelRoom.Text = "Room Number";
             // 
             // dataBedsList
             // 
@@ -512,6 +566,7 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataBedsList).EndInit();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
@@ -549,5 +604,9 @@
         private Label labelBedName;
         private Panel panel10;
         private Panel panel12;
+        private Label labelRoom;
+        private Label label3;
+        private Label label4;
+        private Label labelBed;
     }
 }

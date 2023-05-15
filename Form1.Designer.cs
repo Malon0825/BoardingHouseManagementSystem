@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panelSideMenu = new Panel();
-            panel4 = new Panel();
+            panel6 = new Panel();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             billBtn = new FontAwesome.Sharp.IconButton();
             tenantBtn = new FontAwesome.Sharp.IconButton();
             bedBtn = new FontAwesome.Sharp.IconButton();
             roomBtn = new FontAwesome.Sharp.IconButton();
-            homeBtn = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             panel5 = new Panel();
             label2 = new Label();
@@ -44,7 +44,6 @@
             iconMinimize = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconClose = new FontAwesome.Sharp.IconButton();
-            lblTitleChildForm = new Label();
             iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             panelHomeBg = new Panel();
             panel2 = new Panel();
@@ -58,12 +57,12 @@
             // panelSideMenu
             // 
             panelSideMenu.BackColor = Color.FromArgb(225, 138, 170);
-            panelSideMenu.Controls.Add(panel4);
+            panelSideMenu.Controls.Add(panel6);
+            panelSideMenu.Controls.Add(iconButton3);
             panelSideMenu.Controls.Add(billBtn);
             panelSideMenu.Controls.Add(tenantBtn);
             panelSideMenu.Controls.Add(bedBtn);
             panelSideMenu.Controls.Add(roomBtn);
-            panelSideMenu.Controls.Add(homeBtn);
             panelSideMenu.Controls.Add(panelLogo);
             panelSideMenu.Dock = DockStyle.Left;
             panelSideMenu.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -72,16 +71,41 @@
             panelSideMenu.Size = new Size(243, 761);
             panelSideMenu.TabIndex = 0;
             // 
-            // panel4
+            // panel6
             // 
-            panel4.BackColor = Color.Transparent;
-            panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
-            panel4.BackgroundImageLayout = ImageLayout.Zoom;
-            panel4.Dock = DockStyle.Left;
-            panel4.Location = new Point(0, 430);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(237, 331);
-            panel4.TabIndex = 10;
+            panel6.BackColor = Color.Transparent;
+            panel6.BackgroundImage = (Image)resources.GetObject("panel6.BackgroundImage");
+            panel6.BackgroundImageLayout = ImageLayout.Zoom;
+            panel6.Dock = DockStyle.Fill;
+            panel6.Location = new Point(0, 430);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(243, 331);
+            panel6.TabIndex = 11;
+            // 
+            // iconButton3
+            // 
+            iconButton3.Dock = DockStyle.Top;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatAppearance.MouseDownBackColor = Color.FromArgb(228, 160, 183);
+            iconButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(158, 97, 120);
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton3.ForeColor = Color.FromArgb(245, 220, 224);
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.ClockRotateLeft;
+            iconButton3.IconColor = Color.White;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 35;
+            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton3.Location = new Point(0, 374);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Padding = new Padding(10, 0, 20, 0);
+            iconButton3.Size = new Size(243, 56);
+            iconButton3.TabIndex = 11;
+            iconButton3.Text = "History";
+            iconButton3.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton3.UseVisualStyleBackColor = true;
+            iconButton3.Click += iconButton3_Click;
             // 
             // billBtn
             // 
@@ -97,7 +121,7 @@
             billBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             billBtn.IconSize = 35;
             billBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            billBtn.Location = new Point(0, 374);
+            billBtn.Location = new Point(0, 318);
             billBtn.Name = "billBtn";
             billBtn.Padding = new Padding(10, 0, 20, 0);
             billBtn.Size = new Size(243, 56);
@@ -122,7 +146,7 @@
             tenantBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             tenantBtn.IconSize = 35;
             tenantBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            tenantBtn.Location = new Point(0, 318);
+            tenantBtn.Location = new Point(0, 262);
             tenantBtn.Name = "tenantBtn";
             tenantBtn.Padding = new Padding(10, 0, 20, 0);
             tenantBtn.Size = new Size(243, 56);
@@ -147,7 +171,7 @@
             bedBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bedBtn.IconSize = 35;
             bedBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            bedBtn.Location = new Point(0, 262);
+            bedBtn.Location = new Point(0, 206);
             bedBtn.Name = "bedBtn";
             bedBtn.Padding = new Padding(10, 0, 20, 0);
             bedBtn.Size = new Size(243, 56);
@@ -172,7 +196,7 @@
             roomBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             roomBtn.IconSize = 35;
             roomBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            roomBtn.Location = new Point(0, 206);
+            roomBtn.Location = new Point(0, 150);
             roomBtn.Name = "roomBtn";
             roomBtn.Padding = new Padding(10, 0, 20, 0);
             roomBtn.Size = new Size(243, 56);
@@ -182,31 +206,6 @@
             roomBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             roomBtn.UseVisualStyleBackColor = true;
             roomBtn.Click += roomBtn_Click;
-            // 
-            // homeBtn
-            // 
-            homeBtn.Dock = DockStyle.Top;
-            homeBtn.FlatAppearance.BorderSize = 0;
-            homeBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(228, 160, 183);
-            homeBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(158, 97, 120);
-            homeBtn.FlatStyle = FlatStyle.Flat;
-            homeBtn.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            homeBtn.ForeColor = Color.FromArgb(245, 220, 224);
-            homeBtn.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyWindow;
-            homeBtn.IconColor = Color.White;
-            homeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            homeBtn.IconSize = 35;
-            homeBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            homeBtn.Location = new Point(0, 150);
-            homeBtn.Name = "homeBtn";
-            homeBtn.Padding = new Padding(10, 0, 20, 0);
-            homeBtn.Size = new Size(243, 56);
-            homeBtn.TabIndex = 5;
-            homeBtn.Text = "Home";
-            homeBtn.TextAlign = ContentAlignment.MiddleLeft;
-            homeBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            homeBtn.UseVisualStyleBackColor = true;
-            homeBtn.Click += iconButton1_Click;
             // 
             // panelLogo
             // 
@@ -258,7 +257,6 @@
             panel1.Controls.Add(iconMinimize);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(iconClose);
-            panel1.Controls.Add(lblTitleChildForm);
             panel1.Controls.Add(iconCurrentChildForm);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(243, 0);
@@ -316,18 +314,6 @@
             iconClose.TabIndex = 2;
             iconClose.UseVisualStyleBackColor = true;
             iconClose.Click += iconClose_Click;
-            // 
-            // lblTitleChildForm
-            // 
-            lblTitleChildForm.AutoSize = true;
-            lblTitleChildForm.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTitleChildForm.ForeColor = Color.FromArgb(245, 220, 224);
-            lblTitleChildForm.Location = new Point(42, 10);
-            lblTitleChildForm.Name = "lblTitleChildForm";
-            lblTitleChildForm.Size = new Size(73, 30);
-            lblTitleChildForm.TabIndex = 1;
-            lblTitleChildForm.Text = "Home";
-            lblTitleChildForm.Click += lblTitleChildForm_Click;
             // 
             // iconCurrentChildForm
             // 
@@ -391,7 +377,6 @@
             panelLogo.ResumeLayout(false);
             panelLogo.PerformLayout();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
             ResumeLayout(false);
         }
@@ -400,13 +385,11 @@
 
         private Panel panelSideMenu;
         private Panel panelLogo;
-        private FontAwesome.Sharp.IconButton homeBtn;
         private FontAwesome.Sharp.IconButton billBtn;
         private FontAwesome.Sharp.IconButton tenantBtn;
         private FontAwesome.Sharp.IconButton bedBtn;
         private FontAwesome.Sharp.IconButton roomBtn;
         private Panel panel1;
-        private Label lblTitleChildForm;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private Label label1;
         private Label label2;
@@ -416,7 +399,8 @@
         private Panel panelHomeBg;
         private Panel panel2;
         private Panel panel3;
-        private Panel panel4;
         private Panel panel5;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private Panel panel6;
     }
 }

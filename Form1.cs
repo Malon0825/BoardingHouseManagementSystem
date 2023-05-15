@@ -28,6 +28,8 @@ namespace ManagementSystem
             leftBorderBtn.Size = new Size(7, 60);
             panelSideMenu.Controls.Add(leftBorderBtn);
 
+            OpenChildForm(new FormHistory());
+
             //Form
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -97,7 +99,6 @@ namespace ManagementSystem
             panelHomeBg.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -123,7 +124,7 @@ namespace ManagementSystem
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(55, 34, 42));
-            OpenChildForm(new FormHome());
+            OpenChildForm(new FormHistory());
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -212,6 +213,17 @@ namespace ManagementSystem
         private void panelHomeBg_Layout(object sender, LayoutEventArgs e)
         {
 
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(55, 34, 42));
+            OpenChildForm(new FormHistory());
         }
     }
 }

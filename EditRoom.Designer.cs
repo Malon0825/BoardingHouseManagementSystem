@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             panel8 = new Panel();
+            panel1 = new Panel();
+            textAddDescription = new TextBox();
+            label1 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconButton4 = new FontAwesome.Sharp.IconButton();
             panel11 = new Panel();
@@ -37,9 +40,6 @@
             panel10 = new Panel();
             textAddName = new TextBox();
             label8 = new Label();
-            panel1 = new Panel();
-            textAddDescription = new TextBox();
-            label1 = new Label();
             panel8.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,6 +62,34 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(515, 280);
             panel8.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(228, 160, 183);
+            panel1.Location = new Point(235, 170);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(234, 5);
+            panel1.TabIndex = 19;
+            // 
+            // textAddDescription
+            // 
+            textAddDescription.BackColor = Color.FromArgb(225, 138, 170);
+            textAddDescription.BorderStyle = BorderStyle.None;
+            textAddDescription.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            textAddDescription.Location = new Point(235, 139);
+            textAddDescription.Name = "textAddDescription";
+            textAddDescription.Size = new Size(234, 29);
+            textAddDescription.TabIndex = 18;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(36, 139);
+            label1.Name = "label1";
+            label1.Size = new Size(196, 30);
+            label1.TabIndex = 17;
+            label1.Text = "Room Description:";
             // 
             // iconButton1
             // 
@@ -163,37 +191,9 @@
             label8.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(36, 55);
             label8.Name = "label8";
-            label8.Size = new Size(141, 30);
+            label8.Size = new Size(165, 30);
             label8.TabIndex = 5;
-            label8.Text = "Room Name:";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(228, 160, 183);
-            panel1.Location = new Point(235, 170);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(234, 5);
-            panel1.TabIndex = 19;
-            // 
-            // textAddDescription
-            // 
-            textAddDescription.BackColor = Color.FromArgb(225, 138, 170);
-            textAddDescription.BorderStyle = BorderStyle.None;
-            textAddDescription.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textAddDescription.Location = new Point(235, 139);
-            textAddDescription.Name = "textAddDescription";
-            textAddDescription.Size = new Size(234, 29);
-            textAddDescription.TabIndex = 18;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(36, 139);
-            label1.Name = "label1";
-            label1.Size = new Size(196, 30);
-            label1.TabIndex = 17;
-            label1.Text = "Room Description:";
+            label8.Text = "Room Number:";
             // 
             // EditRoom
             // 
