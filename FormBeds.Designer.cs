@@ -40,17 +40,17 @@
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel7 = new Panel();
+            dataBedsList = new DataGridView();
             label3 = new Label();
             lalebTennantName = new Label();
-            dataBedsList = new DataGridView();
             panel11 = new Panel();
             labelBedName = new Label();
             panel10 = new Panel();
             panel8 = new Panel();
             panel6 = new Panel();
             panel3 = new Panel();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
             dataSearchList = new DataGridView();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             label9 = new Label();
             label10 = new Label();
             panelEdit = new Panel();
@@ -89,9 +89,9 @@
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(225, 138, 170);
+            panel7.Controls.Add(dataBedsList);
             panel7.Controls.Add(label3);
             panel7.Controls.Add(lalebTennantName);
-            panel7.Controls.Add(dataBedsList);
             panel7.Controls.Add(panel11);
             panel7.Controls.Add(panel10);
             panel7.Controls.Add(panel8);
@@ -101,30 +101,10 @@
             panel7.Size = new Size(515, 610);
             panel7.TabIndex = 8;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(10, 493);
-            label3.Name = "label3";
-            label3.Size = new Size(202, 37);
-            label3.TabIndex = 9;
-            label3.Text = "Tennant Name:";
-            label3.Click += label3_Click;
-            // 
-            // lalebTennantName
-            // 
-            lalebTennantName.AutoSize = true;
-            lalebTennantName.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lalebTennantName.ForeColor = Color.White;
-            lalebTennantName.Location = new Point(208, 493);
-            lalebTennantName.Name = "lalebTennantName";
-            lalebTennantName.Size = new Size(84, 37);
-            lalebTennantName.TabIndex = 10;
-            lalebTennantName.Text = "None";
-            // 
             // dataBedsList
             // 
+            dataBedsList.AllowUserToAddRows = false;
+            dataBedsList.AllowUserToDeleteRows = false;
             dataBedsList.AllowUserToResizeColumns = false;
             dataBedsList.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -133,7 +113,9 @@
             dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = Color.Pink;
             dataBedsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataBedsList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataBedsList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataBedsList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataBedsList.BackgroundColor = Color.FromArgb(228, 160, 183);
             dataBedsList.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataBedsList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -144,7 +126,7 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.LavenderBlush;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
             dataBedsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataBedsList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataBedsList.ColumnHeadersHeight = 35;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(228, 160, 183);
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -153,7 +135,7 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataBedsList.DefaultCellStyle = dataGridViewCellStyle3;
-            dataBedsList.Dock = DockStyle.Top;
+            dataBedsList.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataBedsList.GridColor = Color.Black;
             dataBedsList.Location = new Point(10, 95);
             dataBedsList.Name = "dataBedsList";
@@ -176,14 +158,36 @@
             dataBedsList.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataBedsList.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dataBedsList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Pink;
-            dataBedsList.RowTemplate.Height = 25;
+            dataBedsList.RowTemplate.Height = 35;
             dataBedsList.ScrollBars = ScrollBars.Vertical;
             dataBedsList.ShowCellToolTips = false;
             dataBedsList.ShowEditingIcon = false;
             dataBedsList.ShowRowErrors = false;
-            dataBedsList.Size = new Size(495, 356);
-            dataBedsList.TabIndex = 9;
-            dataBedsList.CellClick += dataBedsList_CellClick;
+            dataBedsList.Size = new Size(495, 355);
+            dataBedsList.TabIndex = 17;
+            dataBedsList.CellClick += dataBedsList_CellClick_1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(10, 493);
+            label3.Name = "label3";
+            label3.Size = new Size(202, 37);
+            label3.TabIndex = 9;
+            label3.Text = "Tennant Name:";
+            label3.Click += label3_Click;
+            // 
+            // lalebTennantName
+            // 
+            lalebTennantName.AutoSize = true;
+            lalebTennantName.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lalebTennantName.ForeColor = Color.White;
+            lalebTennantName.Location = new Point(208, 493);
+            lalebTennantName.Name = "lalebTennantName";
+            lalebTennantName.Size = new Size(84, 37);
+            lalebTennantName.TabIndex = 10;
+            lalebTennantName.Text = "None";
             // 
             // panel11
             // 
@@ -234,8 +238,8 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(225, 138, 170);
-            panel3.Controls.Add(iconButton3);
             panel3.Controls.Add(dataSearchList);
+            panel3.Controls.Add(iconButton3);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label10);
             panel3.Controls.Add(panelEdit);
@@ -249,6 +253,73 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(515, 610);
             panel3.TabIndex = 5;
+            // 
+            // dataSearchList
+            // 
+            dataSearchList.AllowUserToAddRows = false;
+            dataSearchList.AllowUserToDeleteRows = false;
+            dataSearchList.AllowUserToResizeColumns = false;
+            dataSearchList.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Pink;
+            dataSearchList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataSearchList.Anchor = AnchorStyles.Top;
+            dataSearchList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataSearchList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataSearchList.BackgroundColor = Color.FromArgb(228, 160, 183);
+            dataSearchList.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataSearchList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.LavenderBlush;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.ControlText;
+            dataSearchList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataSearchList.ColumnHeadersHeight = 35;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Pink;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataSearchList.DefaultCellStyle = dataGridViewCellStyle8;
+            dataSearchList.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataSearchList.GridColor = Color.Black;
+            dataSearchList.Location = new Point(12, 137);
+            dataSearchList.Name = "dataSearchList";
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = Color.Pink;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataSearchList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataSearchList.RowHeadersVisible = false;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = Color.Pink;
+            dataSearchList.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataSearchList.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataSearchList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(228, 160, 183);
+            dataSearchList.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataSearchList.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dataSearchList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Pink;
+            dataSearchList.RowTemplate.Height = 35;
+            dataSearchList.RowTemplate.Resizable = DataGridViewTriState.True;
+            dataSearchList.ScrollBars = ScrollBars.Vertical;
+            dataSearchList.ShowCellToolTips = false;
+            dataSearchList.ShowEditingIcon = false;
+            dataSearchList.ShowRowErrors = false;
+            dataSearchList.Size = new Size(488, 153);
+            dataSearchList.TabIndex = 9;
+            dataSearchList.CellClick += dataSearchList_CellClick_1;
             // 
             // iconButton3
             // 
@@ -273,68 +344,6 @@
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton3.UseVisualStyleBackColor = true;
             iconButton3.Click += iconButton3_Click;
-            // 
-            // dataSearchList
-            // 
-            dataSearchList.AllowUserToResizeColumns = false;
-            dataSearchList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Pink;
-            dataSearchList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            dataSearchList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataSearchList.BackgroundColor = Color.FromArgb(228, 160, 183);
-            dataSearchList.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataSearchList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = Color.LavenderBlush;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.ControlText;
-            dataSearchList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataSearchList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Pink;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dataSearchList.DefaultCellStyle = dataGridViewCellStyle8;
-            dataSearchList.GridColor = Color.Black;
-            dataSearchList.Location = new Point(12, 137);
-            dataSearchList.Name = "dataSearchList";
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = Color.Pink;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
-            dataSearchList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataSearchList.RowHeadersVisible = false;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = Color.Pink;
-            dataSearchList.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataSearchList.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataSearchList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(228, 160, 183);
-            dataSearchList.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataSearchList.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dataSearchList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Pink;
-            dataSearchList.RowTemplate.Height = 25;
-            dataSearchList.ScrollBars = ScrollBars.Vertical;
-            dataSearchList.ShowCellToolTips = false;
-            dataSearchList.ShowEditingIcon = false;
-            dataSearchList.ShowRowErrors = false;
-            dataSearchList.Size = new Size(488, 153);
-            dataSearchList.TabIndex = 7;
-            dataSearchList.CellClick += dataSearchList_CellClick;
-            dataSearchList.CellContentClick += dataSearchList_CellContentClick;
             // 
             // label9
             // 
@@ -521,7 +530,6 @@
         private Panel panel7;
         private Label labelBedName;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private DataGridView dataSearchList;
         private Label label9;
         private Label label10;
         private Panel panelEdit;
@@ -537,8 +545,9 @@
         private Panel panel11;
         private Panel panel10;
         private Panel panel8;
-        private DataGridView dataBedsList;
         private Label label3;
         private Label lalebTennantName;
+        private DataGridView dataSearchList;
+        private DataGridView dataBedsList;
     }
 }

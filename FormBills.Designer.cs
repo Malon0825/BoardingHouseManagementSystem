@@ -51,9 +51,6 @@
             panel17 = new Panel();
             textBox2 = new TextBox();
             panel16 = new Panel();
-            label11 = new Label();
-            panel15 = new Panel();
-            textSearchName = new TextBox();
             textTotal = new Label();
             label10 = new Label();
             label8 = new Label();
@@ -137,9 +134,6 @@
             panel14.Controls.Add(panel17);
             panel14.Controls.Add(textBox2);
             panel14.Controls.Add(panel16);
-            panel14.Controls.Add(label11);
-            panel14.Controls.Add(panel15);
-            panel14.Controls.Add(textSearchName);
             panel14.Controls.Add(textTotal);
             panel14.Controls.Add(label10);
             panel14.Controls.Add(label8);
@@ -323,38 +317,6 @@
             panel16.Name = "panel16";
             panel16.Size = new Size(353, 10);
             panel16.TabIndex = 14;
-            // 
-            // label11
-            // 
-            label11.Anchor = AnchorStyles.Top;
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(513, 37);
-            label11.Name = "label11";
-            label11.Size = new Size(133, 37);
-            label11.TabIndex = 14;
-            label11.Text = "Discount:";
-            // 
-            // panel15
-            // 
-            panel15.Anchor = AnchorStyles.Top;
-            panel15.BackColor = Color.FromArgb(228, 160, 183);
-            panel15.Location = new Point(652, 75);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(333, 5);
-            panel15.TabIndex = 13;
-            // 
-            // textSearchName
-            // 
-            textSearchName.Anchor = AnchorStyles.Top;
-            textSearchName.BackColor = Color.FromArgb(225, 138, 170);
-            textSearchName.BorderStyle = BorderStyle.None;
-            textSearchName.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            textSearchName.Location = new Point(652, 38);
-            textSearchName.Name = "textSearchName";
-            textSearchName.Size = new Size(333, 36);
-            textSearchName.TabIndex = 12;
-            textSearchName.KeyPress += textSearchName_KeyPress;
             // 
             // textTotal
             // 
@@ -676,9 +638,6 @@
         private Label label6;
         private Label label4;
         private Label labelName;
-        private Label label11;
-        private Panel panel15;
-        private TextBox textSearchName;
         private Panel panel13;
         private Label label15;
         private Label labelChange;

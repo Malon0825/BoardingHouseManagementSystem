@@ -257,9 +257,21 @@ namespace ManagementSystem
             foreach (Bed bed in beds)
             {
                 DataRow row = dataTable.NewRow();
-                row["ID"] = bed.ID;
-                row["BedName"] = bed.BedName;
-                row["Occupancy"] = bed.Occupancy;
+
+                var occ = bed.Occupancy;
+
+                if (occ == "True")
+                {
+                    row["ID"] = bed.ID;
+                    row["BedName"] = bed.BedName;
+                    row["Occupancy"] = "Occupied";
+                }
+                else
+                {
+                    row["ID"] = bed.ID;
+                    row["BedName"] = bed.BedName;
+                    row["Occupancy"] = "Vacant";
+                }
 
                 dataTable.Rows.Add(row);
             }

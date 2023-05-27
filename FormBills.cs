@@ -190,7 +190,6 @@ namespace ManagementSystem
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            string discount = textSearchName.Text;
             string cash = textBox2.Text;
             string totalVal = textTotal.Text;
             rentType = comboBox1.Text;
@@ -200,7 +199,7 @@ namespace ManagementSystem
             {
                 if (!string.IsNullOrEmpty(totalVal))
                 {
-                    if (string.IsNullOrEmpty(discount) && !string.IsNullOrEmpty(cash))
+                    if (!string.IsNullOrEmpty(cash))
                     {
                         int cashInt = int.Parse(cash);
 
@@ -218,33 +217,9 @@ namespace ManagementSystem
                         }
 
                     }
-                    else if (!string.IsNullOrEmpty(discount) && string.IsNullOrEmpty(cash))
-                    {
-                        MessageBox.Show("Please input the cash amount!!");
-                    }
-                    else if (!string.IsNullOrEmpty(discount) && !string.IsNullOrEmpty(cash))
-                    {
-                        int discountInt = int.Parse(discount);
-                        int cashInt = int.Parse(cash);
-
-                        int discountedBill = total - discountInt;
-
-                        int change = cashInt - discountedBill;
-
-                        if (change < 0)
-                        {
-                            labelChange.Text = change.ToString();
-                            MessageBox.Show("Insufficient cash amount");
-                        }
-                        else
-                        {
-                            labelChange.Text = change.ToString();
-                            addTennantBill();
-                        }
-                    }
                     else
                     {
-                        MessageBox.Show("Check the cash amount if correct!");
+                        MessageBox.Show("Please input the cash amount!!");
                     }
                 }
                 else
@@ -344,7 +319,6 @@ namespace ManagementSystem
                 textRentBill.Clear();
                 textBox4.Clear();
                 comboBox1.Items.Clear();
-                textSearchName.Clear();
                 textBox2.Clear();
                 comboBox1.Items.Add("Bed");
                 comboBox1.Items.Add("Room");

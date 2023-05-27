@@ -129,6 +129,52 @@ namespace ManagementSystem
 
         private void dataSearchList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void labelBedName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataBedsList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Top;
+            panelEdit.Controls.Add(childForm);
+            panelEdit.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new BedsAdd());
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new BedsUpdate());
+        }
+
+        private void dataSearchList_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
             DataGridView dataGridView = (DataGridView)sender;
 
             int rowCliked = dataGridView.CurrentRow.Index;
@@ -176,9 +222,22 @@ namespace ManagementSystem
             foreach (Bed bed in beds)
             {
                 DataRow row = dataTable.NewRow();
-                row["ID"] = bed.ID;
-                row["BedName"] = bed.BedName;
-                row["Occupancy"] = bed.Occupancy;
+
+                var occ = bed.Occupancy;
+
+                if (occ == "True")
+                {
+                    row["ID"] = bed.ID;
+                    row["BedName"] = bed.BedName;
+                    row["Occupancy"] = "Occupied";
+                }
+                else
+                {
+                    row["ID"] = bed.ID;
+                    row["BedName"] = bed.BedName;
+                    row["Occupancy"] = "Vacant";
+                }
+
 
                 dataTable.Rows.Add(row);
             }
@@ -186,25 +245,14 @@ namespace ManagementSystem
             dataBedsList.DataSource = dataTable;
         }
 
-        private void labelBedName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataBedsList_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataBedsList_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dataGridView = (DataGridView)sender;
 
             int rowCliked = dataGridView.CurrentRow.Index;
             object cellValue = dataGridView.Rows[rowCliked].Cells[2].Value;
             string occupancy = cellValue == null ? "" : cellValue.ToString();
-
-            if (occupancy == "True")
+            if (occupancy == "Occupied")
             {
 
                 String bedid = dataGridView.Rows[rowCliked].Cells[0].Value.ToString();
@@ -249,33 +297,6 @@ namespace ManagementSystem
             {
                 lalebTennantName.Text = "Vacant Bed";
             }
-
-        }
-
-        private void OpenChildForm(Form childForm)
-        {
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Top;
-            panelEdit.Controls.Add(childForm);
-            panelEdit.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new BedsAdd());
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton5_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new BedsUpdate());
         }
     }
 }
