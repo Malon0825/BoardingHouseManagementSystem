@@ -41,6 +41,7 @@
             label2 = new Label();
             label1 = new Label();
             panel1 = new Panel();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             iconMinimize = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             iconClose = new FontAwesome.Sharp.IconButton();
@@ -254,6 +255,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(225, 138, 170);
+            panel1.Controls.Add(iconButton2);
             panel1.Controls.Add(iconMinimize);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(iconClose);
@@ -265,6 +267,22 @@
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
+            // 
+            // iconButton2
+            // 
+            iconButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            iconButton2.IconColor = Color.Black;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 35;
+            iconButton2.Location = new Point(892, 0);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(45, 50);
+            iconButton2.TabIndex = 5;
+            iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click_1;
             // 
             // iconMinimize
             // 
@@ -341,7 +359,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(158, 97, 120);
+            panel2.BackColor = Color.Black;
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(243, 50);
             panel2.Name = "panel2";
@@ -350,7 +368,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(158, 97, 120);
+            panel3.BackColor = Color.Black;
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(243, 55);
             panel3.Name = "panel3";
@@ -402,5 +420,6 @@
         private Panel panel5;
         private FontAwesome.Sharp.IconButton iconButton3;
         private Panel panel6;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

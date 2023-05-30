@@ -87,6 +87,7 @@
             cbBedName.Size = new Size(357, 33);
             cbBedName.TabIndex = 30;
             cbBedName.SelectedIndexChanged += cbBedName_SelectedIndexChanged;
+            cbBedName.Enter += cbBedName_Enter;
             // 
             // cbRoomName
             // 
@@ -98,7 +99,10 @@
             cbRoomName.Size = new Size(357, 33);
             cbRoomName.TabIndex = 29;
             cbRoomName.SelectedIndexChanged += cbRoomName_SelectedIndexChanged;
+            cbRoomName.TextUpdate += cbRoomName_TextUpdate;
             cbRoomName.DropDownClosed += cbRoomName_DropDownClosed;
+            cbRoomName.Enter += cbRoomName_Enter;
+            cbRoomName.Leave += cbRoomName_Leave;
             // 
             // label2
             // 

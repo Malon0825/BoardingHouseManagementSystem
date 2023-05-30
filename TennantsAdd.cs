@@ -25,7 +25,7 @@ namespace ManagementSystem
             foreach (Room room in rooms)
             {
                 cbRoomName.DataSource = rooms;
-                cbRoomName.DisplayMember = "RoomName";
+                cbRoomName.DisplayMember = "RoomNumber";
                 cbRoomName.ValueMember = "ID";
             }
 
@@ -122,9 +122,10 @@ namespace ManagementSystem
             string age = textage.Text;
             string email = textemail.Text;
             string address = textaddress.Text;
+            string allotedBed = cbBedName.Text;
             int occupancy = 1;
 
-            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(age) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(address))
+            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(allotedBed) && !string.IsNullOrWhiteSpace(age) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(address))
             {
                 int selectedBedID = (int)cbBedName.SelectedValue;
                 try
@@ -175,7 +176,7 @@ namespace ManagementSystem
             }
 
             connection.Close();
-            
+
         }
 
         private void cbBedName_SelectedIndexChanged(object sender, EventArgs e)
@@ -190,15 +191,7 @@ namespace ManagementSystem
 
         private void cbRoomName_DropDownClosed(object sender, EventArgs e)
         {
-            roomID = (int)cbRoomName.SelectedValue;
-            List<Bed> beds = GetAllBed();
 
-            foreach (Bed bed in beds)
-            {
-                cbBedName.DataSource = beds;
-                cbBedName.DisplayMember = "BedName";
-                cbBedName.ValueMember = "ID";
-            }
         }
 
         private void textage_TextChanged(object sender, EventArgs e)
@@ -214,6 +207,41 @@ namespace ManagementSystem
                 // Set Handled to true to prevent the character from being entered
                 e.Handled = true;
             }
+        }
+
+        private void cbBedName_Enter(object sender, EventArgs e)
+        {
+            roomID = (int)cbRoomName.SelectedValue;
+            List<Bed> beds = GetAllBed();
+
+            if (beds.Count > 0)
+            {
+                cbBedName.DataSource = beds;
+                cbBedName.DisplayMember = "BedName";
+                cbBedName.ValueMember = "ID";
+            }
+            else
+            {
+                cbBedName.DataSource = null;
+                cbBedName.Items.Add("");
+            }
+        }
+
+        private void cbRoomName_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbRoomName_TextUpdate(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void cbRoomName_Enter(object sender, EventArgs e)
+        {
+            cbBedName.DataSource = null;
+            cbBedName.Items.Add("");
         }
     }
 }

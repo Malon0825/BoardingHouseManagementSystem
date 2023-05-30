@@ -112,13 +112,21 @@ namespace ManagementSystem
             public int? RentBill { get; set; }
             public int? ElectricBill { get; set; }
             public int Total { get; set; }
-            public string Date { get; set; }
+            public string DueDate { get; set; }
+            public string? Date { get; set; }
+            public string Status { get; set; }
 
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridView dataGridView2 = (DataGridView)sender;
 
+            int rowCliked = dataGridView2.CurrentRow.Index;
+            String billingID = dataGridView2.Rows[rowCliked].Cells[0].Value.ToString();
+
+            BillingStatus billVal = new BillingStatus(billingID);
+            billVal.Show();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -149,8 +157,9 @@ namespace ManagementSystem
                             RentBill = reader.IsDBNull(3) ? null : reader.GetInt32(3),
                             ElectricBill = reader.IsDBNull(2) ? null : reader.GetInt32(2),
                             Total = reader.GetInt32(4),
-                            Date = reader.GetString(5),
-
+                            DueDate = reader.GetString(5),
+                            Date = reader.IsDBNull(6) ? null : reader.GetString(6),
+                            Status = reader.GetString(7),
 
                         };
 
@@ -172,17 +181,22 @@ namespace ManagementSystem
             dataTable2.Columns.Add("RentBill");
             dataTable2.Columns.Add("ElectricBill");
             dataTable2.Columns.Add("Total");
+            dataTable2.Columns.Add("DueDate");
             dataTable2.Columns.Add("Date");
+            dataTable2.Columns.Add("Status");
 
             foreach (Bills bill in bills)
             {
                 DataRow row = dataTable2.NewRow();
+                var date =
                 row["BillingID"] = bill.BillingID;
                 row["RentType"] = bill.RentType;
                 row["RentBill"] = bill.RentBill;
                 row["ElectricBill"] = bill.ElectricBill;
                 row["Total"] = bill.Total;
+                row["DueDate"] = bill.DueDate;
                 row["Date"] = bill.Date;
+                row["Status"] = bill.Status;
 
                 dataTable2.Rows.Add(row);
             }
@@ -197,6 +211,27 @@ namespace ManagementSystem
 
         private void label2_Click(object sender, EventArgs e)
         {
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            {
+                connection.Open();
+                string query = "SELECT ID, TennantName FROM tennants";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    DataTable dataTable = new DataTable();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+
+                    dataGridView1.DataSource = dataTable;
+                    dataGridView2.DataSource = null;
+                    dataGridView2.Rows.Clear();
+                    dataGridView2.Columns.Clear();
+                }
+
+            }
         }
     }
 }

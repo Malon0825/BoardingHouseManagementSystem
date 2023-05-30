@@ -22,7 +22,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();
-                string query = "SELECT ID, RoomNumber FROM rooms";
+                string query = "SELECT ID, RoomNumber, RoomType FROM rooms";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Execute the query and load the data into a DataTable
@@ -44,7 +44,8 @@ namespace ManagementSystem
         public class SearchRoom
         {
             public int ID { get; set; }
-            public string RoomName { get; set; }
+            public string RoomNumber{ get; set; }
+            public string RoomType { get; set; }
 
         }
 
@@ -73,7 +74,7 @@ namespace ManagementSystem
                 String searchWildPhrase = "%" + searchTerm + "%";
 
                 MySqlCommand command = new MySqlCommand();
-                command.CommandText = "Select ID, RoomNumber FROM rooms WHERE RoomNumber LIKE @search";
+                command.CommandText = "Select ID, RoomNumber, RoomType FROM rooms WHERE RoomNumber LIKE @search";
                 command.Parameters.AddWithValue("@search", searchWildPhrase);
                 command.Connection = connection;
 
@@ -84,7 +85,8 @@ namespace ManagementSystem
                         SearchRoom room = new SearchRoom
                         {
                             ID = reader.GetInt32(0),
-                            RoomName = reader.GetString(1),
+                            RoomNumber = reader.GetString(1),
+                            RoomType = reader.GetString(2),
                         };
 
                         returnThese.Add(room);
@@ -107,7 +109,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();
-                string query = "SELECT ID, RoomNumber FROM rooms";
+                string query = "SELECT ID, RoomNumber, RoomType FROM rooms";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Execute the query and load the data into a DataTable

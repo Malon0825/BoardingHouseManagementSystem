@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel8 = new Panel();
+            cbRoomType = new ComboBox();
+            label3 = new Label();
             panel1 = new Panel();
             textAddDescription = new TextBox();
             label1 = new Label();
@@ -46,6 +48,8 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(225, 138, 170);
+            panel8.Controls.Add(cbRoomType);
+            panel8.Controls.Add(label3);
             panel8.Controls.Add(panel1);
             panel8.Controls.Add(textAddDescription);
             panel8.Controls.Add(label1);
@@ -63,10 +67,30 @@
             panel8.Size = new Size(515, 280);
             panel8.TabIndex = 4;
             // 
+            // cbRoomType
+            // 
+            cbRoomType.BackColor = Color.FromArgb(225, 138, 170);
+            cbRoomType.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            cbRoomType.FormattingEnabled = true;
+            cbRoomType.Location = new Point(237, 81);
+            cbRoomType.Name = "cbRoomType";
+            cbRoomType.Size = new Size(234, 38);
+            cbRoomType.TabIndex = 31;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(38, 89);
+            label3.Name = "label3";
+            label3.Size = new Size(129, 30);
+            label3.TabIndex = 30;
+            label3.Text = "Room Type:";
+            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(228, 160, 183);
-            panel1.Location = new Point(235, 170);
+            panel1.Location = new Point(237, 198);
             panel1.Name = "panel1";
             panel1.Size = new Size(234, 5);
             panel1.TabIndex = 19;
@@ -76,7 +100,7 @@
             textAddDescription.BackColor = Color.FromArgb(225, 138, 170);
             textAddDescription.BorderStyle = BorderStyle.None;
             textAddDescription.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textAddDescription.Location = new Point(235, 139);
+            textAddDescription.Location = new Point(237, 167);
             textAddDescription.Name = "textAddDescription";
             textAddDescription.Size = new Size(234, 29);
             textAddDescription.TabIndex = 18;
@@ -85,7 +109,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(36, 139);
+            label1.Location = new Point(38, 167);
             label1.Name = "label1";
             label1.Size = new Size(196, 30);
             label1.TabIndex = 17;
@@ -105,7 +129,7 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 30;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(109, 200);
+            iconButton1.Location = new Point(114, 223);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(120, 36);
             iconButton1.TabIndex = 16;
@@ -129,7 +153,7 @@
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton4.IconSize = 30;
             iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(290, 200);
+            iconButton4.Location = new Point(295, 223);
             iconButton4.Name = "iconButton4";
             iconButton4.Size = new Size(97, 36);
             iconButton4.TabIndex = 15;
@@ -142,7 +166,7 @@
             // panel11
             // 
             panel11.BackColor = Color.FromArgb(228, 160, 183);
-            panel11.Location = new Point(235, 128);
+            panel11.Location = new Point(237, 156);
             panel11.Name = "panel11";
             panel11.Size = new Size(234, 5);
             panel11.TabIndex = 11;
@@ -152,7 +176,7 @@
             textAddLocation.BackColor = Color.FromArgb(225, 138, 170);
             textAddLocation.BorderStyle = BorderStyle.None;
             textAddLocation.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textAddLocation.Location = new Point(235, 97);
+            textAddLocation.Location = new Point(237, 125);
             textAddLocation.Name = "textAddLocation";
             textAddLocation.Size = new Size(234, 29);
             textAddLocation.TabIndex = 10;
@@ -161,7 +185,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(36, 97);
+            label11.Location = new Point(38, 125);
             label11.Name = "label11";
             label11.Size = new Size(167, 30);
             label11.TabIndex = 9;
@@ -170,7 +194,7 @@
             // panel10
             // 
             panel10.BackColor = Color.FromArgb(228, 160, 183);
-            panel10.Location = new Point(235, 86);
+            panel10.Location = new Point(237, 71);
             panel10.Name = "panel10";
             panel10.Size = new Size(234, 5);
             panel10.TabIndex = 8;
@@ -180,7 +204,7 @@
             textAddName.BackColor = Color.FromArgb(225, 138, 170);
             textAddName.BorderStyle = BorderStyle.None;
             textAddName.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textAddName.Location = new Point(235, 55);
+            textAddName.Location = new Point(237, 40);
             textAddName.Name = "textAddName";
             textAddName.Size = new Size(234, 29);
             textAddName.TabIndex = 7;
@@ -189,7 +213,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(36, 55);
+            label8.Location = new Point(38, 40);
             label8.Name = "label8";
             label8.Size = new Size(165, 30);
             label8.TabIndex = 5;
@@ -223,5 +247,7 @@
         private Panel panel1;
         private TextBox textAddDescription;
         private Label label1;
+        private ComboBox cbRoomType;
+        private Label label3;
     }
 }

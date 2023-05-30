@@ -225,5 +225,10 @@ namespace ManagementSystem
             ActivateButton(sender, Color.FromArgb(55, 34, 42));
             OpenChildForm(new FormHistory());
         }
+
+        private void iconButton2_Click_1(object sender, EventArgs e)
+        {
+            new FormStats().Show();
+        }
     }
 }

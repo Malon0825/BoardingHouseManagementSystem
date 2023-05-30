@@ -329,6 +329,7 @@
             // 
             // panel6
             // 
+            panel6.BackColor = Color.FromArgb(228, 160, 183);
             panel6.Dock = DockStyle.Left;
             panel6.Location = new Point(528, 10);
             panel6.Name = "panel6";
@@ -615,6 +616,7 @@
             // 
             // panel5
             // 
+            panel5.BackColor = Color.FromArgb(228, 160, 183);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(10, 0);
             panel5.Name = "panel5";
@@ -623,6 +625,7 @@
             // 
             // panel4
             // 
+            panel4.BackColor = Color.FromArgb(228, 160, 183);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";

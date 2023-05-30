@@ -25,8 +25,9 @@ namespace ManagementSystem
         string electricBill;
         string rentBill;
         int total;
-
-
+        string tennantName;
+        int cashInt;
+        int change;
 
         public FormBills()
         {
@@ -193,7 +194,7 @@ namespace ManagementSystem
             string cash = textBox2.Text;
             string totalVal = textTotal.Text;
             rentType = comboBox1.Text;
-            string tennantName = labelName.Text;
+            tennantName = labelName.Text;
 
             if (!string.IsNullOrEmpty(rentType) && !string.IsNullOrEmpty(tennantName))
             {
@@ -201,25 +202,26 @@ namespace ManagementSystem
                 {
                     if (!string.IsNullOrEmpty(cash))
                     {
-                        int cashInt = int.Parse(cash);
+                        cashInt = int.Parse(cash);
 
-                        int change = cashInt - total;
+                        change = cashInt - total;
 
                         if (change < 0)
                         {
                             labelChange.Text = change.ToString();
-                            MessageBox.Show("Insufficient cash amount");
+                            MessageBox.Show("Insufficient cash amount!!");
                         }
                         else
                         {
                             labelChange.Text = change.ToString();
                             addTennantBill();
+
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("Please input the cash amount!!");
+                        addTennantBillUnpaid();
                     }
                 }
                 else
@@ -242,13 +244,14 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
             string formattedDate = currentDate.ToString("MM/dd/yyyy");
+            string monthYearDate = currentDate.ToString("MM/01/yyyy");
             int electricBillInt;
             int rentBillInt;
 
             try
             {
-                string query = "INSERT INTO `billing` (`BillingId`, `RentType`, `ElectricBill`, `Rent`, `Total`, `Date`, `tennants_ID`) " +
-                    "VALUES(NULL, @rentType, @electricBill, @rentBills, @total, @date, @tentId)";
+                string query = "INSERT INTO `billing` (`BillingId`, `RentType`, `ElectricBill`, `Rent`, `Total`, `DueDate`, `Date`, `tennants_ID`, `Status`) " +
+                    "VALUES(NULL, @rentType, @electricBill, @rentBills, @total, @dueDate, @date, @tentId, @status)";
 
                 MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -264,8 +267,111 @@ namespace ManagementSystem
                     command.Parameters.AddWithValue("@electricBill", electricBillInt);
                     command.Parameters.AddWithValue("@rentBills", null);
                     command.Parameters.AddWithValue("@total", total);
+                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
                     command.Parameters.AddWithValue("@date", formattedDate);
                     command.Parameters.AddWithValue("@tentId", tentIdInt);
+                    command.Parameters.AddWithValue("@status", "Paid");
+
+                    command.ExecuteNonQuery();
+
+                    FormReciept formReciept = new FormReciept(tennantName, rentType, null, electricBillInt, total, cashInt, change);
+                    formReciept.Show();
+
+                }
+                else if (string.IsNullOrEmpty(electricBill) && !string.IsNullOrEmpty(rentBill))
+                {
+                    rentBillInt = int.Parse(rentBill);
+
+                    int tentIdInt = int.Parse(tentId);
+
+                    command.Parameters.AddWithValue("@rentType", rentType);
+                    command.Parameters.AddWithValue("@electricBill", null);
+                    command.Parameters.AddWithValue("@rentBills", rentBillInt);
+                    command.Parameters.AddWithValue("@total", total);
+                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
+                    command.Parameters.AddWithValue("@date", formattedDate);
+                    command.Parameters.AddWithValue("@tentId", tentIdInt);
+                    command.Parameters.AddWithValue("@status", "Paid");
+
+                    command.ExecuteNonQuery();
+
+                    FormReciept formReciept = new FormReciept(tennantName, rentType, rentBillInt, null, total, cashInt, change);
+                    formReciept.Show();
+
+
+                }
+                else
+                {
+                    rentBillInt = int.Parse(rentBill);
+                    electricBillInt = int.Parse(electricBill);
+
+                    int tentIdInt = int.Parse(tentId);
+
+                    command.Parameters.AddWithValue("@rentType", rentType);
+                    command.Parameters.AddWithValue("@electricBill", electricBillInt);
+                    command.Parameters.AddWithValue("@rentBills", rentBillInt);
+                    command.Parameters.AddWithValue("@total", total);
+                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
+                    command.Parameters.AddWithValue("@date", formattedDate);
+                    command.Parameters.AddWithValue("@tentId", tentIdInt);
+                    command.Parameters.AddWithValue("@status", "Paid");
+
+                    command.ExecuteNonQuery();
+
+                    FormReciept formReciept = new FormReciept(tennantName, rentType, rentBillInt, electricBillInt, total, cashInt, change);
+                    formReciept.Show();
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                // Handle the exception here
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                MessageBox.Show("Successful!!");
+                textRentBill.Clear();
+                textBox4.Clear();
+                comboBox1.Items.Clear();
+                textBox2.Clear();
+                comboBox1.Items.Add("Bed");
+                comboBox1.Items.Add("Room");
+            }
+            connection.Close();
+        }
+
+        private void addTennantBillUnpaid()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+            string monthYearDate = currentDate.ToString("MM/01/yyyy");
+            int electricBillInt;
+            int rentBillInt;
+
+            try
+            {
+                string query = "INSERT INTO `billing` (`BillingId`, `RentType`, `ElectricBill`, `Rent`, `Total`, `DueDate`, `Date`, `tennants_ID`, `Status`) " +
+                    "VALUES(NULL, @rentType, @electricBill, @rentBills, @total, @dueDate, @date, @tentId, @status)";
+
+                MySqlCommand command = new MySqlCommand(query, connection);
+
+
+
+                if (string.IsNullOrEmpty(rentBill) && !string.IsNullOrEmpty(electricBill))
+                {
+                    electricBillInt = int.Parse(electricBill);
+
+                    int tentIdInt = int.Parse(tentId);
+
+                    command.Parameters.AddWithValue("@rentType", rentType);
+                    command.Parameters.AddWithValue("@electricBill", electricBillInt);
+                    command.Parameters.AddWithValue("@rentBills", null);
+                    command.Parameters.AddWithValue("@total", total);
+                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
+                    command.Parameters.AddWithValue("@date", null);
+                    command.Parameters.AddWithValue("@tentId", tentIdInt);
+                    command.Parameters.AddWithValue("@status", "Unpaid");
 
                     command.ExecuteNonQuery();
 
@@ -282,8 +388,10 @@ namespace ManagementSystem
                     command.Parameters.AddWithValue("@electricBill", null);
                     command.Parameters.AddWithValue("@rentBills", rentBillInt);
                     command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@date", formattedDate);
+                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
+                    command.Parameters.AddWithValue("@date", null);
                     command.Parameters.AddWithValue("@tentId", tentIdInt);
+                    command.Parameters.AddWithValue("@status", "Unpaid");
 
                     command.ExecuteNonQuery();
 
@@ -300,8 +408,10 @@ namespace ManagementSystem
                     command.Parameters.AddWithValue("@electricBill", electricBillInt);
                     command.Parameters.AddWithValue("@rentBills", rentBillInt);
                     command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@date", formattedDate);
+                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
+                    command.Parameters.AddWithValue("@date", null);
                     command.Parameters.AddWithValue("@tentId", tentIdInt);
+                    command.Parameters.AddWithValue("@status", "Unpaid");
 
                     command.ExecuteNonQuery();
 
@@ -315,7 +425,7 @@ namespace ManagementSystem
             }
             finally
             {
-                MessageBox.Show("Successful!!");
+                MessageBox.Show("Unpaid payment has been added.");
                 textRentBill.Clear();
                 textBox4.Clear();
                 comboBox1.Items.Clear();
