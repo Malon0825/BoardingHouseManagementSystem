@@ -112,6 +112,7 @@ namespace ManagementSystem
             public int? RentBill { get; set; }
             public int? ElectricBill { get; set; }
             public int Total { get; set; }
+            public int? Balanced { get; set; }
             public string DueDate { get; set; }
             public string? Date { get; set; }
             public string Status { get; set; }
@@ -157,9 +158,10 @@ namespace ManagementSystem
                             RentBill = reader.IsDBNull(3) ? null : reader.GetInt32(3),
                             ElectricBill = reader.IsDBNull(2) ? null : reader.GetInt32(2),
                             Total = reader.GetInt32(4),
-                            DueDate = reader.GetString(5),
-                            Date = reader.IsDBNull(6) ? null : reader.GetString(6),
-                            Status = reader.GetString(7),
+                            Balanced = reader.IsDBNull(5) ? null : reader.GetInt32(5),
+                            DueDate = reader.GetString(6),
+                            Date = reader.IsDBNull(7) ? null : reader.GetString(7),
+                            Status = reader.GetString(8),
 
                         };
 
@@ -181,6 +183,7 @@ namespace ManagementSystem
             dataTable2.Columns.Add("RentBill");
             dataTable2.Columns.Add("ElectricBill");
             dataTable2.Columns.Add("Total");
+            dataTable2.Columns.Add("Balanced");
             dataTable2.Columns.Add("DueDate");
             dataTable2.Columns.Add("Date");
             dataTable2.Columns.Add("Status");
@@ -194,6 +197,7 @@ namespace ManagementSystem
                 row["RentBill"] = bill.RentBill;
                 row["ElectricBill"] = bill.ElectricBill;
                 row["Total"] = bill.Total;
+                row["Balanced"] = bill.Balanced;
                 row["DueDate"] = bill.DueDate;
                 row["Date"] = bill.Date;
                 row["Status"] = bill.Status;
