@@ -90,8 +90,9 @@
             panel2.Controls.Add(panel8);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1125, 658);
+            panel2.Size = new Size(1286, 877);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
             // 
@@ -100,9 +101,10 @@
             panel10.BackColor = Color.FromArgb(228, 160, 183);
             panel10.Controls.Add(panel6);
             panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(10, 311);
+            panel10.Location = new Point(11, 414);
+            panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1115, 347);
+            panel10.Size = new Size(1275, 463);
             panel10.TabIndex = 9;
             // 
             // panel6
@@ -113,8 +115,9 @@
             panel6.Controls.Add(panel11);
             panel6.Dock = DockStyle.Fill;
             panel6.Location = new Point(0, 0);
+            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1115, 347);
+            panel6.Size = new Size(1275, 463);
             panel6.TabIndex = 8;
             // 
             // panel14
@@ -142,9 +145,10 @@
             panel14.Controls.Add(labelName);
             panel14.Controls.Add(label1);
             panel14.Dock = DockStyle.Fill;
-            panel14.Location = new Point(0, 20);
+            panel14.Location = new Point(0, 26);
+            panel14.Margin = new Padding(3, 4, 3, 4);
             panel14.Name = "panel14";
-            panel14.Size = new Size(1115, 327);
+            panel14.Size = new Size(1275, 437);
             panel14.TabIndex = 5;
             panel14.Paint += panel14_Paint;
             // 
@@ -162,9 +166,10 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 30;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(292, 236);
+            iconButton3.Location = new Point(334, 315);
+            iconButton3.Margin = new Padding(3, 4, 3, 4);
             iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(99, 36);
+            iconButton3.Size = new Size(113, 48);
             iconButton3.TabIndex = 8;
             iconButton3.Text = "Save";
             iconButton3.TextAlign = ContentAlignment.MiddleLeft;
@@ -186,9 +191,10 @@
             iconButton2.IconColor = Color.Black;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton2.IconSize = 40;
-            iconButton2.Location = new Point(890, 179);
+            iconButton2.Location = new Point(1018, 239);
+            iconButton2.Margin = new Padding(3, 4, 3, 4);
             iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(145, 64);
+            iconButton2.Size = new Size(166, 85);
             iconButton2.TabIndex = 8;
             iconButton2.Text = "Done";
             iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -200,18 +206,20 @@
             comboBox1.BackColor = Color.FromArgb(225, 138, 170);
             comboBox1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(194, 76);
+            comboBox1.Location = new Point(222, 101);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(94, 38);
+            comboBox1.Size = new Size(107, 45);
             comboBox1.TabIndex = 27;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // panel20
             // 
             panel20.BackColor = Color.FromArgb(228, 160, 183);
-            panel20.Location = new Point(194, 203);
+            panel20.Location = new Point(222, 271);
+            panel20.Margin = new Padding(3, 4, 3, 4);
             panel20.Name = "panel20";
-            panel20.Size = new Size(110, 5);
+            panel20.Size = new Size(126, 7);
             panel20.TabIndex = 26;
             // 
             // textBox4
@@ -219,9 +227,10 @@
             textBox4.BackColor = Color.FromArgb(225, 138, 170);
             textBox4.BorderStyle = BorderStyle.None;
             textBox4.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(194, 172);
+            textBox4.Location = new Point(222, 229);
+            textBox4.Margin = new Padding(3, 4, 3, 4);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(110, 29);
+            textBox4.Size = new Size(126, 36);
             textBox4.TabIndex = 25;
             textBox4.TextChanged += textBox4_TextChanged;
             textBox4.KeyPress += textBox4_KeyPress;
@@ -230,9 +239,10 @@
             // panel19
             // 
             panel19.BackColor = Color.FromArgb(228, 160, 183);
-            panel19.Location = new Point(194, 161);
+            panel19.Location = new Point(222, 215);
+            panel19.Margin = new Padding(3, 4, 3, 4);
             panel19.Name = "panel19";
-            panel19.Size = new Size(110, 5);
+            panel19.Size = new Size(126, 7);
             panel19.TabIndex = 24;
             // 
             // textRentBill
@@ -240,18 +250,20 @@
             textRentBill.BackColor = Color.FromArgb(225, 138, 170);
             textRentBill.BorderStyle = BorderStyle.None;
             textRentBill.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textRentBill.Location = new Point(194, 130);
+            textRentBill.Location = new Point(222, 173);
+            textRentBill.Margin = new Padding(3, 4, 3, 4);
             textRentBill.Name = "textRentBill";
-            textRentBill.Size = new Size(110, 29);
+            textRentBill.Size = new Size(126, 36);
             textRentBill.TabIndex = 23;
             textRentBill.KeyPress += textRentBill_KeyPress;
             // 
             // panel18
             // 
             panel18.BackColor = Color.FromArgb(228, 160, 183);
-            panel18.Location = new Point(194, 115);
+            panel18.Location = new Point(222, 153);
+            panel18.Margin = new Padding(3, 4, 3, 4);
             panel18.Name = "panel18";
-            panel18.Size = new Size(110, 5);
+            panel18.Size = new Size(126, 7);
             panel18.TabIndex = 22;
             // 
             // label15
@@ -259,9 +271,9 @@
             label15.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(594, 193);
+            label15.Location = new Point(680, 257);
             label15.Name = "label15";
-            label15.Size = new Size(117, 37);
+            label15.Size = new Size(145, 46);
             label15.TabIndex = 20;
             label15.Text = "Change:";
             // 
@@ -271,9 +283,9 @@
             labelChange.AutoSize = true;
             labelChange.Font = new Font("Segoe UI Semibold", 30F, FontStyle.Regular, GraphicsUnit.Point);
             labelChange.ForeColor = Color.White;
-            labelChange.Location = new Point(748, 180);
+            labelChange.Location = new Point(856, 240);
             labelChange.Name = "labelChange";
-            labelChange.Size = new Size(67, 54);
+            labelChange.Size = new Size(85, 67);
             labelChange.TabIndex = 19;
             labelChange.Text = "00";
             labelChange.TextAlign = ContentAlignment.MiddleCenter;
@@ -283,9 +295,9 @@
             label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(593, 114);
+            label13.Location = new Point(679, 152);
             label13.Name = "label13";
-            label13.Size = new Size(83, 37);
+            label13.Size = new Size(102, 46);
             label13.TabIndex = 17;
             label13.Text = "Cash:";
             // 
@@ -293,9 +305,10 @@
             // 
             panel17.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel17.BackColor = Color.FromArgb(228, 160, 183);
-            panel17.Location = new Point(732, 146);
+            panel17.Location = new Point(838, 195);
+            panel17.Margin = new Padding(3, 4, 3, 4);
             panel17.Name = "panel17";
-            panel17.Size = new Size(333, 5);
+            panel17.Size = new Size(381, 7);
             panel17.TabIndex = 16;
             // 
             // textBox2
@@ -304,9 +317,10 @@
             textBox2.BackColor = Color.FromArgb(225, 138, 170);
             textBox2.BorderStyle = BorderStyle.None;
             textBox2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(732, 112);
+            textBox2.Location = new Point(838, 149);
+            textBox2.Margin = new Padding(3, 4, 3, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(333, 36);
+            textBox2.Size = new Size(381, 45);
             textBox2.TabIndex = 15;
             textBox2.TextChanged += textBox2_TextChanged;
             textBox2.KeyPress += textBox2_KeyPress;
@@ -314,9 +328,10 @@
             // panel16
             // 
             panel16.BackColor = Color.FromArgb(228, 160, 183);
-            panel16.Location = new Point(38, 216);
+            panel16.Location = new Point(43, 288);
+            panel16.Margin = new Padding(3, 4, 3, 4);
             panel16.Name = "panel16";
-            panel16.Size = new Size(353, 10);
+            panel16.Size = new Size(403, 13);
             panel16.TabIndex = 14;
             // 
             // textTotal
@@ -324,9 +339,9 @@
             textTotal.AutoSize = true;
             textTotal.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Regular, GraphicsUnit.Point);
             textTotal.ForeColor = Color.White;
-            textTotal.Location = new Point(194, 238);
+            textTotal.Location = new Point(222, 317);
             textTotal.Name = "textTotal";
-            textTotal.Size = new Size(40, 32);
+            textTotal.Size = new Size(52, 41);
             textTotal.TabIndex = 11;
             textTotal.Text = "00";
             // 
@@ -334,9 +349,9 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(38, 238);
+            label10.Location = new Point(43, 317);
             label10.Name = "label10";
-            label10.Size = new Size(66, 30);
+            label10.Size = new Size(83, 37);
             label10.TabIndex = 10;
             label10.Text = "Total:";
             // 
@@ -344,9 +359,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(38, 177);
+            label8.Location = new Point(43, 236);
             label8.Name = "label8";
-            label8.Size = new Size(121, 30);
+            label8.Size = new Size(149, 37);
             label8.TabIndex = 8;
             label8.Text = "Electric bill";
             // 
@@ -354,9 +369,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(38, 130);
+            label6.Location = new Point(43, 173);
             label6.Name = "label6";
-            label6.Size = new Size(101, 30);
+            label6.Size = new Size(124, 37);
             label6.TabIndex = 6;
             label6.Text = "Rent Bill:";
             // 
@@ -364,9 +379,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(38, 84);
+            label4.Location = new Point(43, 112);
             label4.Name = "label4";
-            label4.Size = new Size(117, 30);
+            label4.Size = new Size(145, 37);
             label4.TabIndex = 4;
             label4.Text = "Rent Type:";
             // 
@@ -375,9 +390,9 @@
             labelName.AutoSize = true;
             labelName.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
             labelName.ForeColor = Color.White;
-            labelName.Location = new Point(194, 37);
+            labelName.Location = new Point(222, 49);
             labelName.Name = "labelName";
-            labelName.Size = new Size(68, 30);
+            labelName.Size = new Size(84, 37);
             labelName.TabIndex = 3;
             labelName.Text = "None";
             // 
@@ -385,9 +400,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(38, 37);
+            label1.Location = new Point(43, 49);
             label1.Name = "label1";
-            label1.Size = new Size(150, 30);
+            label1.Size = new Size(186, 37);
             label1.TabIndex = 2;
             label1.Text = "Tenant Name:";
             label1.Click += label1_Click_1;
@@ -396,9 +411,10 @@
             // 
             panel12.BackColor = Color.FromArgb(228, 160, 183);
             panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 10);
+            panel12.Location = new Point(0, 13);
+            panel12.Margin = new Padding(3, 4, 3, 4);
             panel12.Name = "panel12";
-            panel12.Size = new Size(1115, 10);
+            panel12.Size = new Size(1275, 13);
             panel12.TabIndex = 5;
             // 
             // panel11
@@ -406,8 +422,9 @@
             panel11.BackColor = Color.FromArgb(225, 138, 170);
             panel11.Dock = DockStyle.Top;
             panel11.Location = new Point(0, 0);
+            panel11.Margin = new Padding(3, 4, 3, 4);
             panel11.Name = "panel11";
-            panel11.Size = new Size(1115, 10);
+            panel11.Size = new Size(1275, 13);
             panel11.TabIndex = 5;
             // 
             // panel3
@@ -419,13 +436,16 @@
             panel3.Controls.Add(panel9);
             panel3.Controls.Add(panel4);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(10, 10);
+            panel3.Location = new Point(11, 13);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1115, 648);
+            panel3.Size = new Size(1275, 864);
             panel3.TabIndex = 5;
             // 
             // dataSearchList
             // 
+            dataSearchList.AllowUserToAddRows = false;
+            dataSearchList.AllowUserToDeleteRows = false;
             dataSearchList.AllowUserToResizeColumns = false;
             dataSearchList.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -445,7 +465,7 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.LavenderBlush;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
             dataSearchList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataSearchList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataSearchList.ColumnHeadersHeight = 35;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(228, 160, 183);
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -455,8 +475,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataSearchList.DefaultCellStyle = dataGridViewCellStyle3;
             dataSearchList.Dock = DockStyle.Fill;
+            dataSearchList.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataSearchList.GridColor = Color.Black;
-            dataSearchList.Location = new Point(29, 69);
+            dataSearchList.Location = new Point(33, 92);
+            dataSearchList.Margin = new Padding(3, 4, 3, 4);
             dataSearchList.Name = "dataSearchList";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(228, 160, 183);
@@ -466,6 +488,7 @@
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
             dataSearchList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataSearchList.RowHeadersVisible = false;
+            dataSearchList.RowHeadersWidth = 51;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(228, 160, 183);
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -477,13 +500,13 @@
             dataSearchList.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataSearchList.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dataSearchList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Pink;
-            dataSearchList.RowTemplate.Height = 25;
+            dataSearchList.RowTemplate.Height = 35;
             dataSearchList.ScrollBars = ScrollBars.Vertical;
             dataSearchList.ShowCellToolTips = false;
             dataSearchList.ShowEditingIcon = false;
             dataSearchList.ShowRowErrors = false;
-            dataSearchList.Size = new Size(1054, 579);
-            dataSearchList.TabIndex = 12;
+            dataSearchList.Size = new Size(1205, 772);
+            dataSearchList.TabIndex = 9;
             dataSearchList.CellClick += dataSearchList_CellClick;
             // 
             // panel13
@@ -494,17 +517,19 @@
             panel13.Controls.Add(iconButton1);
             panel13.Controls.Add(label12);
             panel13.Dock = DockStyle.Top;
-            panel13.Location = new Point(29, 0);
+            panel13.Location = new Point(33, 0);
+            panel13.Margin = new Padding(3, 4, 3, 4);
             panel13.Name = "panel13";
-            panel13.Size = new Size(1054, 69);
+            panel13.Size = new Size(1205, 92);
             panel13.TabIndex = 11;
             // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(228, 160, 183);
-            panel7.Location = new Point(165, 51);
+            panel7.Location = new Point(189, 68);
+            panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(234, 5);
+            panel7.Size = new Size(267, 7);
             panel7.TabIndex = 6;
             // 
             // textSearchTennant
@@ -512,9 +537,10 @@
             textSearchTennant.BackColor = Color.FromArgb(225, 138, 170);
             textSearchTennant.BorderStyle = BorderStyle.None;
             textSearchTennant.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textSearchTennant.Location = new Point(165, 20);
+            textSearchTennant.Location = new Point(189, 27);
+            textSearchTennant.Margin = new Padding(3, 4, 3, 4);
             textSearchTennant.Name = "textSearchTennant";
-            textSearchTennant.Size = new Size(234, 29);
+            textSearchTennant.Size = new Size(267, 36);
             textSearchTennant.TabIndex = 4;
             // 
             // iconButton1
@@ -531,9 +557,10 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 30;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(398, 20);
+            iconButton1.Location = new Point(455, 27);
+            iconButton1.Margin = new Padding(3, 4, 3, 4);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(108, 36);
+            iconButton1.Size = new Size(141, 48);
             iconButton1.TabIndex = 7;
             iconButton1.Text = "Search";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
@@ -545,9 +572,9 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(6, 20);
+            label12.Location = new Point(7, 27);
             label12.Name = "label12";
-            label12.Size = new Size(163, 30);
+            label12.Size = new Size(202, 37);
             label12.TabIndex = 5;
             label12.Text = "Tennant Name:";
             // 
@@ -556,50 +583,56 @@
             panel1.BackColor = Color.FromArgb(225, 138, 170);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(29, 648);
+            panel1.Size = new Size(33, 864);
             panel1.TabIndex = 7;
             // 
             // panel9
             // 
             panel9.Anchor = AnchorStyles.Bottom;
             panel9.BackColor = Color.FromArgb(225, 138, 170);
-            panel9.Location = new Point(2, 638);
+            panel9.Location = new Point(2, 851);
+            panel9.Margin = new Padding(3, 4, 3, 4);
             panel9.Name = "panel9";
-            panel9.Size = new Size(1003, 10);
+            panel9.Size = new Size(1146, 13);
             panel9.TabIndex = 10;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(225, 138, 170);
             panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(1083, 0);
+            panel4.Location = new Point(1238, 0);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(32, 648);
+            panel4.Size = new Size(37, 864);
             panel4.TabIndex = 8;
             // 
             // panel5
             // 
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(10, 0);
+            panel5.Location = new Point(11, 0);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1115, 10);
+            panel5.Size = new Size(1275, 13);
             panel5.TabIndex = 6;
             // 
             // panel8
             // 
             panel8.Dock = DockStyle.Left;
             panel8.Location = new Point(0, 0);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(10, 658);
+            panel8.Size = new Size(11, 877);
             panel8.TabIndex = 5;
             // 
             // FormBills
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1125, 658);
+            ClientSize = new Size(1286, 877);
             Controls.Add(panel2);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormBills";
             Text = "FormBills";
             panel2.ResumeLayout(false);
