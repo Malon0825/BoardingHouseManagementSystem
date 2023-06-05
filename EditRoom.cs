@@ -16,9 +16,11 @@ namespace ManagementSystem
     public partial class EditRoom : Form
     {
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
-        public EditRoom()
+        public EditRoom(FormRooms frm1)
         {
             InitializeComponent();
+
+            this.frm1 = frm1;
 
             cbRoomType.Items.Add("Whole Room");
             cbRoomType.Items.Add("Open Room");
@@ -87,7 +89,9 @@ namespace ManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            this.frm1.UpdateDataGridViewFunc();
             this.Close();
         }
+        private FormRooms frm1;
     }
 }

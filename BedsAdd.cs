@@ -55,9 +55,10 @@ namespace ManagementSystem
 
         }
 
-        public BedsAdd()
+        public BedsAdd(FormBeds frm1)
         {
             InitializeComponent();
+            this.frm1 = frm1;
 
             List<Room> rooms = GetAllRooms();
 
@@ -77,8 +78,10 @@ namespace ManagementSystem
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
+            this.frm1.UpdateDataGridViewFunc();
             this.Close();
         }
+        private FormBeds frm1;
 
         private void iconButton4_Click(object sender, EventArgs e)
         {

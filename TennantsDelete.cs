@@ -14,15 +14,18 @@ namespace ManagementSystem
     public partial class TennantsDelete : Form
     {
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
-        public TennantsDelete()
+        public TennantsDelete(FormTenants frm1)
         {
             InitializeComponent();
+            this.frm1 = frm1;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            this.frm1.UpdateDataGridViewFunc();
             this.Close();
         }
+        private FormTenants frm1;
 
         private void iconButton4_Click(object sender, EventArgs e)
         {

@@ -44,7 +44,7 @@ namespace ManagementSystem
         public class SearchRoom
         {
             public int ID { get; set; }
-            public string RoomNumber{ get; set; }
+            public string RoomNumber { get; set; }
             public string RoomType { get; set; }
 
         }
@@ -106,6 +106,11 @@ namespace ManagementSystem
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
+
+        }
+        public void UpdateDataGridViewFunc()
+        {
+            // Code to update the DataGridView
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();
@@ -162,7 +167,7 @@ namespace ManagementSystem
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BedsAdd());
+            OpenChildForm(new BedsAdd(this));
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -172,7 +177,7 @@ namespace ManagementSystem
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BedsUpdate());
+            OpenChildForm(new BedsUpdate(this));
         }
 
         private void dataSearchList_CellClick_1(object sender, DataGridViewCellEventArgs e)

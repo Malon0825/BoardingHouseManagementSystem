@@ -31,9 +31,10 @@ namespace ManagementSystem
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
         DateTime currentDate = DateTime.Now;
 
-        public BillingStatus(string billingID)
+        public BillingStatus(string billingID, FormHistory frm1)
         {
             InitializeComponent();
+            this.frm1 = frm1;
 
             bill = billingID;
             cbStatus.Items.Add("Paid");
@@ -41,6 +42,7 @@ namespace ManagementSystem
 
 
         }
+        private FormHistory frm1;
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -183,6 +185,7 @@ namespace ManagementSystem
                         {
                             FormReciept formReciept = new FormReciept(tennantName, billrentType, billRentBill, billElectricBill, billTotal, cashInt, change);
                             formReciept.Show();
+                            this.frm1.UpdateDataGridViewFunc();
                             this.Close();
                         }
                     }
@@ -264,6 +267,7 @@ namespace ManagementSystem
                         {
                             FormReciept formReciept = new FormReciept(tennantName, billrentType, billRentBill, billElectricBill, billTotal, totalPay, change);
                             formReciept.Show();
+                            this.frm1.UpdateDataGridViewFunc();
                             this.Close();
                         }
                     }

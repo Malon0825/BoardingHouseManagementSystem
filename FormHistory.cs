@@ -126,7 +126,7 @@ namespace ManagementSystem
             int rowCliked = dataGridView2.CurrentRow.Index;
             String billingID = dataGridView2.Rows[rowCliked].Cells[0].Value.ToString();
 
-            BillingStatus billVal = new BillingStatus(billingID);
+            BillingStatus billVal = new BillingStatus(billingID, this);
             billVal.Show();
         }
 
@@ -219,6 +219,11 @@ namespace ManagementSystem
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+
+        }
+        public void UpdateDataGridViewFunc()
+        {
+            // Code to update the DataGridView
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();

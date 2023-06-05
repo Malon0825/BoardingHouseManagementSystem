@@ -14,9 +14,10 @@ namespace ManagementSystem
     public partial class BedsUpdate : Form
     {
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
-        public BedsUpdate()
+        public BedsUpdate(FormBeds frm1)
         {
             InitializeComponent();
+            this.frm1 = frm1;
         }
 
         private void panel8_Paint(object sender, PaintEventArgs e)
@@ -26,8 +27,10 @@ namespace ManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            this.frm1.UpdateDataGridViewFunc();
             this.Close();
         }
+        private FormBeds frm1;
 
         private void iconButton2_Click(object sender, EventArgs e)
         {

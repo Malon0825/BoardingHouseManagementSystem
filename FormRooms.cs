@@ -70,7 +70,7 @@ namespace ManagementSystem
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new UpdateRoom());
+            OpenChildForm(new UpdateRoom(this));
 
         }
 
@@ -132,22 +132,7 @@ namespace ManagementSystem
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            {
-                connection.Open();
-                string query = "SELECT ID, RoomNumber, RoomType FROM rooms";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    // Execute the query and load the data into a DataTable
-                    DataTable dataTable = new DataTable();
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    adapter.Fill(dataTable);
 
-                    // Bind the DataTable to the DataGridView
-                    dataSearchList.DataSource = dataTable;
-                    textSearchName.Clear();
-                }
-            }
         }
         public class Bed
         {
@@ -354,12 +339,13 @@ namespace ManagementSystem
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new EditRoom());
+            OpenChildForm(new EditRoom(this));
+
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new DeleteRoom());
+            OpenChildForm(new DeleteRoom(this));
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -380,6 +366,26 @@ namespace ManagementSystem
         private void buttonLocation_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("Location: " + room_location);
+        }
+        public void UpdateDataGridViewFunc()
+        {
+            // Code to update the DataGridView
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            {
+                connection.Open();
+                string query = "SELECT ID, RoomNumber, RoomType FROM rooms";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    // Execute the query and load the data into a DataTable
+                    DataTable dataTable = new DataTable();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+
+                    // Bind the DataTable to the DataGridView
+                    dataSearchList.DataSource = dataTable;
+                    textSearchName.Clear();
+                }
+            }
         }
     }
 

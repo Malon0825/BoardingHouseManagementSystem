@@ -51,7 +51,6 @@
             label3 = new Label();
             lableTotalRoom = new Label();
             panel13 = new Panel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
             panel7 = new Panel();
             textSearchTennant = new TextBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -326,7 +325,6 @@
             // panel13
             // 
             panel13.BackColor = Color.FromArgb(225, 138, 170);
-            panel13.Controls.Add(iconButton2);
             panel13.Controls.Add(panel7);
             panel13.Controls.Add(textSearchTennant);
             panel13.Controls.Add(iconButton1);
@@ -336,30 +334,6 @@
             panel13.Name = "panel13";
             panel13.Size = new Size(1005, 69);
             panel13.TabIndex = 11;
-            // 
-            // iconButton2
-            // 
-            iconButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButton2.BackgroundImageLayout = ImageLayout.Center;
-            iconButton2.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowRightRotate;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 30;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(947, 20);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(43, 36);
-            iconButton2.TabIndex = 8;
-            iconButton2.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton2.TextImageRelation = TextImageRelation.ImageAboveText;
-            iconButton2.UseVisualStyleBackColor = true;
-            iconButton2.Click += iconButton2_Click;
             // 
             // panel7
             // 
@@ -499,6 +473,5 @@
         private Label label3;
         private Label lableTotalRoom;
         private DataGridView dataGridView2;
-        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

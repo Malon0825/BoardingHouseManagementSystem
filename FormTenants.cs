@@ -114,6 +114,26 @@ namespace ManagementSystem
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TennantsAdd(this));
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TennantsUpdate(this));
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TennantsDelete(this));
+        }
+        public void UpdateDataGridViewFunc()
+        {
+            // Code to update the DataGridView
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();
@@ -129,21 +149,6 @@ namespace ManagementSystem
                     dataSearchList.DataSource = dataTable;
                 }
             }
-        }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new TennantsAdd());
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new TennantsUpdate());
-        }
-
-        private void iconButton5_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new TennantsDelete());
         }
 
         private void dataSearchList_CellClick(object sender, DataGridViewCellEventArgs e)

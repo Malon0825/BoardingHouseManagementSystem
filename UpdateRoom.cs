@@ -14,9 +14,10 @@ namespace ManagementSystem
     public partial class UpdateRoom : Form
     {
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
-        public UpdateRoom()
+        public UpdateRoom(FormRooms frm1)
         {
             InitializeComponent();
+            this.frm1 = frm1;
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
@@ -80,8 +81,10 @@ namespace ManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            this.frm1.UpdateDataGridViewFunc();
             this.Close();
         }
+        private FormRooms frm1;
 
         private void textId_TextChanged(object sender, EventArgs e)
         {

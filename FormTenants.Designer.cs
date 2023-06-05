@@ -53,7 +53,6 @@
             panel6 = new Panel();
             panel3 = new Panel();
             dataSearchList = new DataGridView();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
             label9 = new Label();
             label10 = new Label();
             panelEdit = new Panel();
@@ -277,7 +276,6 @@
             // 
             panel3.BackColor = Color.FromArgb(225, 138, 170);
             panel3.Controls.Add(dataSearchList);
-            panel3.Controls.Add(iconButton3);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label10);
             panel3.Controls.Add(panelEdit);
@@ -328,7 +326,7 @@
             dataSearchList.DefaultCellStyle = dataGridViewCellStyle8;
             dataSearchList.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataSearchList.GridColor = Color.Black;
-            dataSearchList.Location = new Point(12, 137);
+            dataSearchList.Location = new Point(12, 95);
             dataSearchList.Name = "dataSearchList";
             dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = Color.FromArgb(228, 160, 183);
@@ -355,33 +353,9 @@
             dataSearchList.ShowCellToolTips = false;
             dataSearchList.ShowEditingIcon = false;
             dataSearchList.ShowRowErrors = false;
-            dataSearchList.Size = new Size(488, 153);
+            dataSearchList.Size = new Size(488, 195);
             dataSearchList.TabIndex = 10;
             dataSearchList.CellClick += dataSearchList_CellClick;
-            // 
-            // iconButton3
-            // 
-            iconButton3.BackgroundImageLayout = ImageLayout.Center;
-            iconButton3.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Repeat;
-            iconButton3.IconColor = Color.Black;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 30;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(12, 95);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(132, 36);
-            iconButton3.TabIndex = 8;
-            iconButton3.Text = "Load All";
-            iconButton3.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = true;
-            iconButton3.Click += iconButton3_Click;
             // 
             // label9
             // 
@@ -593,7 +567,6 @@
         private Panel panel6;
         private Panel panel3;
         private Panel panel7;
-        private FontAwesome.Sharp.IconButton iconButton3;
         private Label label9;
         private Label label10;
         private Panel panelEdit;

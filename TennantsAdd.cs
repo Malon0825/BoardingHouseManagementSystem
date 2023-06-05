@@ -17,9 +17,10 @@ namespace ManagementSystem
     {
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
         int roomID;
-        public TennantsAdd()
+        public TennantsAdd(FormTenants frm1)
         {
             InitializeComponent();
+            this.frm1 = frm1;
             List<Room> rooms = GetAllRooms();
 
             foreach (Room room in rooms)
@@ -41,8 +42,10 @@ namespace ManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            this.frm1.UpdateDataGridViewFunc();
             this.Close();
         }
+        private FormTenants frm1;
 
         private List<Room> GetAllRooms()
         {
