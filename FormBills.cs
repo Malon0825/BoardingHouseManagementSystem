@@ -335,7 +335,6 @@ namespace ManagementSystem
             }
             finally
             {
-                MessageBox.Show("Successful!!");
                 textRentBill.Clear();
                 textBox4.Clear();
                 comboBox1.Items.Clear();
