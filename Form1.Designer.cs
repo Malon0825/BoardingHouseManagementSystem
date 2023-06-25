@@ -177,7 +177,7 @@
             bedBtn.Padding = new Padding(10, 0, 20, 0);
             bedBtn.Size = new Size(243, 56);
             bedBtn.TabIndex = 7;
-            bedBtn.Text = "Beds";
+            bedBtn.Text = "Rental Details";
             bedBtn.TextAlign = ContentAlignment.MiddleLeft;
             bedBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             bedBtn.UseVisualStyleBackColor = true;
