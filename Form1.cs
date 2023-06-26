@@ -141,7 +141,7 @@ namespace ManagementSystem
         private void bedBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(55, 34, 42));
-            OpenChildForm(new FormDetails());
+            OpenChildForm(new FormBeds());
         }
 
         private void tenantBtn_Click(object sender, EventArgs e)

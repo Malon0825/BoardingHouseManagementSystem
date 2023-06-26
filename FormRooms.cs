@@ -24,7 +24,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();
-                string query = "SELECT ID, RoomNumber, RoomType, Details, RoomStatus FROM rooms";
+                string query = "SELECT ID, RoomNumber, RoomType FROM rooms";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Execute the query and load the data into a DataTable

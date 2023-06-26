@@ -23,7 +23,7 @@ namespace ManagementSystem
             this.frm1 = frm1;
 
             cbRoomType.Items.Add("Whole Room");
-            cbRoomType.Items.Add("Open Room");
+            cbRoomType.Items.Add("Bed Spacer");
         }
         private void EditRoom_Load(object sender, EventArgs e)
         {

@@ -177,7 +177,7 @@
             bedBtn.Padding = new Padding(10, 0, 20, 0);
             bedBtn.Size = new Size(291, 56);
             bedBtn.TabIndex = 7;
-            bedBtn.Text = "Rental Details";
+            bedBtn.Text = "Beds";
             bedBtn.TextAlign = ContentAlignment.MiddleLeft;
             bedBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             bedBtn.UseVisualStyleBackColor = true;
@@ -236,7 +236,7 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(27, 55);
             label2.Name = "label2";
-            label2.Size = new Size(231, 37);
+            label2.Size = new Size(188, 30);
             label2.TabIndex = 3;
             label2.Text = "Boarding House";
             // 
@@ -247,7 +247,7 @@
             label1.ForeColor = Color.Black;
             label1.Location = new Point(22, 9);
             label1.Name = "label1";
-            label1.Size = new Size(248, 54);
+            label1.Size = new Size(197, 45);
             label1.TabIndex = 2;
             label1.Text = "DOLOROSA";
             label1.Click += label1_Click;
@@ -377,7 +377,7 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 220, 224);
             ClientSize = new Size(1284, 761);
