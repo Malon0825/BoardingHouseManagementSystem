@@ -44,13 +44,23 @@ namespace ManagementSystem
             {
                 try
                 {
-                    string query = "INSERT INTO `rooms` (`ID`, `RoomNumber`, `RoomType`, `RoomLocation`, `RoomDescription`) VALUES(NULL, @roomName, @roomType, @roomLocation, @roomDescription)";
+                    string query = "INSERT INTO `rooms` (`ID`, `RoomNumber`, `RoomType`, `RoomLocation`, `RoomDescription`, `RentalFee`) VALUES(NULL, @roomName, @roomType, @roomLocation, @roomDescription, @rentalFee)";
                     MySqlCommand command = new MySqlCommand(query, connection);
 
                     command.Parameters.AddWithValue("@roomName", roomName);
                     command.Parameters.AddWithValue("@roomType", roomType);
                     command.Parameters.AddWithValue("@roomLocation", roomLocation);
                     command.Parameters.AddWithValue("@roomDescription", roomDescription);
+
+                    if(roomType == "Whole Room")
+                    {
+                        command.Parameters.AddWithValue("@rentalFee", "3500");
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@rentalFee", "500");
+                    }
+                   
 
                     command.ExecuteNonQuery();
                 }
@@ -93,5 +103,42 @@ namespace ManagementSystem
             this.Close();
         }
         private FormRooms frm1;
+
+        private void textAddName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void cbRoomType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void textAddLocation_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void textAddDescription_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -178,54 +178,54 @@
             dataBedsList.ShowCellToolTips = false;
             dataBedsList.ShowEditingIcon = false;
             dataBedsList.ShowRowErrors = false;
-            dataBedsList.Size = new Size(536, 355);
+            dataBedsList.Size = new Size(536, 239);
             dataBedsList.TabIndex = 17;
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(16, 520);
+            label4.Location = new Point(10, 396);
             label4.Name = "label4";
             label4.Size = new Size(70, 37);
             label4.TabIndex = 15;
             label4.Text = "Bed:";
+            label4.Click += label4_Click;
             // 
             // labelBed
             // 
-            labelBed.Anchor = AnchorStyles.Top;
             labelBed.AutoSize = true;
             labelBed.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
             labelBed.ForeColor = Color.White;
-            labelBed.Location = new Point(118, 520);
+            labelBed.Location = new Point(112, 396);
             labelBed.Name = "labelBed";
             labelBed.Size = new Size(143, 37);
             labelBed.TabIndex = 14;
             labelBed.Text = "Bed Name";
+            labelBed.Click += labelBed_Click;
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(16, 473);
+            label3.Location = new Point(10, 349);
             label3.Name = "label3";
             label3.Size = new Size(96, 37);
             label3.TabIndex = 9;
             label3.Text = "Room:";
+            label3.Click += label3_Click;
             // 
             // labelRoom
             // 
-            labelRoom.Anchor = AnchorStyles.Top;
             labelRoom.AutoSize = true;
             labelRoom.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
             labelRoom.ForeColor = Color.White;
-            labelRoom.Location = new Point(118, 473);
+            labelRoom.Location = new Point(112, 349);
             labelRoom.Name = "labelRoom";
             labelRoom.Size = new Size(197, 37);
             labelRoom.TabIndex = 7;
             labelRoom.Text = "Room Number";
+            labelRoom.Click += labelRoom_Click;
             // 
             // panel11
             // 
@@ -353,7 +353,7 @@
             dataSearchList.ShowCellToolTips = false;
             dataSearchList.ShowEditingIcon = false;
             dataSearchList.ShowRowErrors = false;
-            dataSearchList.Size = new Size(488, 195);
+            dataSearchList.Size = new Size(488, 119);
             dataSearchList.TabIndex = 10;
             dataSearchList.CellClick += dataSearchList_CellClick;
             // 
@@ -372,10 +372,10 @@
             // 
             label10.Anchor = AnchorStyles.Top;
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(223, 319);
+            label10.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(234, 233);
             label10.Name = "label10";
-            label10.Size = new Size(64, 37);
+            label10.Size = new Size(55, 32);
             label10.TabIndex = 7;
             label10.Text = "Edit";
             // 
@@ -385,9 +385,9 @@
             panelEdit.Controls.Add(iconButton5);
             panelEdit.Controls.Add(iconButton4);
             panelEdit.Controls.Add(iconButton2);
-            panelEdit.Location = new Point(0, 353);
+            panelEdit.Location = new Point(0, 259);
             panelEdit.Name = "panelEdit";
-            panelEdit.Size = new Size(515, 264);
+            panelEdit.Size = new Size(515, 358);
             panelEdit.TabIndex = 3;
             // 
             // iconButton5
@@ -465,7 +465,7 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(228, 160, 183);
-            panel9.Location = new Point(0, 306);
+            panel9.Location = new Point(0, 220);
             panel9.Name = "panel9";
             panel9.Size = new Size(515, 10);
             panel9.TabIndex = 4;

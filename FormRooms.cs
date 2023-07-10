@@ -24,7 +24,7 @@ namespace ManagementSystem
             MySqlConnection connection = new MySqlConnection(connectionString);
             {
                 connection.Open();
-                string query = "SELECT ID, RoomNumber, RoomType FROM rooms";
+                string query = "SELECT ID, RoomNumber, RoomType, RentalFee FROM rooms";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Execute the query and load the data into a DataTable
@@ -144,6 +144,7 @@ namespace ManagementSystem
         {
             public int ID { get; set; }
             public string TennantName { get; set; }
+            public string TennantGender { get; set; }
         }
 
         private void dataSearchList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -245,20 +246,10 @@ namespace ManagementSystem
             {
                 DataRow row = dataTable.NewRow();
 
-                var occ = bed.Occupancy;
+                row["ID"] = bed.ID;
+                row["BedName"] = bed.BedName;
+                row["Occupancy"] = bed.Occupancy;
 
-                if (occ == "True")
-                {
-                    row["ID"] = bed.ID;
-                    row["BedName"] = bed.BedName;
-                    row["Occupancy"] = "Occupied";
-                }
-                else
-                {
-                    row["ID"] = bed.ID;
-                    row["BedName"] = bed.BedName;
-                    row["Occupancy"] = "Vacant";
-                }
 
                 dataTable.Rows.Add(row);
             }
@@ -386,6 +377,70 @@ namespace ManagementSystem
                     textSearchName.Clear();
                 }
             }
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataBedsList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+
+            int rowCliked = dataGridView.CurrentRow.Index;
+            object cellValue = dataGridView.Rows[rowCliked].Cells[2].Value;
+            string occupancy = cellValue == null ? "" : cellValue.ToString();
+
+            if (occupancy == "Occupied")
+            {
+
+                String bedid = dataGridView.Rows[rowCliked].Cells[0].Value.ToString();
+
+                List<Tennant> getAllTennants()
+                {
+                    List<Tennant> returnThese = new List<Tennant>();
+
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+
+                    MySqlCommand command = new MySqlCommand("SELECT * FROM tennants WHERE beds_ID = @bedid", connection);
+                    command.Parameters.AddWithValue("bedid", bedid);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Tennant b = new Tennant
+                            {
+                                ID = reader.GetInt32(0),
+                                TennantName = reader.GetString(1),
+                                TennantGender = reader.GetString(3),
+
+                            };
+
+                            returnThese.Add(b);
+
+                        }
+
+                    }
+
+                    connection.Close();
+                    return returnThese;
+                }
+                List<Tennant> tennants = getAllTennants();
+                foreach (Tennant tennant in tennants)
+                {
+                    lalebTennantName.Text = tennant.TennantName;
+                    labelGender.Text = tennant.TennantGender;
+                }
+            }
+            else
+            {
+                lalebTennantName.Text = "Vacant Bed";
+                labelGender.Text = "None";
+            }
+
         }
     }
 

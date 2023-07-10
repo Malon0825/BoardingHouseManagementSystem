@@ -37,8 +37,8 @@
             bedBtn = new FontAwesome.Sharp.IconButton();
             roomBtn = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
-            panel5 = new Panel();
             label2 = new Label();
+            panel5 = new Panel();
             label1 = new Label();
             panel1 = new Panel();
             iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -69,7 +69,7 @@
             panelSideMenu.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             panelSideMenu.Location = new Point(0, 0);
             panelSideMenu.Name = "panelSideMenu";
-            panelSideMenu.Size = new Size(291, 761);
+            panelSideMenu.Size = new Size(346, 845);
             panelSideMenu.TabIndex = 0;
             // 
             // panel6
@@ -78,9 +78,9 @@
             panel6.BackgroundImage = (Image)resources.GetObject("panel6.BackgroundImage");
             panel6.BackgroundImageLayout = ImageLayout.Zoom;
             panel6.Dock = DockStyle.Fill;
-            panel6.Location = new Point(0, 430);
+            panel6.Location = new Point(0, 475);
             panel6.Name = "panel6";
-            panel6.Size = new Size(291, 331);
+            panel6.Size = new Size(346, 370);
             panel6.TabIndex = 11;
             // 
             // iconButton3
@@ -97,10 +97,10 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 35;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(0, 374);
+            iconButton3.Location = new Point(0, 419);
             iconButton3.Name = "iconButton3";
             iconButton3.Padding = new Padding(10, 0, 20, 0);
-            iconButton3.Size = new Size(291, 56);
+            iconButton3.Size = new Size(346, 56);
             iconButton3.TabIndex = 11;
             iconButton3.Text = "History";
             iconButton3.TextAlign = ContentAlignment.MiddleLeft;
@@ -122,10 +122,10 @@
             billBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             billBtn.IconSize = 35;
             billBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            billBtn.Location = new Point(0, 318);
+            billBtn.Location = new Point(0, 363);
             billBtn.Name = "billBtn";
             billBtn.Padding = new Padding(10, 0, 20, 0);
-            billBtn.Size = new Size(291, 56);
+            billBtn.Size = new Size(346, 56);
             billBtn.TabIndex = 9;
             billBtn.Text = "Bills";
             billBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -147,10 +147,10 @@
             tenantBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             tenantBtn.IconSize = 35;
             tenantBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            tenantBtn.Location = new Point(0, 262);
+            tenantBtn.Location = new Point(0, 307);
             tenantBtn.Name = "tenantBtn";
             tenantBtn.Padding = new Padding(10, 0, 20, 0);
-            tenantBtn.Size = new Size(291, 56);
+            tenantBtn.Size = new Size(346, 56);
             tenantBtn.TabIndex = 8;
             tenantBtn.Text = "Tenants";
             tenantBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -172,10 +172,10 @@
             bedBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             bedBtn.IconSize = 35;
             bedBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            bedBtn.Location = new Point(0, 206);
+            bedBtn.Location = new Point(0, 251);
             bedBtn.Name = "bedBtn";
             bedBtn.Padding = new Padding(10, 0, 20, 0);
-            bedBtn.Size = new Size(291, 56);
+            bedBtn.Size = new Size(346, 56);
             bedBtn.TabIndex = 7;
             bedBtn.Text = "Beds";
             bedBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -197,10 +197,10 @@
             roomBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             roomBtn.IconSize = 35;
             roomBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            roomBtn.Location = new Point(0, 150);
+            roomBtn.Location = new Point(0, 195);
             roomBtn.Name = "roomBtn";
             roomBtn.Padding = new Padding(10, 0, 20, 0);
-            roomBtn.Size = new Size(291, 56);
+            roomBtn.Size = new Size(346, 56);
             roomBtn.TabIndex = 6;
             roomBtn.Text = "Rooms";
             roomBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -210,35 +210,35 @@
             // 
             // panelLogo
             // 
-            panelLogo.Controls.Add(panel5);
             panelLogo.Controls.Add(label2);
+            panelLogo.Controls.Add(panel5);
             panelLogo.Controls.Add(label1);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(291, 150);
+            panelLogo.Size = new Size(346, 195);
             panelLogo.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Transparent;
-            panel5.BackgroundImage = (Image)resources.GetObject("panel5.BackgroundImage");
-            panel5.BackgroundImageLayout = ImageLayout.Zoom;
-            panel5.Location = new Point(0, 94);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(41, 56);
-            panel5.TabIndex = 11;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Black", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(27, 55);
+            label2.Location = new Point(32, 85);
             label2.Name = "label2";
-            label2.Size = new Size(188, 30);
+            label2.Size = new Size(274, 45);
             label2.TabIndex = 3;
             label2.Text = "Boarding House";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = (Image)resources.GetObject("panel5.BackgroundImage");
+            panel5.BackgroundImageLayout = ImageLayout.Zoom;
+            panel5.Location = new Point(0, 133);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(41, 56);
+            panel5.TabIndex = 11;
             // 
             // label1
             // 
@@ -247,7 +247,7 @@
             label1.ForeColor = Color.Black;
             label1.Location = new Point(22, 9);
             label1.Name = "label1";
-            label1.Size = new Size(197, 45);
+            label1.Size = new Size(297, 65);
             label1.TabIndex = 2;
             label1.Text = "DOLOROSA";
             label1.Click += label1_Click;
@@ -261,9 +261,9 @@
             panel1.Controls.Add(iconClose);
             panel1.Controls.Add(iconCurrentChildForm);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(291, 0);
+            panel1.Location = new Point(346, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(993, 50);
+            panel1.Size = new Size(967, 50);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
@@ -277,7 +277,7 @@
             iconButton2.IconColor = Color.Black;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 35;
-            iconButton2.Location = new Point(844, 0);
+            iconButton2.Location = new Point(818, 0);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(45, 50);
             iconButton2.TabIndex = 5;
@@ -293,7 +293,7 @@
             iconMinimize.IconColor = Color.FromArgb(245, 220, 224);
             iconMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconMinimize.IconSize = 30;
-            iconMinimize.Location = new Point(912, 0);
+            iconMinimize.Location = new Point(886, 0);
             iconMinimize.Name = "iconMinimize";
             iconMinimize.Size = new Size(25, 50);
             iconMinimize.TabIndex = 4;
@@ -309,7 +309,7 @@
             iconButton1.IconColor = Color.FromArgb(245, 220, 224);
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Regular;
             iconButton1.IconSize = 25;
-            iconButton1.Location = new Point(937, 0);
+            iconButton1.Location = new Point(911, 0);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(31, 50);
             iconButton1.TabIndex = 3;
@@ -326,7 +326,7 @@
             iconClose.IconColor = Color.FromArgb(245, 220, 224);
             iconClose.IconFont = FontAwesome.Sharp.IconFont.Regular;
             iconClose.IconSize = 25;
-            iconClose.Location = new Point(968, 0);
+            iconClose.Location = new Point(942, 0);
             iconClose.Name = "iconClose";
             iconClose.Size = new Size(25, 50);
             iconClose.TabIndex = 2;
@@ -351,9 +351,9 @@
             // 
             panelHomeBg.BackColor = Color.FromArgb(228, 160, 183);
             panelHomeBg.Dock = DockStyle.Fill;
-            panelHomeBg.Location = new Point(291, 50);
+            panelHomeBg.Location = new Point(346, 50);
             panelHomeBg.Name = "panelHomeBg";
-            panelHomeBg.Size = new Size(993, 711);
+            panelHomeBg.Size = new Size(967, 795);
             panelHomeBg.TabIndex = 2;
             panelHomeBg.Layout += panelHomeBg_Layout;
             // 
@@ -361,26 +361,26 @@
             // 
             panel2.BackColor = Color.Black;
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(291, 50);
+            panel2.Location = new Point(346, 50);
             panel2.Name = "panel2";
-            panel2.Size = new Size(993, 5);
+            panel2.Size = new Size(967, 5);
             panel2.TabIndex = 3;
             // 
             // panel3
             // 
             panel3.BackColor = Color.Black;
             panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(291, 55);
+            panel3.Location = new Point(346, 55);
             panel3.Name = "panel3";
-            panel3.Size = new Size(5, 706);
+            panel3.Size = new Size(5, 790);
             panel3.TabIndex = 4;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 220, 224);
-            ClientSize = new Size(1284, 761);
+            ClientSize = new Size(1313, 845);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panelHomeBg);

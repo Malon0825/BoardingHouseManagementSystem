@@ -91,7 +91,7 @@ namespace ManagementSystem
             string bedName = textAddBedName.Text;
             string roomname = cbRoomName.Text;
             int selectedRoomID = (int)cbRoomName.SelectedValue;
-            int occupancy = 0;
+            string occupancy = "Vacant";
 
             if (!string.IsNullOrWhiteSpace(bedName) && !string.IsNullOrWhiteSpace(roomname))
             {
@@ -112,7 +112,7 @@ namespace ManagementSystem
                     MessageBox.Show(ex.Message);
                 }
                 finally
-                {            
+                {
                     MessageBox.Show("Successful!!" + Environment.NewLine + "The " + bedName + " has been added.");
                     textAddBedName.Clear();
                 }

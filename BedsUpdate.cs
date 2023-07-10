@@ -66,5 +66,14 @@ namespace ManagementSystem
                 MessageBox.Show("Please enter a valid room ID.");
             }
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBedID_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

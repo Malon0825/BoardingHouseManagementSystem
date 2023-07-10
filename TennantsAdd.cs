@@ -23,6 +23,9 @@ namespace ManagementSystem
             this.frm1 = frm1;
             List<Room> rooms = GetAllRooms();
 
+            comboBoxGender.Items.Add("Male");
+            comboBoxGender.Items.Add("Female");
+
             foreach (Room room in rooms)
             {
                 cbRoomName.DataSource = rooms;
@@ -36,7 +39,7 @@ namespace ManagementSystem
         {
             public int ID { get; set; }
             public string BedName { get; set; }
-            public bool Occupancy { get; set; }
+            public string Occupancy { get; set; }
 
         }
 
@@ -83,7 +86,7 @@ namespace ManagementSystem
 
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-            int occupancy = 0;
+            string occupancy = "Vacant";
 
             MySqlCommand command = new MySqlCommand("SELECT ID, BedName, Occupancy FROM beds WHERE Occupancy = @occupancy AND rooms_ID = @roomID", connection);
 
@@ -99,7 +102,7 @@ namespace ManagementSystem
                     {
                         ID = reader.GetInt32(0),
                         BedName = reader.GetString(1),
-                        Occupancy = reader.GetBoolean(2),
+                        Occupancy = reader.GetString(2),
 
                     };
 
@@ -123,18 +126,18 @@ namespace ManagementSystem
 
             string name = textname.Text;
             string age = textage.Text;
-            string email = textemail.Text;
+            string gender = comboBoxGender.Text;
             string address = textaddress.Text;
             string allotedBed = cbBedName.Text;
-            int occupancy = 1;
+            string occupancy = "Occupied";
 
-            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(allotedBed) && !string.IsNullOrWhiteSpace(age) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(address))
+            if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(allotedBed) && !string.IsNullOrWhiteSpace(age) && !string.IsNullOrWhiteSpace(address) && !string.IsNullOrWhiteSpace(gender))
             {
                 int selectedBedID = (int)cbBedName.SelectedValue;
                 try
                 {
-                    string query = "INSERT INTO `tennants` (`ID`, `TennantName`, `TennantAge`, `TennantEmail`, `TennantAddress`, `rooms_ID`, `beds_ID`) " +
-                        "VALUES(NULL, @name, @age, @email, @address, @roomid, @bedid)";
+                    string query = "INSERT INTO `tennants` (`ID`, `TennantName`, `TennantAge`, `TennantGender`, `TennantAddress`, `rooms_ID`, `beds_ID`) " +
+                        "VALUES(NULL, @name, @age, @gender, @address, @roomid, @bedid)";
                     MySqlCommand command = new MySqlCommand(query, connection);
 
 
@@ -143,8 +146,8 @@ namespace ManagementSystem
 
                     command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@age", age);
-                    command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@address", address);
+                    command.Parameters.AddWithValue("@gender", gender);
                     command.Parameters.AddWithValue("@roomid", roomID);
                     command.Parameters.AddWithValue("@bedid", selectedBedID);
                     command.Parameters.AddWithValue("@occupancy", occupancy);
@@ -167,7 +170,6 @@ namespace ManagementSystem
                     MessageBox.Show("Successful!!" + Environment.NewLine + "New tennant has been added.");
                     textname.Clear();
                     textage.Clear();
-                    textemail.Clear();
                     textaddress.Clear();
                     this.Close();
 

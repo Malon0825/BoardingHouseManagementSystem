@@ -51,9 +51,10 @@
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton4.IconSize = 30;
             iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(283, 179);
+            iconButton4.Location = new Point(404, 298);
+            iconButton4.Margin = new Padding(4, 5, 4, 5);
             iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(114, 36);
+            iconButton4.Size = new Size(163, 60);
             iconButton4.TabIndex = 16;
             iconButton4.Text = "Delete";
             iconButton4.TextAlign = ContentAlignment.MiddleLeft;
@@ -65,9 +66,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(74, 101);
+            label1.Location = new Point(106, 168);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(104, 30);
+            label1.Size = new Size(154, 45);
             label1.TabIndex = 17;
             label1.Text = "Room ID:";
             label1.Click += label1_Click;
@@ -77,17 +79,19 @@
             textId.BackColor = Color.FromArgb(225, 138, 170);
             textId.BorderStyle = BorderStyle.None;
             textId.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            textId.Location = new Point(209, 101);
+            textId.Location = new Point(299, 168);
+            textId.Margin = new Padding(4, 5, 4, 5);
             textId.Name = "textId";
-            textId.Size = new Size(234, 29);
+            textId.Size = new Size(334, 43);
             textId.TabIndex = 18;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(228, 160, 183);
-            panel1.Location = new Point(209, 132);
+            panel1.Location = new Point(299, 220);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(234, 5);
+            panel1.Size = new Size(334, 8);
             panel1.TabIndex = 19;
             // 
             // iconButton1
@@ -104,9 +108,10 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 30;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(93, 179);
+            iconButton1.Location = new Point(133, 298);
+            iconButton1.Margin = new Padding(4, 5, 4, 5);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(120, 36);
+            iconButton1.Size = new Size(171, 60);
             iconButton1.TabIndex = 20;
             iconButton1.Text = "Go Back";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
@@ -124,16 +129,18 @@
             panel8.Controls.Add(iconButton4);
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(0, 0);
+            panel8.Margin = new Padding(4, 5, 4, 5);
             panel8.Name = "panel8";
-            panel8.Size = new Size(523, 280);
+            panel8.Size = new Size(747, 467);
             panel8.TabIndex = 18;
             // 
             // DeleteRoom
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(523, 280);
+            ClientSize = new Size(747, 467);
             Controls.Add(panel8);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "DeleteRoom";
             Text = "DeleteRoom";
             panel8.ResumeLayout(false);

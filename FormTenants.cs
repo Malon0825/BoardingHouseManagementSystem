@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -114,7 +115,7 @@ namespace ManagementSystem
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
@@ -157,6 +158,9 @@ namespace ManagementSystem
 
             int rowCliked = dataGridView.CurrentRow.Index;
             String tennantID = dataGridView.Rows[rowCliked].Cells[0].Value.ToString();
+
+            FormTennantView formTennantView = new FormTennantView(tennantID);
+            formTennantView.Show();
 
             List<Tennant> getAllTennants()
             {
@@ -283,6 +287,23 @@ namespace ManagementSystem
                 dataBedsList.DataSource = dataTable2;
 
             }
+        }
+
+        private void labelRoom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void labelBed_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -42,7 +42,20 @@ namespace ManagementSystem
 
 
         }
+
+        public BillingStatus(string? billingID, FormTennantView formTennantView)
+        {
+            InitializeComponent();
+            bill = billingID;
+            this.formTennantView = formTennantView;
+
+            cbStatus.Items.Add("Paid");
+            cbStatus.Items.Add("Unpaid");
+        }
+
         private FormHistory frm1;
+        private string? billingID;
+        private FormTennantView formTennantView;
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -185,7 +198,9 @@ namespace ManagementSystem
                         {
                             FormReciept formReciept = new FormReciept(tennantName, billrentType, billRentBill, billElectricBill, billTotal, cashInt, change);
                             formReciept.Show();
-                            this.frm1.UpdateDataGridViewFunc();
+                            
+                            //this.frm1.UpdateDataGridViewFunc();
+
                             this.Close();
                         }
                     }
@@ -267,7 +282,7 @@ namespace ManagementSystem
                         {
                             FormReciept formReciept = new FormReciept(tennantName, billrentType, billRentBill, billElectricBill, billTotal, totalPay, change);
                             formReciept.Show();
-                            this.frm1.UpdateDataGridViewFunc();
+                            //this.frm1.UpdateDataGridViewFunc();
                             this.Close();
                         }
                     }
