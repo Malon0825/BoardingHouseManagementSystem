@@ -60,7 +60,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(225, 138, 170);
+            panel4.BackColor = Color.FromArgb(238, 186, 178);
             panel4.Dock = DockStyle.Bottom;
             panel4.Location = new Point(43, 732);
             panel4.Margin = new Padding(4, 5, 4, 5);
@@ -81,7 +81,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.Pink;
             dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.BackgroundColor = Color.FromArgb(228, 160, 183);
+            dataGridView2.BackgroundColor = Color.FromArgb(245, 243, 231);
             dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -122,10 +122,10 @@
             dataGridViewCellStyle5.SelectionBackColor = Color.Pink;
             dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView2.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridView2.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridView2.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(245, 243, 231);
             dataGridView2.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dataGridView2.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Pink;
+            dataGridView2.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(204, 212, 191);
             dataGridView2.RowTemplate.Height = 35;
             dataGridView2.ScrollBars = ScrollBars.Vertical;
             dataGridView2.ShowCellToolTips = false;
@@ -138,7 +138,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(225, 138, 170);
+            panel3.BackColor = Color.FromArgb(238, 186, 178);
             panel3.Dock = DockStyle.Right;
             panel3.Location = new Point(1431, 105);
             panel3.Margin = new Padding(4, 5, 4, 5);
@@ -148,7 +148,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(225, 138, 170);
+            panel2.BackColor = Color.FromArgb(238, 186, 178);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 105);
             panel2.Margin = new Padding(4, 5, 4, 5);
@@ -158,7 +158,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(225, 138, 170);
+            panel1.BackColor = Color.FromArgb(238, 186, 178);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);

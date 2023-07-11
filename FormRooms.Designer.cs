@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle29 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel7 = new Panel();
             panel12 = new Panel();
@@ -119,6 +119,7 @@
             // 
             // panel12
             // 
+            panel12.BackColor = Color.FromArgb(238, 186, 178);
             panel12.Controls.Add(labelGender);
             panel12.Controls.Add(label5);
             panel12.Controls.Add(lalebTennantName);
@@ -188,52 +189,52 @@
             dataTennantsList.AllowUserToDeleteRows = false;
             dataTennantsList.AllowUserToResizeColumns = false;
             dataTennantsList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle16.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle16.ForeColor = Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = Color.Pink;
-            dataTennantsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Pink;
+            dataTennantsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataTennantsList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataTennantsList.BackgroundColor = Color.FromArgb(228, 160, 183);
             dataTennantsList.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataTennantsList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle17.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle17.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = Color.LavenderBlush;
-            dataGridViewCellStyle17.SelectionForeColor = SystemColors.ControlText;
-            dataTennantsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.LavenderBlush;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataTennantsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataTennantsList.ColumnHeadersHeight = 35;
-            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle18.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle18.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = Color.Pink;
-            dataGridViewCellStyle18.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.False;
-            dataTennantsList.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Pink;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataTennantsList.DefaultCellStyle = dataGridViewCellStyle3;
             dataTennantsList.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataTennantsList.GridColor = Color.Black;
             dataTennantsList.Location = new Point(33, 1410);
             dataTennantsList.Margin = new Padding(4, 5, 4, 5);
             dataTennantsList.Name = "dataTennantsList";
-            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle19.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle19.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = Color.Pink;
-            dataGridViewCellStyle19.SelectionForeColor = SystemColors.HighlightText;
-            dataTennantsList.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Pink;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataTennantsList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataTennantsList.RowHeadersVisible = false;
             dataTennantsList.RowHeadersWidth = 62;
-            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle20.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle20.ForeColor = Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = Color.Pink;
-            dataTennantsList.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Pink;
+            dataTennantsList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataTennantsList.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataTennantsList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(228, 160, 183);
             dataTennantsList.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -253,59 +254,59 @@
             dataBedsList.AllowUserToDeleteRows = false;
             dataBedsList.AllowUserToResizeColumns = false;
             dataBedsList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle21.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle21.ForeColor = Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = Color.Pink;
-            dataBedsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Pink;
+            dataBedsList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             dataBedsList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataBedsList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataBedsList.BackgroundColor = Color.FromArgb(228, 160, 183);
+            dataBedsList.BackgroundColor = Color.FromArgb(245, 243, 231);
             dataBedsList.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataBedsList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle22.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle22.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = Color.LavenderBlush;
-            dataGridViewCellStyle22.SelectionForeColor = SystemColors.ControlText;
-            dataBedsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.LavenderBlush;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.ControlText;
+            dataBedsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataBedsList.ColumnHeadersHeight = 35;
-            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle23.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle23.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = Color.Pink;
-            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
-            dataBedsList.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Pink;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataBedsList.DefaultCellStyle = dataGridViewCellStyle8;
             dataBedsList.Dock = DockStyle.Fill;
             dataBedsList.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataBedsList.GridColor = Color.Black;
             dataBedsList.Location = new Point(33, 187);
             dataBedsList.Margin = new Padding(4, 5, 4, 5);
             dataBedsList.Name = "dataBedsList";
-            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle24.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle24.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = Color.Pink;
-            dataGridViewCellStyle24.SelectionForeColor = SystemColors.HighlightText;
-            dataBedsList.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = Color.Pink;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataBedsList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataBedsList.RowHeadersVisible = false;
             dataBedsList.RowHeadersWidth = 62;
-            dataGridViewCellStyle25.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle25.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle25.ForeColor = Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = Color.Pink;
-            dataBedsList.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(228, 160, 183);
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = Color.Pink;
+            dataBedsList.RowsDefaultCellStyle = dataGridViewCellStyle10;
             dataBedsList.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataBedsList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(228, 160, 183);
+            dataBedsList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(245, 243, 231);
             dataBedsList.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataBedsList.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dataBedsList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Pink;
+            dataBedsList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(204, 212, 191);
             dataBedsList.RowTemplate.Height = 35;
             dataBedsList.ScrollBars = ScrollBars.Vertical;
             dataBedsList.ShowCellToolTips = false;
@@ -314,9 +315,11 @@
             dataBedsList.Size = new Size(567, 846);
             dataBedsList.TabIndex = 16;
             dataBedsList.CellClick += dataBedsList_CellClick;
+            dataBedsList.CellContentClick += dataBedsList_CellContentClick;
             // 
             // panel11
             // 
+            panel11.BackColor = Color.FromArgb(238, 186, 178);
             panel11.Controls.Add(labelRoomName);
             panel11.Controls.Add(buttonDescription);
             panel11.Controls.Add(buttonLocation);
@@ -343,10 +346,10 @@
             // buttonDescription
             // 
             buttonDescription.BackgroundImageLayout = ImageLayout.Center;
-            buttonDescription.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            buttonDescription.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             buttonDescription.FlatAppearance.BorderSize = 0;
             buttonDescription.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            buttonDescription.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            buttonDescription.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             buttonDescription.FlatStyle = FlatStyle.Flat;
             buttonDescription.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDescription.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
@@ -369,10 +372,10 @@
             // 
             buttonLocation.Anchor = AnchorStyles.Top;
             buttonLocation.BackgroundImageLayout = ImageLayout.Center;
-            buttonLocation.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            buttonLocation.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             buttonLocation.FlatAppearance.BorderSize = 0;
             buttonLocation.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            buttonLocation.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            buttonLocation.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             buttonLocation.FlatStyle = FlatStyle.Flat;
             buttonLocation.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             buttonLocation.IconChar = FontAwesome.Sharp.IconChar.LocationDot;
@@ -393,6 +396,7 @@
             // 
             // panel10
             // 
+            panel10.BackColor = Color.FromArgb(238, 186, 178);
             panel10.Dock = DockStyle.Right;
             panel10.Location = new Point(600, 0);
             panel10.Margin = new Padding(4, 5, 4, 5);
@@ -403,6 +407,7 @@
             // 
             // panel8
             // 
+            panel8.BackColor = Color.FromArgb(238, 186, 178);
             panel8.Dock = DockStyle.Left;
             panel8.Location = new Point(0, 0);
             panel8.Margin = new Padding(4, 5, 4, 5);
@@ -412,7 +417,7 @@
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(228, 160, 183);
+            panel6.BackColor = Color.FromArgb(245, 243, 231);
             panel6.Dock = DockStyle.Left;
             panel6.Location = new Point(803, 17);
             panel6.Margin = new Padding(4, 5, 4, 5);
@@ -422,7 +427,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(225, 138, 170);
+            panel3.BackColor = Color.FromArgb(238, 186, 178);
             panel3.Controls.Add(panel9);
             panel3.Controls.Add(dataSearchList);
             panel3.Controls.Add(label9);
@@ -442,7 +447,7 @@
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(228, 160, 183);
+            panel9.BackColor = Color.FromArgb(245, 243, 231);
             panel9.Location = new Point(0, 382);
             panel9.Margin = new Padding(4, 5, 4, 5);
             panel9.Name = "panel9";
@@ -455,59 +460,59 @@
             dataSearchList.AllowUserToDeleteRows = false;
             dataSearchList.AllowUserToResizeColumns = false;
             dataSearchList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle26.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle26.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle26.ForeColor = Color.Black;
-            dataGridViewCellStyle26.SelectionBackColor = Color.Pink;
-            dataSearchList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(238, 186, 178);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(245, 243, 231);
+            dataSearchList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             dataSearchList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataSearchList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataSearchList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataSearchList.BackgroundColor = Color.FromArgb(228, 160, 183);
+            dataSearchList.BackgroundColor = Color.FromArgb(245, 243, 231);
             dataSearchList.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataSearchList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle27.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle27.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle27.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = Color.LavenderBlush;
-            dataGridViewCellStyle27.SelectionForeColor = SystemColors.ControlText;
-            dataSearchList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(245, 226, 228);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = Color.LavenderBlush;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.ControlText;
+            dataSearchList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dataSearchList.ColumnHeadersHeight = 35;
-            dataGridViewCellStyle28.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle28.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle28.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionBackColor = Color.Pink;
-            dataGridViewCellStyle28.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = DataGridViewTriState.False;
-            dataSearchList.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = Color.FromArgb(245, 226, 228);
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = Color.FromArgb(245, 243, 231);
+            dataGridViewCellStyle13.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
+            dataSearchList.DefaultCellStyle = dataGridViewCellStyle13;
             dataSearchList.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataSearchList.GridColor = Color.Black;
             dataSearchList.Location = new Point(26, 148);
             dataSearchList.Margin = new Padding(4, 5, 4, 5);
             dataSearchList.Name = "dataSearchList";
-            dataGridViewCellStyle29.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle29.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle29.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = Color.Pink;
-            dataGridViewCellStyle29.SelectionForeColor = SystemColors.HighlightText;
-            dataSearchList.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = Color.FromArgb(245, 226, 228);
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = Color.Pink;
+            dataGridViewCellStyle14.SelectionForeColor = SystemColors.HighlightText;
+            dataSearchList.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             dataSearchList.RowHeadersVisible = false;
             dataSearchList.RowHeadersWidth = 62;
-            dataGridViewCellStyle30.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = Color.FromArgb(228, 160, 183);
-            dataGridViewCellStyle30.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle30.ForeColor = Color.Black;
-            dataGridViewCellStyle30.SelectionBackColor = Color.Pink;
-            dataSearchList.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = Color.FromArgb(245, 226, 228);
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = Color.FromArgb(245, 243, 231);
+            dataSearchList.RowsDefaultCellStyle = dataGridViewCellStyle15;
             dataSearchList.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataSearchList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(228, 160, 183);
+            dataSearchList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(245, 243, 231);
             dataSearchList.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataSearchList.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dataSearchList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Pink;
+            dataSearchList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(204, 212, 191);
             dataSearchList.RowTemplate.Height = 35;
             dataSearchList.RowTemplate.Resizable = DataGridViewTriState.True;
             dataSearchList.ScrollBars = ScrollBars.Vertical;
@@ -517,6 +522,7 @@
             dataSearchList.Size = new Size(733, 223);
             dataSearchList.TabIndex = 7;
             dataSearchList.CellClick += dataSearchList_CellClick;
+            dataSearchList.CellContentClick += dataSearchList_CellContentClick;
             // 
             // label9
             // 
@@ -545,7 +551,7 @@
             // 
             // panelEdit
             // 
-            panelEdit.BackColor = Color.FromArgb(225, 138, 170);
+            panelEdit.BackColor = Color.FromArgb(238, 186, 178);
             panelEdit.Controls.Add(iconButton5);
             panelEdit.Controls.Add(iconButton4);
             panelEdit.Controls.Add(iconButton2);
@@ -559,10 +565,10 @@
             // 
             iconButton5.Anchor = AnchorStyles.Top;
             iconButton5.BackgroundImageLayout = ImageLayout.Center;
-            iconButton5.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton5.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton5.FlatAppearance.BorderSize = 0;
             iconButton5.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton5.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton5.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton5.FlatStyle = FlatStyle.Flat;
             iconButton5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton5.IconChar = FontAwesome.Sharp.IconChar.Minus;
@@ -585,10 +591,10 @@
             // 
             iconButton4.Anchor = AnchorStyles.Top;
             iconButton4.BackgroundImageLayout = ImageLayout.Center;
-            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton4.FlatStyle = FlatStyle.Flat;
             iconButton4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton4.IconChar = FontAwesome.Sharp.IconChar.Add;
@@ -611,10 +617,10 @@
             // 
             iconButton2.Anchor = AnchorStyles.Top;
             iconButton2.BackgroundImageLayout = ImageLayout.Center;
-            iconButton2.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton2.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton2.FlatAppearance.BorderSize = 0;
             iconButton2.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton2.FlatStyle = FlatStyle.Flat;
             iconButton2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton2.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
@@ -636,7 +642,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top;
-            panel2.BackColor = Color.FromArgb(228, 160, 183);
+            panel2.BackColor = Color.FromArgb(245, 243, 231);
             panel2.Location = new Point(267, 125);
             panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
@@ -646,7 +652,7 @@
             // textSearchName
             // 
             textSearchName.Anchor = AnchorStyles.Top;
-            textSearchName.BackColor = Color.FromArgb(225, 138, 170);
+            textSearchName.BackColor = Color.FromArgb(238, 186, 178);
             textSearchName.BorderStyle = BorderStyle.None;
             textSearchName.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             textSearchName.Location = new Point(267, 67);
@@ -660,10 +666,10 @@
             // 
             iconButton1.Anchor = AnchorStyles.Top;
             iconButton1.BackgroundImageLayout = ImageLayout.Center;
-            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
@@ -697,7 +703,7 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(228, 160, 183);
+            panel5.BackColor = Color.FromArgb(245, 243, 231);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(14, 0);
             panel5.Margin = new Padding(4, 5, 4, 5);
@@ -707,7 +713,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(228, 160, 183);
+            panel4.BackColor = Color.FromArgb(245, 243, 231);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 0);
             panel4.Margin = new Padding(4, 5, 4, 5);
@@ -731,6 +737,7 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "FormRooms";
             Text = "FormRooms";
+            Load += FormRooms_Load;
             panel1.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel12.ResumeLayout(false);

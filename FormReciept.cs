@@ -16,18 +16,34 @@ namespace ManagementSystem
         Bitmap bitmap;
 
 
-        public FormReciept(string name, string rentType, int? rentBill, int? electricBill, int totalBill, int cash, int change)
+        public FormReciept(string name, string rentType, int? rentBill, int? electricBill, int totalBill, int deposit, int cash, int change)
         {
             InitializeComponent();
 
-            lblName.Text = name;
-            lblRentType.Text = rentType;
-            lblRentBill.Text = rentBill.ToString();
-            lblElectricBill.Text = electricBill.ToString();
-            lblTotalBill.Text = totalBill.ToString();
-            lblCash.Text = cash.ToString();
-            lblChange.Text = change.ToString();
+            if(deposit != 0)
+            {
+                int newTotalBill = deposit + totalBill;
+                int newChange = cash - newTotalBill;
 
+                lblName.Text = name;
+                lblRentType.Text = rentType;
+                lblRentBill.Text = rentBill.ToString();
+                lblElectricBill.Text = deposit.ToString();
+                lblTotalBill.Text = newTotalBill.ToString();
+                lblCash.Text = cash.ToString();
+                lblChange.Text = newChange.ToString();
+
+            }
+            else
+            {
+                lblName.Text = name;
+                lblRentType.Text = rentType;
+                lblRentBill.Text = rentBill.ToString();
+                lblElectricBill.Text = deposit.ToString();
+                lblTotalBill.Text = totalBill.ToString();
+                lblCash.Text = cash.ToString();
+                lblChange.Text = change.ToString();
+            }
         }
 
 
@@ -95,6 +111,11 @@ namespace ManagementSystem
                 printPreviewDialog1.Document = printDocument1;
                 printPreviewDialog1.ShowDialog();
             }
+        }
+
+        private void lblRentBill_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

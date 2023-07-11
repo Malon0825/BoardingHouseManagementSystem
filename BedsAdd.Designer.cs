@@ -41,7 +41,7 @@
             // 
             // panel8
             // 
-            panel8.BackColor = Color.FromArgb(225, 138, 170);
+            panel8.BackColor = Color.FromArgb(238, 186, 178);
             panel8.Controls.Add(cbRoomName);
             panel8.Controls.Add(iconButton1);
             panel8.Controls.Add(iconButton4);
@@ -59,7 +59,7 @@
             // cbRoomName
             // 
             cbRoomName.Anchor = AnchorStyles.Top;
-            cbRoomName.BackColor = Color.FromArgb(225, 138, 170);
+            cbRoomName.BackColor = Color.FromArgb(238, 186, 178);
             cbRoomName.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             cbRoomName.FormattingEnabled = true;
             cbRoomName.Location = new Point(347, 244);
@@ -73,10 +73,10 @@
             // 
             iconButton1.Anchor = AnchorStyles.Top;
             iconButton1.BackgroundImageLayout = ImageLayout.Center;
-            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
@@ -99,10 +99,10 @@
             // 
             iconButton4.Anchor = AnchorStyles.Top;
             iconButton4.BackgroundImageLayout = ImageLayout.Center;
-            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton4.FlatStyle = FlatStyle.Flat;
             iconButton4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton4.IconChar = FontAwesome.Sharp.IconChar.Add;
@@ -136,7 +136,7 @@
             // panel10
             // 
             panel10.Anchor = AnchorStyles.Top;
-            panel10.BackColor = Color.FromArgb(228, 160, 183);
+            panel10.BackColor = Color.FromArgb(245, 243, 231);
             panel10.Location = new Point(347, 225);
             panel10.Margin = new Padding(4, 5, 4, 5);
             panel10.Name = "panel10";
@@ -146,7 +146,7 @@
             // textAddBedName
             // 
             textAddBedName.Anchor = AnchorStyles.Top;
-            textAddBedName.BackColor = Color.FromArgb(225, 138, 170);
+            textAddBedName.BackColor = Color.FromArgb(238, 186, 178);
             textAddBedName.BorderStyle = BorderStyle.None;
             textAddBedName.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             textAddBedName.Location = new Point(347, 174);

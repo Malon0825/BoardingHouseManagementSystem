@@ -131,10 +131,10 @@ namespace ManagementSystem
         private void iconButton4_Click_1(object sender, EventArgs e)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();          
+            connection.Open();
 
             int id;
-            string name = textTennantName.Text;        
+            string name = textTennantName.Text;
             string roomid = roomID.ToString();
             int occupancy = 1;
 

@@ -49,11 +49,12 @@
             // iconButton4
             // 
             iconButton4.Anchor = AnchorStyles.Top;
+            iconButton4.BackColor = Color.FromArgb(238, 186, 178);
             iconButton4.BackgroundImageLayout = ImageLayout.Center;
-            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton4.FlatStyle = FlatStyle.Flat;
             iconButton4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleUp;
@@ -61,19 +62,20 @@
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton4.IconSize = 30;
             iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(305, 194);
+            iconButton4.Location = new Point(436, 323);
+            iconButton4.Margin = new Padding(4, 5, 4, 5);
             iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(114, 36);
+            iconButton4.Size = new Size(163, 60);
             iconButton4.TabIndex = 16;
             iconButton4.Text = "Update";
             iconButton4.TextAlign = ContentAlignment.MiddleLeft;
             iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton4.UseVisualStyleBackColor = true;
+            iconButton4.UseVisualStyleBackColor = false;
             iconButton4.Click += iconButton4_Click;
             // 
             // panel8
             // 
-            panel8.BackColor = Color.FromArgb(225, 138, 170);
+            panel8.BackColor = Color.FromArgb(238, 186, 178);
             panel8.Controls.Add(iconButton1);
             panel8.Controls.Add(panel1);
             panel8.Controls.Add(textId);
@@ -90,18 +92,20 @@
             panel8.Controls.Add(label8);
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(0, 0);
+            panel8.Margin = new Padding(4, 5, 4, 5);
             panel8.Name = "panel8";
-            panel8.Size = new Size(540, 269);
+            panel8.Size = new Size(771, 448);
             panel8.TabIndex = 17;
             // 
             // iconButton1
             // 
             iconButton1.Anchor = AnchorStyles.Top;
+            iconButton1.BackColor = Color.FromArgb(238, 186, 178);
             iconButton1.BackgroundImageLayout = ImageLayout.Center;
-            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
@@ -109,34 +113,37 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 30;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(104, 194);
+            iconButton1.Location = new Point(149, 323);
+            iconButton1.Margin = new Padding(4, 5, 4, 5);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(120, 36);
+            iconButton1.Size = new Size(171, 60);
             iconButton1.TabIndex = 20;
             iconButton1.Text = "Go Back";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.UseVisualStyleBackColor = false;
             iconButton1.Click += iconButton1_Click;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
-            panel1.BackColor = Color.FromArgb(228, 160, 183);
-            panel1.Location = new Point(235, 43);
+            panel1.BackColor = Color.FromArgb(245, 243, 231);
+            panel1.Location = new Point(336, 72);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(234, 5);
+            panel1.Size = new Size(334, 8);
             panel1.TabIndex = 19;
             // 
             // textId
             // 
             textId.Anchor = AnchorStyles.Top;
-            textId.BackColor = Color.FromArgb(225, 138, 170);
+            textId.BackColor = Color.FromArgb(238, 186, 178);
             textId.BorderStyle = BorderStyle.None;
             textId.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textId.Location = new Point(235, 12);
+            textId.Location = new Point(336, 20);
+            textId.Margin = new Padding(4, 5, 4, 5);
             textId.Name = "textId";
-            textId.Size = new Size(234, 25);
+            textId.Size = new Size(334, 38);
             textId.TabIndex = 18;
             textId.TextChanged += textId_TextChanged;
             // 
@@ -145,111 +152,125 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(36, 12);
+            label1.Location = new Point(51, 20);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(92, 25);
+            label1.Size = new Size(135, 38);
             label1.TabIndex = 17;
             label1.Text = "Room ID:";
             // 
             // panel12
             // 
             panel12.Anchor = AnchorStyles.Top;
-            panel12.BackColor = Color.FromArgb(228, 160, 183);
-            panel12.Location = new Point(235, 170);
+            panel12.BackColor = Color.FromArgb(245, 243, 231);
+            panel12.Location = new Point(336, 283);
+            panel12.Margin = new Padding(4, 5, 4, 5);
             panel12.Name = "panel12";
-            panel12.Size = new Size(234, 5);
+            panel12.Size = new Size(334, 8);
             panel12.TabIndex = 14;
             // 
             // textUpdateDescription
             // 
             textUpdateDescription.Anchor = AnchorStyles.Top;
-            textUpdateDescription.BackColor = Color.FromArgb(225, 138, 170);
+            textUpdateDescription.BackColor = Color.FromArgb(238, 186, 178);
             textUpdateDescription.BorderStyle = BorderStyle.None;
             textUpdateDescription.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textUpdateDescription.Location = new Point(235, 139);
+            textUpdateDescription.Location = new Point(336, 232);
+            textUpdateDescription.Margin = new Padding(4, 5, 4, 5);
             textUpdateDescription.Name = "textUpdateDescription";
-            textUpdateDescription.Size = new Size(234, 25);
+            textUpdateDescription.Size = new Size(334, 38);
             textUpdateDescription.TabIndex = 13;
+            textUpdateDescription.TextChanged += textUpdateDescription_TextChanged;
             // 
             // label12
             // 
             label12.Anchor = AnchorStyles.Top;
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(33, 139);
+            label12.Location = new Point(47, 232);
+            label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
-            label12.Size = new Size(170, 25);
+            label12.Size = new Size(251, 38);
             label12.TabIndex = 12;
             label12.Text = "Room Description:";
             // 
             // panel11
             // 
             panel11.Anchor = AnchorStyles.Top;
-            panel11.BackColor = Color.FromArgb(228, 160, 183);
-            panel11.Location = new Point(235, 128);
+            panel11.BackColor = Color.FromArgb(245, 243, 231);
+            panel11.Location = new Point(336, 213);
+            panel11.Margin = new Padding(4, 5, 4, 5);
             panel11.Name = "panel11";
-            panel11.Size = new Size(234, 5);
+            panel11.Size = new Size(334, 8);
             panel11.TabIndex = 11;
             // 
             // textUpdateLocation
             // 
             textUpdateLocation.Anchor = AnchorStyles.Top;
-            textUpdateLocation.BackColor = Color.FromArgb(225, 138, 170);
+            textUpdateLocation.BackColor = Color.FromArgb(238, 186, 178);
             textUpdateLocation.BorderStyle = BorderStyle.None;
             textUpdateLocation.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textUpdateLocation.Location = new Point(235, 97);
+            textUpdateLocation.Location = new Point(336, 162);
+            textUpdateLocation.Margin = new Padding(4, 5, 4, 5);
             textUpdateLocation.Name = "textUpdateLocation";
-            textUpdateLocation.Size = new Size(234, 25);
+            textUpdateLocation.Size = new Size(334, 38);
             textUpdateLocation.TabIndex = 10;
+            textUpdateLocation.TextChanged += textUpdateLocation_TextChanged;
             // 
             // label11
             // 
             label11.Anchor = AnchorStyles.Top;
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(36, 97);
+            label11.Location = new Point(51, 162);
+            label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
-            label11.Size = new Size(145, 25);
+            label11.Size = new Size(216, 38);
             label11.TabIndex = 9;
             label11.Text = "Room Location:";
             // 
             // panel10
             // 
             panel10.Anchor = AnchorStyles.Top;
-            panel10.BackColor = Color.FromArgb(228, 160, 183);
-            panel10.Location = new Point(235, 86);
+            panel10.BackColor = Color.FromArgb(245, 243, 231);
+            panel10.Location = new Point(336, 143);
+            panel10.Margin = new Padding(4, 5, 4, 5);
             panel10.Name = "panel10";
-            panel10.Size = new Size(234, 5);
+            panel10.Size = new Size(334, 8);
             panel10.TabIndex = 8;
             // 
             // textUpdateName
             // 
             textUpdateName.Anchor = AnchorStyles.Top;
-            textUpdateName.BackColor = Color.FromArgb(225, 138, 170);
+            textUpdateName.BackColor = Color.FromArgb(238, 186, 178);
             textUpdateName.BorderStyle = BorderStyle.None;
             textUpdateName.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textUpdateName.Location = new Point(235, 55);
+            textUpdateName.Location = new Point(336, 92);
+            textUpdateName.Margin = new Padding(4, 5, 4, 5);
             textUpdateName.Name = "textUpdateName";
-            textUpdateName.Size = new Size(234, 25);
+            textUpdateName.Size = new Size(334, 38);
             textUpdateName.TabIndex = 7;
+            textUpdateName.TextChanged += textUpdateName_TextChanged;
             // 
             // label8
             // 
             label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(36, 55);
+            label8.Location = new Point(51, 92);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(144, 25);
+            label8.Size = new Size(212, 38);
             label8.TabIndex = 5;
             label8.Text = "Room Number:";
             // 
             // UpdateRoom
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(540, 269);
+            ClientSize = new Size(771, 448);
             Controls.Add(panel8);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "UpdateRoom";
             Text = "UpdateRoom";
             panel8.ResumeLayout(false);

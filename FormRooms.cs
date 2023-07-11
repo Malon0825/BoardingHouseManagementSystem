@@ -442,6 +442,21 @@ namespace ManagementSystem
             }
 
         }
+
+        private void dataSearchList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataBedsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormRooms_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

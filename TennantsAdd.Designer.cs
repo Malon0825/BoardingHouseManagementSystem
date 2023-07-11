@@ -51,7 +51,7 @@
             // 
             // panel8
             // 
-            panel8.BackColor = Color.FromArgb(225, 138, 170);
+            panel8.BackColor = Color.FromArgb(238, 186, 178);
             panel8.Controls.Add(comboBoxGender);
             panel8.Controls.Add(cbBedName);
             panel8.Controls.Add(cbRoomName);
@@ -78,7 +78,7 @@
             // 
             // comboBoxGender
             // 
-            comboBoxGender.BackColor = Color.FromArgb(225, 138, 170);
+            comboBoxGender.BackColor = Color.FromArgb(238, 186, 178);
             comboBoxGender.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             comboBoxGender.FormattingEnabled = true;
             comboBoxGender.Location = new Point(433, 75);
@@ -89,7 +89,7 @@
             // 
             // cbBedName
             // 
-            cbBedName.BackColor = Color.FromArgb(225, 138, 170);
+            cbBedName.BackColor = Color.FromArgb(238, 186, 178);
             cbBedName.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             cbBedName.FormattingEnabled = true;
             cbBedName.Location = new Point(170, 280);
@@ -102,7 +102,7 @@
             // 
             // cbRoomName
             // 
-            cbRoomName.BackColor = Color.FromArgb(225, 138, 170);
+            cbRoomName.BackColor = Color.FromArgb(238, 186, 178);
             cbRoomName.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             cbRoomName.FormattingEnabled = true;
             cbRoomName.Location = new Point(170, 210);
@@ -140,7 +140,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(228, 160, 183);
+            panel4.BackColor = Color.FromArgb(245, 243, 231);
             panel4.Location = new Point(170, 197);
             panel4.Margin = new Padding(4, 5, 4, 5);
             panel4.Name = "panel4";
@@ -149,7 +149,7 @@
             // 
             // textaddress
             // 
-            textaddress.BackColor = Color.FromArgb(225, 138, 170);
+            textaddress.BackColor = Color.FromArgb(238, 186, 178);
             textaddress.BorderStyle = BorderStyle.None;
             textaddress.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             textaddress.Location = new Point(170, 145);
@@ -182,11 +182,12 @@
             // 
             // iconButton1
             // 
+            iconButton1.BackColor = Color.FromArgb(238, 186, 178);
             iconButton1.BackgroundImageLayout = ImageLayout.Center;
-            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
@@ -202,16 +203,17 @@
             iconButton1.Text = "Go Back";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
             iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.UseVisualStyleBackColor = false;
             iconButton1.Click += iconButton1_Click;
             // 
             // iconButton4
             // 
+            iconButton4.BackColor = Color.FromArgb(238, 186, 178);
             iconButton4.BackgroundImageLayout = ImageLayout.Center;
-            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(238, 186, 178);
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(238, 186, 178);
             iconButton4.FlatStyle = FlatStyle.Flat;
             iconButton4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton4.IconChar = FontAwesome.Sharp.IconChar.Add;
@@ -227,12 +229,12 @@
             iconButton4.Text = "Add";
             iconButton4.TextAlign = ContentAlignment.MiddleLeft;
             iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton4.UseVisualStyleBackColor = true;
+            iconButton4.UseVisualStyleBackColor = false;
             iconButton4.Click += iconButton4_Click;
             // 
             // panel11
             // 
-            panel11.BackColor = Color.FromArgb(228, 160, 183);
+            panel11.BackColor = Color.FromArgb(245, 243, 231);
             panel11.Location = new Point(170, 127);
             panel11.Margin = new Padding(4, 5, 4, 5);
             panel11.Name = "panel11";
@@ -241,7 +243,7 @@
             // 
             // textage
             // 
-            textage.BackColor = Color.FromArgb(225, 138, 170);
+            textage.BackColor = Color.FromArgb(238, 186, 178);
             textage.BorderStyle = BorderStyle.None;
             textage.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             textage.Location = new Point(170, 75);
@@ -265,7 +267,7 @@
             // 
             // panel10
             // 
-            panel10.BackColor = Color.FromArgb(228, 160, 183);
+            panel10.BackColor = Color.FromArgb(245, 243, 231);
             panel10.Location = new Point(170, 57);
             panel10.Margin = new Padding(4, 5, 4, 5);
             panel10.Name = "panel10";
@@ -274,7 +276,7 @@
             // 
             // textname
             // 
-            textname.BackColor = Color.FromArgb(225, 138, 170);
+            textname.BackColor = Color.FromArgb(238, 186, 178);
             textname.BorderStyle = BorderStyle.None;
             textname.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             textname.Location = new Point(170, 5);

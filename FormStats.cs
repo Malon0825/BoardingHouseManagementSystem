@@ -78,7 +78,7 @@ namespace ManagementSystem
             dataTable2.Columns.Add("BillingID");
             dataTable2.Columns.Add("RentType");
             dataTable2.Columns.Add("RentBill");
-            dataTable2.Columns.Add("ElectricBill");
+            //dataTable2.Columns.Add("ElectricBill");
             dataTable2.Columns.Add("Total");
             dataTable2.Columns.Add("DueDate");
             dataTable2.Columns.Add("Date");
@@ -91,7 +91,7 @@ namespace ManagementSystem
                 row["BillingID"] = bill.BillingID;
                 row["RentType"] = bill.RentType;
                 row["RentBill"] = bill.RentBill;
-                row["ElectricBill"] = bill.ElectricBill;
+                //row["ElectricBill"] = bill.ElectricBill;
                 row["Total"] = bill.Total;
                 row["DueDate"] = bill.DueDate;
                 row["Date"] = bill.Date;
@@ -136,8 +136,8 @@ namespace ManagementSystem
             int totalRentBills = rentBills.Sum();
             lableRentBill.Text = totalRentBills.ToString();
 
-            int totalElectricBills = electricBills.Sum();
-            lableElectricBill.Text = totalElectricBills.ToString();
+            //int totalElectricBills = electricBills.Sum();
+            //lableElectricBill.Text = totalElectricBills.ToString();
 
             int overAllBills = totalBills.Sum();
             lableTotalBill.Text = overAllBills.ToString();
@@ -249,7 +249,7 @@ namespace ManagementSystem
             dataTable2.Columns.Add("BillingID");
             dataTable2.Columns.Add("RentType");
             dataTable2.Columns.Add("RentBill");
-            dataTable2.Columns.Add("ElectricBill");
+            //dataTable2.Columns.Add("ElectricBill");
             dataTable2.Columns.Add("Total");
             dataTable2.Columns.Add("DueDate");
             dataTable2.Columns.Add("Date");
@@ -262,7 +262,7 @@ namespace ManagementSystem
                 row["BillingID"] = bill.BillingID;
                 row["RentType"] = bill.RentType;
                 row["RentBill"] = bill.RentBill;
-                row["ElectricBill"] = bill.ElectricBill;
+                //row["ElectricBill"] = bill.ElectricBill;
                 row["Total"] = bill.Total;
                 row["DueDate"] = bill.DueDate;
                 row["Date"] = bill.Date;
@@ -308,12 +308,21 @@ namespace ManagementSystem
             lableRentBill.Text = totalRentBills.ToString();
 
             int totalElectricBills = electricBills.Sum();
-            lableElectricBill.Text = totalElectricBills.ToString();
+            //lableElectricBill.Text = totalElectricBills.ToString();
 
             int overAllBills = totalBills.Sum();
             lableTotalBill.Text = overAllBills.ToString();
 
             dataGridView2.DataSource = dataTable2;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lableRentBill_Click(object sender, EventArgs e)
+        {
         }
     }
 }

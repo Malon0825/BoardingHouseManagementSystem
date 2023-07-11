@@ -54,7 +54,7 @@ namespace ManagementSystem
             public int ID { get; set; }
             public string BedName { get; set; }
             public string Occupancy { get; set; }
-            public int RoomID{ get; set; }
+            public int RoomID { get; set; }
         }
 
         public class Tennant
@@ -314,6 +314,16 @@ namespace ManagementSystem
         }
 
         private void lalebTennantName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelEdit_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataSearchList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

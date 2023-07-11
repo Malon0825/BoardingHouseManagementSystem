@@ -52,7 +52,7 @@ namespace ManagementSystem
                     command.Parameters.AddWithValue("@roomLocation", roomLocation);
                     command.Parameters.AddWithValue("@roomDescription", roomDescription);
 
-                    if(roomType == "Whole Room")
+                    if (roomType == "Whole Room")
                     {
                         command.Parameters.AddWithValue("@rentalFee", "3500");
                     }
@@ -60,7 +60,7 @@ namespace ManagementSystem
                     {
                         command.Parameters.AddWithValue("@rentalFee", "500");
                     }
-                   
+
 
                     command.ExecuteNonQuery();
                 }

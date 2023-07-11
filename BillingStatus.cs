@@ -27,6 +27,7 @@ namespace ManagementSystem
         string billStatus;
         string tennantName;
         int billTenantId;
+        int deposit;
 
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
         DateTime currentDate = DateTime.Now;
@@ -133,7 +134,7 @@ namespace ManagementSystem
 
             if (!string.IsNullOrWhiteSpace(status) && !string.IsNullOrWhiteSpace(cash))
             {
-                if(billBalanced == null)
+                if (billBalanced == null)
                 {
                     int cashInt = int.Parse(cash);
                     int change = cashInt - billTotal;
@@ -196,9 +197,9 @@ namespace ManagementSystem
                         }
                         finally
                         {
-                            FormReciept formReciept = new FormReciept(tennantName, billrentType, billRentBill, billElectricBill, billTotal, cashInt, change);
+                            FormReciept formReciept = new FormReciept(tennantName, billrentType, billRentBill, billElectricBill, billTotal, deposit, cashInt, change);
                             formReciept.Show();
-                            
+
                             //this.frm1.UpdateDataGridViewFunc();
 
                             this.Close();
@@ -280,7 +281,7 @@ namespace ManagementSystem
                         }
                         finally
                         {
-                            FormReciept formReciept = new FormReciept(tennantName, billrentType, billRentBill, billElectricBill, billTotal, totalPay, change);
+                            FormReciept formReciept = new FormReciept(tennantName, billrentType, billRentBill, billElectricBill, billTotal, deposit, totalPay, change);
                             formReciept.Show();
                             //this.frm1.UpdateDataGridViewFunc();
                             this.Close();
@@ -291,7 +292,7 @@ namespace ManagementSystem
                         MessageBox.Show("Not enough cash!");
                     }
                 }
-                
+
             }
             else
             {

@@ -57,7 +57,7 @@
             // 
             // panelSideMenu
             // 
-            panelSideMenu.BackColor = Color.FromArgb(225, 138, 170);
+            panelSideMenu.BackColor = Color.FromArgb(238, 186, 178);
             panelSideMenu.Controls.Add(panel6);
             panelSideMenu.Controls.Add(iconButton3);
             panelSideMenu.Controls.Add(billBtn);
@@ -85,13 +85,14 @@
             // 
             // iconButton3
             // 
+            iconButton3.BackColor = Color.FromArgb(238, 186, 178);
             iconButton3.Dock = DockStyle.Top;
             iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatAppearance.MouseDownBackColor = Color.FromArgb(228, 160, 183);
-            iconButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(158, 97, 120);
+            iconButton3.FlatAppearance.MouseDownBackColor = Color.FromArgb(238, 186, 178);
+            iconButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(204, 212, 191);
             iconButton3.FlatStyle = FlatStyle.Flat;
             iconButton3.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton3.ForeColor = Color.FromArgb(245, 220, 224);
+            iconButton3.ForeColor = Color.Black;
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.ClockRotateLeft;
             iconButton3.IconColor = Color.White;
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -105,18 +106,19 @@
             iconButton3.Text = "History";
             iconButton3.TextAlign = ContentAlignment.MiddleLeft;
             iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = true;
+            iconButton3.UseVisualStyleBackColor = false;
             iconButton3.Click += iconButton3_Click;
             // 
             // billBtn
             // 
+            billBtn.BackColor = Color.FromArgb(238, 186, 178);
             billBtn.Dock = DockStyle.Top;
             billBtn.FlatAppearance.BorderSize = 0;
-            billBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(228, 160, 183);
-            billBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(158, 97, 120);
+            billBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(238, 186, 178);
+            billBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(204, 212, 191);
             billBtn.FlatStyle = FlatStyle.Flat;
             billBtn.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            billBtn.ForeColor = Color.FromArgb(245, 220, 224);
+            billBtn.ForeColor = Color.Black;
             billBtn.IconChar = FontAwesome.Sharp.IconChar.Coins;
             billBtn.IconColor = Color.White;
             billBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -130,18 +132,19 @@
             billBtn.Text = "Bills";
             billBtn.TextAlign = ContentAlignment.MiddleLeft;
             billBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            billBtn.UseVisualStyleBackColor = true;
+            billBtn.UseVisualStyleBackColor = false;
             billBtn.Click += billBtn_Click;
             // 
             // tenantBtn
             // 
+            tenantBtn.BackColor = Color.FromArgb(238, 186, 178);
             tenantBtn.Dock = DockStyle.Top;
             tenantBtn.FlatAppearance.BorderSize = 0;
-            tenantBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(228, 160, 183);
-            tenantBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(158, 97, 120);
+            tenantBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(238, 186, 178);
+            tenantBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(204, 212, 191);
             tenantBtn.FlatStyle = FlatStyle.Flat;
             tenantBtn.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            tenantBtn.ForeColor = Color.FromArgb(245, 220, 224);
+            tenantBtn.ForeColor = Color.Black;
             tenantBtn.IconChar = FontAwesome.Sharp.IconChar.PersonShelter;
             tenantBtn.IconColor = Color.White;
             tenantBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -155,18 +158,19 @@
             tenantBtn.Text = "Tenants";
             tenantBtn.TextAlign = ContentAlignment.MiddleLeft;
             tenantBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            tenantBtn.UseVisualStyleBackColor = true;
+            tenantBtn.UseVisualStyleBackColor = false;
             tenantBtn.Click += tenantBtn_Click;
             // 
             // bedBtn
             // 
+            bedBtn.BackColor = Color.FromArgb(238, 186, 178);
             bedBtn.Dock = DockStyle.Top;
             bedBtn.FlatAppearance.BorderSize = 0;
-            bedBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(228, 160, 183);
-            bedBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(158, 97, 120);
+            bedBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(238, 186, 178);
+            bedBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(204, 212, 191);
             bedBtn.FlatStyle = FlatStyle.Flat;
             bedBtn.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            bedBtn.ForeColor = Color.FromArgb(245, 220, 224);
+            bedBtn.ForeColor = Color.Black;
             bedBtn.IconChar = FontAwesome.Sharp.IconChar.Bed;
             bedBtn.IconColor = Color.White;
             bedBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -180,18 +184,19 @@
             bedBtn.Text = "Beds";
             bedBtn.TextAlign = ContentAlignment.MiddleLeft;
             bedBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            bedBtn.UseVisualStyleBackColor = true;
+            bedBtn.UseVisualStyleBackColor = false;
             bedBtn.Click += bedBtn_Click;
             // 
             // roomBtn
             // 
+            roomBtn.BackColor = Color.FromArgb(238, 186, 178);
             roomBtn.Dock = DockStyle.Top;
             roomBtn.FlatAppearance.BorderSize = 0;
-            roomBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(228, 160, 183);
-            roomBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(158, 97, 120);
+            roomBtn.FlatAppearance.MouseDownBackColor = Color.FromArgb(238, 186, 178);
+            roomBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(204, 212, 191);
             roomBtn.FlatStyle = FlatStyle.Flat;
             roomBtn.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            roomBtn.ForeColor = Color.FromArgb(245, 220, 224);
+            roomBtn.ForeColor = Color.Black;
             roomBtn.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             roomBtn.IconColor = Color.White;
             roomBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -205,11 +210,12 @@
             roomBtn.Text = "Rooms";
             roomBtn.TextAlign = ContentAlignment.MiddleLeft;
             roomBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            roomBtn.UseVisualStyleBackColor = true;
+            roomBtn.UseVisualStyleBackColor = false;
             roomBtn.Click += roomBtn_Click;
             // 
             // panelLogo
             // 
+            panelLogo.BackColor = Color.FromArgb(238, 186, 178);
             panelLogo.Controls.Add(label2);
             panelLogo.Controls.Add(panel5);
             panelLogo.Controls.Add(label1);
@@ -254,7 +260,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(225, 138, 170);
+            panel1.BackColor = Color.FromArgb(238, 186, 178);
             panel1.Controls.Add(iconButton2);
             panel1.Controls.Add(iconMinimize);
             panel1.Controls.Add(iconButton1);
@@ -335,7 +341,7 @@
             // 
             // iconCurrentChildForm
             // 
-            iconCurrentChildForm.BackColor = Color.FromArgb(225, 138, 170);
+            iconCurrentChildForm.BackColor = Color.FromArgb(238, 186, 178);
             iconCurrentChildForm.ForeColor = Color.FromArgb(245, 220, 224);
             iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyWindow;
             iconCurrentChildForm.IconColor = Color.FromArgb(245, 220, 224);
@@ -349,12 +355,13 @@
             // 
             // panelHomeBg
             // 
-            panelHomeBg.BackColor = Color.FromArgb(228, 160, 183);
+            panelHomeBg.BackColor = Color.FromArgb(238, 186, 178);
             panelHomeBg.Dock = DockStyle.Fill;
             panelHomeBg.Location = new Point(346, 50);
             panelHomeBg.Name = "panelHomeBg";
             panelHomeBg.Size = new Size(967, 795);
             panelHomeBg.TabIndex = 2;
+            panelHomeBg.Paint += panelHomeBg_Paint;
             panelHomeBg.Layout += panelHomeBg_Layout;
             // 
             // panel2

@@ -90,5 +90,18 @@ namespace ManagementSystem
         {
 
         }
+
+        private void textUpdateName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textUpdateLocation_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void textUpdateDescription_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

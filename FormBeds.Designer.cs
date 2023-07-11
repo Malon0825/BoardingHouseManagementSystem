@@ -69,7 +69,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(225, 138, 170);
+            panel3.BackColor = Color.FromArgb(238, 186, 178);
             panel3.Controls.Add(panel9);
             panel3.Controls.Add(dataSearchList);
             panel3.Controls.Add(label9);
@@ -88,7 +88,7 @@
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(228, 160, 183);
+            panel9.BackColor = Color.FromArgb(245, 243, 231);
             panel9.Location = new Point(0, 375);
             panel9.Margin = new Padding(4, 5, 4, 5);
             panel9.Name = "panel9";
@@ -107,10 +107,10 @@
             dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = Color.Pink;
             dataSearchList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataSearchList.Anchor = AnchorStyles.Top;
+            dataSearchList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataSearchList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataSearchList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataSearchList.BackgroundColor = Color.FromArgb(228, 160, 183);
+            dataSearchList.BackgroundColor = Color.FromArgb(245, 243, 231);
             dataSearchList.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataSearchList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -150,10 +150,10 @@
             dataGridViewCellStyle5.SelectionBackColor = Color.Pink;
             dataSearchList.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataSearchList.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataSearchList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(228, 160, 183);
+            dataSearchList.RowTemplate.DefaultCellStyle.BackColor = Color.FromArgb(245, 243, 231);
             dataSearchList.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             dataSearchList.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dataSearchList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Pink;
+            dataSearchList.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(204, 212, 191);
             dataSearchList.RowTemplate.Height = 35;
             dataSearchList.RowTemplate.Resizable = DataGridViewTriState.True;
             dataSearchList.ScrollBars = ScrollBars.Vertical;
@@ -163,6 +163,7 @@
             dataSearchList.Size = new Size(1445, 207);
             dataSearchList.TabIndex = 9;
             dataSearchList.CellClick += dataSearchList_CellClick_1;
+            dataSearchList.CellContentClick += dataSearchList_CellContentClick_1;
             // 
             // label9
             // 
@@ -191,7 +192,7 @@
             // 
             // panelEdit
             // 
-            panelEdit.BackColor = Color.FromArgb(225, 138, 170);
+            panelEdit.BackColor = Color.FromArgb(238, 186, 178);
             panelEdit.Controls.Add(iconButton5);
             panelEdit.Controls.Add(iconButton4);
             panelEdit.Dock = DockStyle.Bottom;
@@ -200,14 +201,15 @@
             panelEdit.Name = "panelEdit";
             panelEdit.Size = new Size(1486, 566);
             panelEdit.TabIndex = 3;
+            panelEdit.Paint += panelEdit_Paint;
             // 
             // iconButton5
             // 
             iconButton5.BackgroundImageLayout = ImageLayout.Center;
-            iconButton5.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton5.FlatAppearance.BorderColor = Color.FromArgb(231, 203, 169);
             iconButton5.FlatAppearance.BorderSize = 0;
             iconButton5.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton5.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton5.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 203, 169);
             iconButton5.FlatStyle = FlatStyle.Flat;
             iconButton5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton5.IconChar = FontAwesome.Sharp.IconChar.Minus;
@@ -229,10 +231,10 @@
             // iconButton4
             // 
             iconButton4.BackgroundImageLayout = ImageLayout.Center;
-            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.BorderColor = Color.FromArgb(231, 203, 169);
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 203, 169);
             iconButton4.FlatStyle = FlatStyle.Flat;
             iconButton4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton4.IconChar = FontAwesome.Sharp.IconChar.Add;
@@ -253,7 +255,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(228, 160, 183);
+            panel2.BackColor = Color.FromArgb(245, 243, 231);
             panel2.Location = new Point(243, 137);
             panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
@@ -262,7 +264,7 @@
             // 
             // textSearchName
             // 
-            textSearchName.BackColor = Color.FromArgb(225, 138, 170);
+            textSearchName.BackColor = Color.FromArgb(238, 186, 178);
             textSearchName.BorderStyle = BorderStyle.None;
             textSearchName.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             textSearchName.Location = new Point(243, 85);
@@ -274,10 +276,10 @@
             // iconButton1
             // 
             iconButton1.BackgroundImageLayout = ImageLayout.Center;
-            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.BorderColor = Color.FromArgb(231, 203, 169);
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 34, 42);
-            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(228, 160, 183);
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 203, 169);
             iconButton1.FlatStyle = FlatStyle.Flat;
             iconButton1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
@@ -309,6 +311,7 @@
             // 
             // panel5
             // 
+            panel5.BackColor = Color.FromArgb(245, 243, 231);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(14, 0);
             panel5.Margin = new Padding(4, 5, 4, 5);
@@ -318,6 +321,7 @@
             // 
             // panel4
             // 
+            panel4.BackColor = Color.FromArgb(245, 243, 231);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 0);
             panel4.Margin = new Padding(4, 5, 4, 5);

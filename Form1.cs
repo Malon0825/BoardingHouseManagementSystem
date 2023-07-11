@@ -56,20 +56,20 @@ namespace ManagementSystem
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(158, 97, 120);
-                currentBtn.ForeColor = color;
+                currentBtn.BackColor = Color.FromArgb(204, 212, 191);
+                currentBtn.ForeColor = Color.Black;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.IconColor = color;
+                currentBtn.IconColor = Color.Black;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
                 //Left border button
-                leftBorderBtn.BackColor = color;
+                leftBorderBtn.BackColor = Color.Black;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
                 //Current Child Form Icon
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                iconCurrentChildForm.IconColor = color;
+                iconCurrentChildForm.IconColor = Color.Black;
 
 
             }
@@ -80,10 +80,10 @@ namespace ManagementSystem
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(225, 138, 170);
-                currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.BackColor = Color.FromArgb(238, 186, 178);
+                currentBtn.ForeColor = Color.Black;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.IconColor = Color.Black;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
@@ -123,7 +123,7 @@ namespace ManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(55, 34, 42));
+            ActivateButton(sender, Color.FromArgb(238, 186, 178));
             OpenChildForm(new FormHistory());
         }
 
@@ -134,25 +134,25 @@ namespace ManagementSystem
 
         private void roomBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(55, 34, 42));
+            ActivateButton(sender, Color.FromArgb(238, 186, 178));
             OpenChildForm(new FormRooms());
         }
 
         private void bedBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(55, 34, 42));
+            ActivateButton(sender, Color.FromArgb(238, 186, 178));
             OpenChildForm(new FormBeds());
         }
 
         private void tenantBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(55, 34, 42));
+            ActivateButton(sender, Color.FromArgb(238, 186, 178));
             OpenChildForm(new FormTenants());
         }
 
         private void billBtn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(55, 34, 42));
+            ActivateButton(sender, Color.FromArgb(238, 186, 178));
             OpenChildForm(new FormBills());
         }
 
@@ -222,13 +222,18 @@ namespace ManagementSystem
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(55, 34, 42));
+            ActivateButton(sender, Color.FromArgb(238, 186, 178));
             OpenChildForm(new FormHistory());
         }
 
         private void iconButton2_Click_1(object sender, EventArgs e)
         {
             new FormStats().Show();
+        }
+
+        private void panelHomeBg_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
