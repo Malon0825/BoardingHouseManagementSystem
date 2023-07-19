@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ManagementSystem
 {
-    public partial class FormHome : Form
+    public partial class FormNewReceipt : Form
     {
-        public FormHome()
+        public FormNewReceipt()
         {
             InitializeComponent();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

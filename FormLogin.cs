@@ -37,11 +37,6 @@ namespace ManagementSystem
             public string Password { get; set; }
         }
 
-        internal class UserAccount
-        {
-
-        }
-
         public FormLogin()
         {
             InitializeComponent();
@@ -88,7 +83,7 @@ namespace ManagementSystem
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
 
-            string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=accounts;";
+            string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
 
             List<User> getAllUsers()
             {
@@ -100,7 +95,7 @@ namespace ManagementSystem
                 string username = textUsername.Text;
                 string password = textPassword.Text;
 
-                MySqlCommand command = new MySqlCommand("SELECT * FROM user WHERE Username = @username AND Password = @password", connection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM accounts WHERE Username = @username AND Password = @password", connection);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@password", password);
 
@@ -128,26 +123,26 @@ namespace ManagementSystem
                 return returnThese;
             }
 
-            AllocConsole();
             List<User> users = getAllUsers();
+            bool matchFound = false;
 
             foreach (User user in users)
             {
-                Console.WriteLine("Username: " + user.Username);
-                Console.WriteLine("Password: " + user.Password);
 
                 if (textUsername.Text == user.Username && textPassword.Text == user.Password)
                 {
                     new Form1().Show();
                     this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("The username or password you enter is incorrect.");
-                    textUsername.Clear();
-                    textPassword.Clear();
+                    matchFound = true;
+                    break;
                 }
 
+            }
+            if (!matchFound)
+            {
+                MessageBox.Show("The username or password you enter is incorrect.");
+                textUsername.Clear();
+                textPassword.Clear();
             }
 
 
