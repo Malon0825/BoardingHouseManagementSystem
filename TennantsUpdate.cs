@@ -40,7 +40,7 @@ namespace ManagementSystem
         {
             public int ID { get; set; }
             public string BedName { get; set; }
-            public bool Occupancy { get; set; }
+            public string Occupancy { get; set; }
 
         }
         private List<Room> GetAllRooms()
@@ -95,7 +95,7 @@ namespace ManagementSystem
                     {
                         ID = reader.GetInt32(0),
                         BedName = reader.GetString(1),
-                        Occupancy = reader.GetBoolean(2),
+                        Occupancy = reader.GetString(2),
 
                     };
 

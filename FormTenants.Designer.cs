@@ -379,6 +379,7 @@
             dataSearchList.Size = new Size(697, 198);
             dataSearchList.TabIndex = 10;
             dataSearchList.CellClick += dataSearchList_CellClick;
+            dataSearchList.CellContentClick += dataSearchList_CellContentClick;
             // 
             // label9
             // 

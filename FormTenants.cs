@@ -319,5 +319,10 @@ namespace ManagementSystem
         {
 
         }
+
+        private void dataSearchList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
