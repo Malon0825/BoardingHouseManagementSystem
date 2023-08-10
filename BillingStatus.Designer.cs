@@ -33,35 +33,36 @@
             panel17 = new Panel();
             txtCash = new TextBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
-            cbStatus = new ComboBox();
-            label3 = new Label();
+            label2 = new Label();
+            panel1 = new Panel();
+            textDeposit = new TextBox();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(238, 186, 178);
+            panel5.Controls.Add(label2);
+            panel5.Controls.Add(panel1);
+            panel5.Controls.Add(textDeposit);
             panel5.Controls.Add(label1);
             panel5.Controls.Add(panel17);
             panel5.Controls.Add(txtCash);
             panel5.Controls.Add(iconButton1);
-            panel5.Controls.Add(cbStatus);
-            panel5.Controls.Add(label3);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 0);
-            panel5.Margin = new Padding(4, 5, 4, 5);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(537, 358);
+            panel5.Size = new Size(430, 287);
             panel5.TabIndex = 8;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(106, 57);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(85, 45);
             label1.Name = "label1";
-            label1.Size = new Size(84, 38);
+            label1.Size = new Size(72, 32);
             label1.TabIndex = 35;
             label1.Text = "Cash:";
             // 
@@ -69,10 +70,10 @@
             // 
             panel17.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel17.BackColor = Color.FromArgb(245, 243, 231);
-            panel17.Location = new Point(220, 95);
-            panel17.Margin = new Padding(4, 5, 4, 5);
+            panel17.Location = new Point(176, 76);
+            panel17.Margin = new Padding(3, 4, 3, 4);
             panel17.Name = "panel17";
-            panel17.Size = new Size(196, 8);
+            panel17.Size = new Size(157, 7);
             panel17.TabIndex = 34;
             // 
             // txtCash
@@ -81,10 +82,10 @@
             txtCash.BackColor = Color.FromArgb(238, 186, 178);
             txtCash.BorderStyle = BorderStyle.None;
             txtCash.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCash.Location = new Point(220, 38);
-            txtCash.Margin = new Padding(4, 5, 4, 5);
+            txtCash.Location = new Point(176, 31);
+            txtCash.Margin = new Padding(3, 4, 3, 4);
             txtCash.Name = "txtCash";
-            txtCash.Size = new Size(196, 54);
+            txtCash.Size = new Size(157, 45);
             txtCash.TabIndex = 33;
             // 
             // iconButton1
@@ -101,10 +102,10 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 30;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(193, 257);
-            iconButton1.Margin = new Padding(4, 5, 4, 5);
+            iconButton1.Location = new Point(154, 205);
+            iconButton1.Margin = new Padding(3, 4, 3, 4);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(154, 60);
+            iconButton1.Size = new Size(123, 48);
             iconButton1.TabIndex = 32;
             iconButton1.Text = "Done";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
@@ -112,37 +113,45 @@
             iconButton1.UseVisualStyleBackColor = true;
             iconButton1.Click += iconButton1_Click;
             // 
-            // cbStatus
+            // label2
             // 
-            cbStatus.BackColor = Color.FromArgb(238, 186, 178);
-            cbStatus.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            cbStatus.FormattingEnabled = true;
-            cbStatus.Location = new Point(220, 133);
-            cbStatus.Margin = new Padding(4, 5, 4, 5);
-            cbStatus.Name = "cbStatus";
-            cbStatus.Size = new Size(194, 46);
-            cbStatus.TabIndex = 31;
-            cbStatus.SelectedIndexChanged += cbRoomName_SelectedIndexChanged;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(54, 122);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 32);
+            label2.TabIndex = 38;
+            label2.Text = "Deposit:";
             // 
-            // label3
+            // panel1
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(106, 138);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(101, 38);
-            label3.TabIndex = 30;
-            label3.Text = "Status:";
-            label3.Click += label3_Click;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel1.BackColor = Color.FromArgb(245, 243, 231);
+            panel1.Location = new Point(176, 154);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(157, 7);
+            panel1.TabIndex = 37;
+            // 
+            // textDeposit
+            // 
+            textDeposit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textDeposit.BackColor = Color.FromArgb(238, 186, 178);
+            textDeposit.BorderStyle = BorderStyle.None;
+            textDeposit.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            textDeposit.Location = new Point(176, 109);
+            textDeposit.Margin = new Padding(3, 4, 3, 4);
+            textDeposit.Name = "textDeposit";
+            textDeposit.Size = new Size(157, 45);
+            textDeposit.TabIndex = 36;
             // 
             // BillingStatus
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(537, 358);
+            ClientSize = new Size(430, 287);
             Controls.Add(panel5);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "BillingStatus";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BillingStatus";
@@ -154,11 +163,12 @@
         #endregion
 
         private Panel panel5;
-        private ComboBox cbStatus;
-        private Label label3;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label1;
         private Panel panel17;
         private TextBox txtCash;
+        private Label label2;
+        private Panel panel1;
+        private TextBox textDeposit;
     }
 }

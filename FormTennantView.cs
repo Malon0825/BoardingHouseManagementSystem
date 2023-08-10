@@ -14,6 +14,8 @@ namespace ManagementSystem
     public partial class FormTennantView : Form
     {
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
+
+        int balance;
         public FormTennantView(string tennantId)
         {
             InitializeComponent();
@@ -37,13 +39,11 @@ namespace ManagementSystem
                             BillingID = reader.GetInt32(0),
                             RentType = reader.GetString(1),
                             RentBill = reader.IsDBNull(3) ? null : reader.GetInt32(3),
-                            ElectricBill = reader.IsDBNull(2) ? null : reader.GetInt32(2),
                             Total = reader.GetInt32(4),
-                            Deposit = reader.IsDBNull(5) ? null : reader.GetInt32(5),
-                            Balanced = reader.IsDBNull(6) ? null : reader.GetInt32(6),
-                            DueDate = reader.GetString(7),
-                            Date = reader.IsDBNull(8) ? null : reader.GetString(8),
-                            Status = reader.GetString(9),
+                            Balanced = reader.IsDBNull(5) ? null : reader.GetInt32(5),
+                            DueDate = reader.GetString(6),
+                            Date = reader.IsDBNull(7) ? null : reader.GetString(7),
+                            Status = reader.GetString(8),
 
                         };
 
@@ -65,7 +65,6 @@ namespace ManagementSystem
             dataTable2.Columns.Add("RentBill");
             //dataTable2.Columns.Add("ElectricBill");
             dataTable2.Columns.Add("Total");
-            dataTable2.Columns.Add("Deposit");
             dataTable2.Columns.Add("Balanced");
             dataTable2.Columns.Add("DueDate");
             dataTable2.Columns.Add("Date");
@@ -80,7 +79,6 @@ namespace ManagementSystem
                 row["RentBill"] = bill.RentBill;
                 //row["ElectricBill"] = bill.ElectricBill;
                 row["Total"] = bill.Total;
-                row["Deposit"] = bill.Deposit;
                 row["Balanced"] = bill.Balanced;
                 row["DueDate"] = bill.DueDate;
                 row["Date"] = bill.Date;
@@ -129,8 +127,50 @@ namespace ManagementSystem
             int rowCliked = dataGridView2.CurrentRow.Index;
             String billingID = dataGridView2.Rows[rowCliked].Cells[0].Value.ToString();
 
+            List<Bills> getAllBills()
+            {
+                List<Bills> returnThese = new List<Bills>();
+
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+
+                MySqlCommand command = new MySqlCommand("SELECT * FROM billing WHERE BillingId = @id", connection);
+                command.Parameters.AddWithValue("id", billingID);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Bills t = new Bills
+                        {
+                            Balanced = reader.IsDBNull(5) ? null : reader.GetInt32(5),
+                        };
+
+                        returnThese.Add(t);
+
+                    }
+
+                }
+
+                connection.Close();
+                return returnThese;
+            }
+
+            List<Bills> bills = getAllBills();
+
+            foreach (Bills bill in bills)
+            {
+                balance = bill.Balanced ?? 0;
+            }
+            if (balance == 0)
+            {
+
+            } else
+            {
             BillingStatus billVal = new BillingStatus(billingID, this);
             billVal.Show();
+            }
+
         }
     }
 }

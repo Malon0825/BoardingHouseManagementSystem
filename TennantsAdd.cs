@@ -134,10 +134,11 @@ namespace ManagementSystem
             if (!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(allotedBed) && !string.IsNullOrWhiteSpace(age) && !string.IsNullOrWhiteSpace(address) && !string.IsNullOrWhiteSpace(gender))
             {
                 int selectedBedID = (int)cbBedName.SelectedValue;
+                int deposit = int.Parse(address);
                 try
                 {
-                    string query = "INSERT INTO `tennants` (`ID`, `TennantName`, `TennantAge`, `TennantGender`, `TennantAddress`, `rooms_ID`, `beds_ID`) " +
-                        "VALUES(NULL, @name, @age, @gender, @address, @roomid, @bedid)";
+                    string query = "INSERT INTO `tennants` (`ID`, `TennantName`, `TennantAge`, `TennantGender`, `Deposit`, `rooms_ID`, `beds_ID`) " +
+                        "VALUES(NULL, @name, @age, @gender, @deposit, @roomid, @bedid)";
                     MySqlCommand command = new MySqlCommand(query, connection);
 
 
@@ -146,7 +147,7 @@ namespace ManagementSystem
 
                     command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@age", age);
-                    command.Parameters.AddWithValue("@address", address);
+                    command.Parameters.AddWithValue("@deposit", deposit);
                     command.Parameters.AddWithValue("@gender", gender);
                     command.Parameters.AddWithValue("@roomid", roomID);
                     command.Parameters.AddWithValue("@bedid", selectedBedID);

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
 using System.Security.Policy;
+using System.Windows.Input;
 
 namespace ManagementSystem
 {
@@ -19,18 +20,19 @@ namespace ManagementSystem
     {
 
         string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=management_system;";
-        string query = "INSERT INTO `billing` (`BillingId`, `RentType`, `ElectricBill`, `Rent`, `Total`, `Deposit`, `Balance`, `DueDate`, `Date`, `tennants_ID`, `Status`) " +
-                        "VALUES(NULL, @rentType, @electricBill, @rentBills, @total, @deposit, @balance, @dueDate, @date, @tentId, @status)";
+
         DateTime currentDate = DateTime.Now;
         string tentId;
         string rentType;
-        string electricBill;
-        string rentBill;
+        int rentInt;
         int total;
-        int depositHolder;
         string tennantName;
         int cashInt;
-        int change;
+        int changeInt;
+        int deposit;
+        int newDeposit;
+
+        int balance = 0;
 
         public FormBills()
         {
@@ -100,7 +102,7 @@ namespace ManagementSystem
             public string TennantName { get; set; }
             public int TennantAge { get; set; }
             public string TennantEmail { get; set; }
-            public string TennantAddress { get; set; }
+            public int Deposit { get; set; }
             public int rooms_ID { get; set; }
             public int beds_ID { get; set; }
 
@@ -151,10 +153,7 @@ namespace ManagementSystem
 
         }
 
-        private void textBox4_KeyUp(object sender, KeyEventArgs e)
-        {
 
-        }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -194,136 +193,86 @@ namespace ManagementSystem
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+            string rent = textRentBill.Text;
             string cash = textBox2.Text;
-            string totalVal = textTotal.Text;
-            string deposit = textBoxDeposit.Text;
+            string depositLocal = textBoxDeposit.Text;
             rentType = comboBox1.Text;
             tennantName = labelName.Text;
 
-            if (!string.IsNullOrEmpty(rentType) && !string.IsNullOrEmpty(tennantName))
+            if (!string.IsNullOrEmpty(rentType) && tennantName != "None" && !string.IsNullOrEmpty(rent))
             {
-                if (!string.IsNullOrEmpty(totalVal))
+                rentInt = int.Parse(rent);
+                total = rentInt;
+
+                if (string.IsNullOrEmpty(depositLocal) && !string.IsNullOrEmpty(cash))
                 {
-                    int intTotalValue = int.Parse(totalVal);
-                    if (intTotalValue != 0)
+                    cashInt = int.Parse(cash);
+                    changeInt = cashInt - rentInt;
+                    AddTennantBill(changeInt);
+                }
+                else if (!string.IsNullOrEmpty(depositLocal) && string.IsNullOrEmpty(cash))
+                {
+                    int depositInt = int.Parse(depositLocal);
+                    int newDepositLocal = deposit - depositInt;
+
+                    if (newDepositLocal < 0)
                     {
-                        if (!string.IsNullOrEmpty(cash))
-                        {
-                            if (!string.IsNullOrEmpty(deposit))
-                            {
-                                cashInt = int.Parse(cash);
-                                int newDeposit = int.Parse(deposit);
-
-                                change = cashInt - total;
-
-                                int newTotal = total + newDeposit;
-                                int newChange = cashInt - newTotal;
-
-                                if (change <= 0)
-                                {
-                                    labelChange.Text = change.ToString();
-                                    int balanced = change * -1;
-                                    string bal = balanced.ToString();
-                                    addTennantBillBalance(int.Parse(bal));
-                                }
-                                else
-                                {
-                                    labelChange.Text = newChange.ToString();
-
-                                    if (!string.IsNullOrEmpty(deposit))
-                                    {
-                                        addTennantBill(int.Parse(deposit));
-                                    }
-                                    else
-                                    {
-                                        addTennantBill(0);
-                                    }
-
-
-                                }
-                            }
-                            else
-                            {
-                                cashInt = int.Parse(cash);
-
-                                change = cashInt - total;
-
-                                if (change < 0)
-                                {
-                                    labelChange.Text = change.ToString();
-                                    int balanced = change * -1;
-                                    string bal = balanced.ToString();
-                                    addTennantBillBalance(int.Parse(bal));
-                                }
-                                else
-                                {
-                                    labelChange.Text = change.ToString();
-
-                                    if (!string.IsNullOrEmpty(deposit))
-                                    {
-                                        addTennantBill(int.Parse(deposit));
-                                    }
-                                    else
-                                    {
-                                        addTennantBill(0);
-                                    }
-
-
-                                }
-                            }
-
-
-                        }
-                        else
-                        {
-                            addTennantBillUnpaid();
-                        }
-                    }
+                        MessageBox.Show("Insufficient deposit amount.");
+                    } 
                     else
                     {
-                        MessageBox.Show("Please input the bills first!!");
+                        newDeposit = newDepositLocal;
+                        cashInt = depositInt;
+                        changeInt = cashInt - rentInt;
+                        AddDepositTennantBill(changeInt);
                     }
+
+                }
+                else if (!string.IsNullOrEmpty(depositLocal) && !string.IsNullOrEmpty(cash))
+                {
+                    int depositInt = int.Parse(depositLocal);
+                    int newCashInt = int.Parse(cash);
+                    cashInt = depositInt + newCashInt;
+                    changeInt = cashInt - rentInt;
+                    AddDepositTennantBill(changeInt);
                 }
                 else
                 {
-                    MessageBox.Show("Please input the bills first!!");
+                    MessageBox.Show("No cash available.");
                 }
             }
             else
             {
-                MessageBox.Show("Please check the tennant and rent type to continue.");
+                MessageBox.Show("Please check the fields to continue.");
             }
 
 
-
-
-
         }
-        private void addTennantBill(int deposit)
+
+        string query = "INSERT INTO `billing` (`BillingId`, `RentType`, `ElectricBill`, `Rent`, `Total`, `Balance`, `DueDate`, `Date`, `Status`, `tennants_ID`) " +
+                "VALUES(NULL, @rentType, NULL, @rentBills, @total, @balance, @dueDate, @date, @status, @tentId)";
+
+        string query2 = "UPDATE `tennants` SET `Deposit` = @deposit WHERE ID = @tenantID";
+
+        private void AddTennantBill(int change)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
             string formattedDate = currentDate.ToString("MM/dd/yyyy");
             string monthYearDate = currentDate.ToString("MM/01/yyyy");
-            int electricBillInt;
-            int rentBillInt;
 
             try
             {
-                MySqlCommand command = new MySqlCommand(query, connection);
-                rentBill = textRentBill.Text;
 
-                if (string.IsNullOrEmpty(rentBill) && !string.IsNullOrEmpty(electricBill))
+                if (changeInt >= 0)
                 {
-                    electricBillInt = int.Parse(electricBill);
+                    MySqlCommand command = new MySqlCommand(query, connection);
 
                     int tentIdInt = int.Parse(tentId);
 
                     command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", electricBillInt);
-                    command.Parameters.AddWithValue("@rentBills", null);
+                    command.Parameters.AddWithValue("@rentBills", rentInt);
                     command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", deposit);
                     command.Parameters.AddWithValue("@balance", null);
                     command.Parameters.AddWithValue("@dueDate", monthYearDate);
                     command.Parameters.AddWithValue("@date", formattedDate);
@@ -332,61 +281,34 @@ namespace ManagementSystem
 
                     command.ExecuteNonQuery();
 
-                    FormReciept formReciept = new FormReciept(tennantName, rentType, null, electricBillInt, total, deposit, cashInt, change);
-                    formReciept.Show();
+                    labelChange.Text = changeInt.ToString();
 
+                    FormReciept formReciept = new FormReciept(tennantName, rentType, rentInt, total, deposit, cashInt, change, balance);
+                    formReciept.Show();
                 }
-                else if (string.IsNullOrEmpty(electricBill) && !string.IsNullOrEmpty(rentBill))
+                else if (changeInt < 0)
                 {
-                    rentBillInt = int.Parse(rentBill);
+                    MySqlCommand command = new MySqlCommand(query, connection);
+
+
+                    int positiveChange = changeInt * -1;
 
                     int tentIdInt = int.Parse(tentId);
 
                     command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", null);
-                    command.Parameters.AddWithValue("@rentBills", rentBillInt);
+                    command.Parameters.AddWithValue("@rentBills", rentInt);
                     command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", deposit);
-                    command.Parameters.AddWithValue("@balance", null);
+                    command.Parameters.AddWithValue("@balance", positiveChange);
                     command.Parameters.AddWithValue("@dueDate", monthYearDate);
                     command.Parameters.AddWithValue("@date", formattedDate);
                     command.Parameters.AddWithValue("@tentId", tentIdInt);
-                    command.Parameters.AddWithValue("@status", "Paid");
+                    command.Parameters.AddWithValue("@status", "Unpaid");
 
                     command.ExecuteNonQuery();
 
-                    FormReciept formReciept = new FormReciept(tennantName, rentType, rentBillInt, null, total, deposit, cashInt, change);
-                    formReciept.Show();
-
-
+                    MessageBox.Show("Balanced payment has been added.");
                 }
-                else if (!string.IsNullOrEmpty(electricBill) && !string.IsNullOrEmpty(rentBill))
-                {
-                    rentBillInt = int.Parse(rentBill);
-                    electricBillInt = int.Parse(electricBill);
 
-                    int tentIdInt = int.Parse(tentId);
-
-                    command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", electricBillInt);
-                    command.Parameters.AddWithValue("@rentBills", rentBillInt);
-                    command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", deposit);
-                    command.Parameters.AddWithValue("@balance", null);
-                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
-                    command.Parameters.AddWithValue("@date", formattedDate);
-                    command.Parameters.AddWithValue("@tentId", tentIdInt);
-                    command.Parameters.AddWithValue("@status", "Paid");
-
-                    command.ExecuteNonQuery();
-
-                    FormReciept formReciept = new FormReciept(tennantName, rentType, rentBillInt, electricBillInt, total, deposit, cashInt, change);
-                    formReciept.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Please click save button first.");
-                }
 
             }
             catch (MySqlException ex)
@@ -397,7 +319,6 @@ namespace ManagementSystem
             finally
             {
                 textRentBill.Clear();
-                textBox4.Clear();
                 comboBox1.Items.Clear();
                 textBox2.Clear();
                 comboBox1.Items.Add("Bed");
@@ -406,83 +327,75 @@ namespace ManagementSystem
             connection.Close();
         }
 
-        private void addTennantBillUnpaid()
+        private void AddDepositTennantBill(int change)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
+            string formattedDate = currentDate.ToString("MM/dd/yyyy");
             string monthYearDate = currentDate.ToString("MM/01/yyyy");
-            int electricBillInt;
-            int rentBillInt;
 
             try
             {
-                MySqlCommand command = new MySqlCommand(query, connection);
-                rentBill = textRentBill.Text;
 
-                if (string.IsNullOrEmpty(rentBill) && !string.IsNullOrEmpty(electricBill))
+                if (changeInt >= 0)
                 {
-                    electricBillInt = int.Parse(electricBill);
+                    MySqlCommand command = new MySqlCommand(query, connection);
 
                     int tentIdInt = int.Parse(tentId);
 
                     command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", electricBillInt);
-                    command.Parameters.AddWithValue("@rentBills", null);
+                    command.Parameters.AddWithValue("@rentBills", rentInt);
                     command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", depositHolder);
                     command.Parameters.AddWithValue("@balance", null);
                     command.Parameters.AddWithValue("@dueDate", monthYearDate);
-                    command.Parameters.AddWithValue("@date", null);
+                    command.Parameters.AddWithValue("@date", formattedDate);
+                    command.Parameters.AddWithValue("@tentId", tentIdInt);
+                    command.Parameters.AddWithValue("@status", "Paid");
+
+                    command.ExecuteNonQuery();
+
+                    MySqlCommand command2 = new MySqlCommand(query2, connection);
+
+                    command2.Parameters.AddWithValue("@deposit", newDeposit);
+                    command2.Parameters.AddWithValue("@tenantID", tentIdInt);
+
+                    command2.ExecuteNonQuery();
+
+                    labelChange.Text = changeInt.ToString();
+
+                    FormReciept formReciept = new FormReciept(tennantName, rentType, rentInt, total, deposit, cashInt, newDeposit, balance);
+                    formReciept.Show();
+                }
+                else if (changeInt < 0)
+                {
+                    MySqlCommand command = new MySqlCommand(query, connection);
+
+
+                    int positiveChange = changeInt * -1;
+
+                    int tentIdInt = int.Parse(tentId);
+
+                    command.Parameters.AddWithValue("@rentType", rentType);
+                    command.Parameters.AddWithValue("@rentBills", rentInt);
+                    command.Parameters.AddWithValue("@total", total);
+                    command.Parameters.AddWithValue("@balance", positiveChange);
+                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
+                    command.Parameters.AddWithValue("@date", formattedDate);
                     command.Parameters.AddWithValue("@tentId", tentIdInt);
                     command.Parameters.AddWithValue("@status", "Unpaid");
 
                     command.ExecuteNonQuery();
 
+                    MySqlCommand command2 = new MySqlCommand(query2, connection);
 
+                    command2.Parameters.AddWithValue("@deposit", newDeposit);
+                    command2.Parameters.AddWithValue("@tenantID", tentIdInt);
 
+                    command2.ExecuteNonQuery();
+
+                    MessageBox.Show("Balanced payment has been added.");
                 }
-                else if (string.IsNullOrEmpty(electricBill) && !string.IsNullOrEmpty(rentBill))
-                {
-                    rentBillInt = int.Parse(rentBill);
 
-                    int tentIdInt = int.Parse(tentId);
-
-                    command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", null);
-                    command.Parameters.AddWithValue("@rentBills", rentBillInt);
-                    command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", depositHolder);
-                    command.Parameters.AddWithValue("@balance", null);
-                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
-                    command.Parameters.AddWithValue("@date", null);
-                    command.Parameters.AddWithValue("@tentId", tentIdInt);
-                    command.Parameters.AddWithValue("@status", "Unpaid");
-
-                    command.ExecuteNonQuery();
-
-
-                }
-                else
-                {
-                    rentBillInt = int.Parse(rentBill);
-                    electricBillInt = int.Parse(electricBill);
-
-                    int tentIdInt = int.Parse(tentId);
-
-                    command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", electricBillInt);
-                    command.Parameters.AddWithValue("@rentBills", rentBillInt);
-                    command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", depositHolder);
-                    command.Parameters.AddWithValue("@balance", null);
-                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
-                    command.Parameters.AddWithValue("@date", null);
-                    command.Parameters.AddWithValue("@tentId", tentIdInt);
-                    command.Parameters.AddWithValue("@status", "Unpaid");
-
-                    command.ExecuteNonQuery();
-
-                }
 
             }
             catch (MySqlException ex)
@@ -492,9 +405,7 @@ namespace ManagementSystem
             }
             finally
             {
-                MessageBox.Show("Unpaid payment has been added.");
                 textRentBill.Clear();
-                textBox4.Clear();
                 comboBox1.Items.Clear();
                 textBox2.Clear();
                 comboBox1.Items.Add("Bed");
@@ -502,103 +413,7 @@ namespace ManagementSystem
             }
             connection.Close();
         }
-        private void addTennantBillBalance(int change)
-        {
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
-            string monthYearDate = currentDate.ToString("MM/01/yyyy");
-            int electricBillInt;
-            int rentBillInt;
 
-            try
-            {
-                MySqlCommand command = new MySqlCommand(query, connection);
-
-                rentBill = textRentBill.Text;
-
-                if (string.IsNullOrEmpty(rentBill) && !string.IsNullOrEmpty(electricBill))
-                {
-                    electricBillInt = int.Parse(electricBill);
-
-                    int tentIdInt = int.Parse(tentId);
-
-                    command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", electricBillInt);
-                    command.Parameters.AddWithValue("@rentBills", null);
-                    command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", depositHolder);
-                    command.Parameters.AddWithValue("@balance", change);
-                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
-                    command.Parameters.AddWithValue("@date", null);
-                    command.Parameters.AddWithValue("@tentId", tentIdInt);
-                    command.Parameters.AddWithValue("@status", "Unpaid");
-
-                    command.ExecuteNonQuery();
-
-
-
-                }
-                else if (string.IsNullOrEmpty(electricBill) && !string.IsNullOrEmpty(rentBill))
-                {
-                    rentBillInt = int.Parse(rentBill);
-
-                    int tentIdInt = int.Parse(tentId);
-
-                    command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", null);
-                    command.Parameters.AddWithValue("@rentBills", rentBillInt);
-                    command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", depositHolder);
-                    command.Parameters.AddWithValue("@balance", change);
-                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
-                    command.Parameters.AddWithValue("@date", null);
-                    command.Parameters.AddWithValue("@tentId", tentIdInt);
-                    command.Parameters.AddWithValue("@status", "Unpaid");
-
-                    command.ExecuteNonQuery();
-
-
-                }
-                else
-                {
-                    rentBillInt = int.Parse(rentBill);
-                    electricBillInt = int.Parse(electricBill);
-
-                    int tentIdInt = int.Parse(tentId);
-
-                    command.Parameters.AddWithValue("@rentType", rentType);
-                    command.Parameters.AddWithValue("@electricBill", electricBillInt);
-                    command.Parameters.AddWithValue("@rentBills", rentBillInt);
-                    command.Parameters.AddWithValue("@total", total);
-                    command.Parameters.AddWithValue("@deposit", depositHolder);
-                    command.Parameters.AddWithValue("@balance", change);
-                    command.Parameters.AddWithValue("@dueDate", monthYearDate);
-                    command.Parameters.AddWithValue("@date", null);
-                    command.Parameters.AddWithValue("@tentId", tentIdInt);
-                    command.Parameters.AddWithValue("@status", "Unpaid");
-
-                    command.ExecuteNonQuery();
-
-                }
-
-            }
-            catch (MySqlException ex)
-            {
-                // Handle the exception here
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                MessageBox.Show("With balanced payment has been added.");
-                textRentBill.Clear();
-                textBox4.Clear();
-                comboBox1.Items.Clear();
-                textBox2.Clear();
-                comboBox1.Items.Add("Bed");
-                comboBox1.Items.Add("Room");
-            }
-            connection.Close();
-        }
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -614,39 +429,7 @@ namespace ManagementSystem
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            rentBill = textRentBill.Text;
-            electricBill = textBox4.Text;
 
-            if (string.IsNullOrEmpty(rentBill) && !string.IsNullOrEmpty(electricBill))
-            {
-                int electricBillInt = int.Parse(electricBill);
-
-                total = electricBillInt;
-
-                textTotal.Text = total.ToString();
-
-            }
-            else if (string.IsNullOrEmpty(electricBill) && !string.IsNullOrEmpty(rentBill))
-            {
-                int rentBillInt = int.Parse(rentBill);
-
-                total = rentBillInt;
-
-                textTotal.Text = total.ToString();
-            }
-            else if(!string.IsNullOrEmpty(electricBill) && !string.IsNullOrEmpty(rentBill))
-            {
-                int rentBillInt = int.Parse(rentBill);
-                int electricBillInt = int.Parse(electricBill);
-
-                total = rentBillInt + electricBillInt;
-
-                textTotal.Text = total.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Please input the bills first.");
-            }
         }
 
         private void dataSearchList_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -675,7 +458,7 @@ namespace ManagementSystem
                             TennantName = reader.GetString(1),
                             TennantAge = reader.GetInt32(2),
                             TennantEmail = reader.GetString(3),
-                            TennantAddress = reader.GetString(4),
+                            Deposit = reader.GetInt32(4),
                             rooms_ID = reader.GetInt32(5),
                             beds_ID = reader.GetInt32(6),
 
@@ -698,6 +481,7 @@ namespace ManagementSystem
             {
                 tentId = tennant.ID.ToString();
                 labelName.Text = tennant.TennantName;
+                deposit = tennant.Deposit;
 
             }
         }

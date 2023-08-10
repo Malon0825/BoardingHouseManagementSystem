@@ -21,21 +21,95 @@ namespace ManagementSystem
         public FormRooms()
         {
             InitializeComponent();
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            {
-                connection.Open();
-                string query = "SELECT ID, RoomNumber, RoomType, RentalFee FROM rooms";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    // Execute the query and load the data into a DataTable
-                    DataTable dataTable = new DataTable();
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    adapter.Fill(dataTable);
 
-                    // Bind the DataTable to the DataGridView
-                    dataSearchList.DataSource = dataTable;
+            List<SearchRoom> getSearchRooms()
+            {
+                List<SearchRoom> returnThese = new List<SearchRoom>();
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand command = new MySqlCommand();
+                command.CommandText = "Select ID, RoomNumber, RoomType FROM rooms";
+                command.Connection = connection;
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        SearchRoom room = new SearchRoom
+                        {
+                            ID = reader.GetInt32(0),
+                            RoomNumber = reader.GetString(1),
+                            RoomType = reader.GetString(2),
+                        };
+                        returnThese.Add(room);
+                    }
                 }
+                connection.Close();
+                return returnThese;
             }
+
+            List<SearchRoom> rooms = getSearchRooms();
+
+            List<Bed> getAllBeds(int roomid)
+            {
+                List<Bed> returnThese = new List<Bed>();
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+                MySqlCommand command = new MySqlCommand("SELECT * FROM beds WHERE rooms_ID = @roomid", connection);
+                command.Parameters.AddWithValue("roomid", roomid);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Bed b = new Bed
+                        {
+                            ID = reader.GetInt32(0),
+                            BedName = reader.GetString(1),
+                            Occupancy = reader.GetString(2),
+                        };
+                        returnThese.Add(b);
+                    }
+                }
+                connection.Close();
+                return returnThese;
+            }
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ID");
+            dataTable.Columns.Add("RoomNumber");
+            dataTable.Columns.Add("RoomType");
+            dataTable.Columns.Add("VacantBeds");
+
+            foreach (SearchRoom room in rooms)
+            {
+                List<Bed> beds = getAllBeds(room.ID);
+                int vacantBedsCount = beds.Count(b => b.Occupancy == "Vacant");
+
+                DataRow row = dataTable.NewRow();
+                row["ID"] = room.ID;
+                row["RoomNumber"] = room.RoomNumber;
+                row["RoomType"] = room.RoomType;
+                row["VacantBeds"] = vacantBedsCount;
+
+                dataTable.Rows.Add(row);
+            }
+
+            dataSearchList.DataSource = dataTable;
+
+            //MySqlConnection connection = new MySqlConnection(connectionString);
+            //{
+            //    connection.Open();
+            //    string query = "SELECT ID, RoomNumber, RoomType, RentalFee FROM rooms";
+            //    using (MySqlCommand command = new MySqlCommand(query, connection))
+            //    {
+            //        // Execute the query and load the data into a DataTable
+            //        DataTable dataTable = new DataTable();
+            //        MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            //        adapter.Fill(dataTable);
+
+            //        // Bind the DataTable to the DataGridView
+            //        dataSearchList.DataSource = dataTable;
+            //    }
+            //}
 
         }
 

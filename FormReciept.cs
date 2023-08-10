@@ -16,34 +16,34 @@ namespace ManagementSystem
         Bitmap bitmap;
 
 
-        public FormReciept(string name, string rentType, int? rentBill, int? electricBill, int totalBill, int deposit, int cash, int change)
+        public FormReciept(string name, string rentType, int? rentBill, int totalBill, int? deposit, int cash, int change, int? balance)
         {
             InitializeComponent();
 
-            if(deposit != 0)
-            {
-                int newTotalBill = deposit + totalBill;
-                int newChange = cash - newTotalBill;
+            lblName.Text = name;
+            lblRentType.Text = rentType;
+            lblRentBill.Text = rentBill.ToString();
+            lblTotalBill.Text = totalBill.ToString();
+            lblDeposit.Text = deposit.ToString();
+            lblCash.Text = cash.ToString();
+            lblChange.Text = change.ToString();
+            labelBalance.Text = balance.ToString();
 
-                lblName.Text = name;
-                lblRentType.Text = rentType;
-                lblRentBill.Text = rentBill.ToString();
-                lblElectricBill.Text = deposit.ToString();
-                lblTotalBill.Text = newTotalBill.ToString();
-                lblCash.Text = cash.ToString();
-                lblChange.Text = newChange.ToString();
+            //if (deposit != 0)
+            //{
 
-            }
-            else
-            {
-                lblName.Text = name;
-                lblRentType.Text = rentType;
-                lblRentBill.Text = rentBill.ToString();
-                lblElectricBill.Text = deposit.ToString();
-                lblTotalBill.Text = totalBill.ToString();
-                lblCash.Text = cash.ToString();
-                lblChange.Text = change.ToString();
-            }
+
+            //}
+            //else
+            //{
+            //    lblName.Text = name;
+            //    lblRentType.Text = rentType;
+            //    lblRentBill.Text = rentBill.ToString();
+            //    lblElectricBill.Text = deposit.ToString();
+            //    lblTotalBill.Text = totalBill.ToString();
+            //    lblCash.Text = cash.ToString();
+            //    lblChange.Text = change.ToString();
+            //}
         }
 
 
@@ -114,6 +114,11 @@ namespace ManagementSystem
         }
 
         private void lblRentBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click_1(object sender, EventArgs e)
         {
 
         }

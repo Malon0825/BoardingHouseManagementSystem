@@ -327,5 +327,14 @@ namespace ManagementSystem
         {
 
         }
+
+        private void textSearchName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }

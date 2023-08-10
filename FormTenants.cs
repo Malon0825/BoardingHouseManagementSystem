@@ -40,7 +40,7 @@ namespace ManagementSystem
             public string TennantName { get; set; }
             public int TennantAge { get; set; }
             public string TennantEmail { get; set; }
-            public string TennantAddress { get; set; }
+            public int? Deposit { get; set; }
             public int rooms_ID { get; set; }
             public int beds_ID { get; set; }
 
@@ -182,7 +182,7 @@ namespace ManagementSystem
                             TennantName = reader.GetString(1),
                             TennantAge = reader.GetInt32(2),
                             TennantEmail = reader.GetString(3),
-                            TennantAddress = reader.GetString(4),
+                            Deposit = reader.GetInt32(4),
                             rooms_ID = reader.GetInt32(5),
                             beds_ID = reader.GetInt32(6),
 
@@ -206,7 +206,7 @@ namespace ManagementSystem
             dataTable2.Columns.Add("TennantName");
             dataTable2.Columns.Add("TennantAge");
             dataTable2.Columns.Add("TennantEmail");
-            dataTable2.Columns.Add("TennantAddress");
+            dataTable2.Columns.Add("Deposit");
 
             foreach (Tennant tennant in tennants)
             {
@@ -215,7 +215,7 @@ namespace ManagementSystem
                 row["TennantName"] = tennant.TennantName;
                 row["TennantAge"] = tennant.TennantAge;
                 row["TennantEmail"] = tennant.TennantEmail;
-                row["TennantAddress"] = tennant.TennantAddress;
+                row["Deposit"] = tennant.Deposit;
 
                 dataTable2.Rows.Add(row);
 
