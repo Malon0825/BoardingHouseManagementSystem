@@ -29,7 +29,7 @@ namespace ManagementSystem
         string tennantName;
         int cashInt;
         int changeInt;
-        int deposit;
+        int? deposit;
         int newDeposit;
 
         int balance = 0;
@@ -102,7 +102,7 @@ namespace ManagementSystem
             public string TennantName { get; set; }
             public int TennantAge { get; set; }
             public string TennantEmail { get; set; }
-            public int Deposit { get; set; }
+            public int? Deposit { get; set; }
             public int rooms_ID { get; set; }
             public int beds_ID { get; set; }
 
@@ -119,7 +119,7 @@ namespace ManagementSystem
                 String searchWildPhrase = "%" + searchTerm + "%";
 
                 MySqlCommand command = new MySqlCommand();
-                command.CommandText = "Select ID, TennantName FROM tennants WHERE TennantName LIKE @search";
+                command.CommandText = "Select * FROM tennants WHERE TennantName LIKE @search";
                 command.Parameters.AddWithValue("@search", searchWildPhrase);
                 command.Connection = connection;
 
@@ -196,10 +196,14 @@ namespace ManagementSystem
             string rent = textRentBill.Text;
             string cash = textBox2.Text;
             string depositLocal = textBoxDeposit.Text;
+            int depositNullInt = deposit ?? 0;
+
             rentType = comboBox1.Text;
             tennantName = labelName.Text;
 
-            if (!string.IsNullOrEmpty(rentType) && tennantName != "None" && !string.IsNullOrEmpty(rent))
+            int depositInt = int.Parse(depositLocal);
+
+            if (!string.IsNullOrEmpty(rentType) && tennantName != "None" && !string.IsNullOrEmpty(rent) && depositNullInt >= depositInt)
             {
                 rentInt = int.Parse(rent);
                 total = rentInt;
@@ -212,8 +216,7 @@ namespace ManagementSystem
                 }
                 else if (!string.IsNullOrEmpty(depositLocal) && string.IsNullOrEmpty(cash))
                 {
-                    int depositInt = int.Parse(depositLocal);
-                    int newDepositLocal = deposit - depositInt;
+                    int newDepositLocal = depositNullInt - depositInt;
 
                     if (newDepositLocal < 0)
                     {
@@ -230,7 +233,6 @@ namespace ManagementSystem
                 }
                 else if (!string.IsNullOrEmpty(depositLocal) && !string.IsNullOrEmpty(cash))
                 {
-                    int depositInt = int.Parse(depositLocal);
                     int newCashInt = int.Parse(cash);
                     cashInt = depositInt + newCashInt;
                     changeInt = cashInt - rentInt;

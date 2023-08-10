@@ -232,7 +232,7 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(32, 85);
             label2.Name = "label2";
-            label2.Size = new Size(274, 45);
+            label2.Size = new Size(231, 37);
             label2.TabIndex = 3;
             label2.Text = "Boarding House";
             // 
@@ -253,7 +253,7 @@
             label1.ForeColor = Color.Black;
             label1.Location = new Point(22, 9);
             label1.Name = "label1";
-            label1.Size = new Size(297, 65);
+            label1.Size = new Size(248, 54);
             label1.TabIndex = 2;
             label1.Text = "DOLOROSA";
             label1.Click += label1_Click;
@@ -384,7 +384,7 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 220, 224);
             ClientSize = new Size(1313, 845);
