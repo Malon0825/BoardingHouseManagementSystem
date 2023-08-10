@@ -14,12 +14,15 @@ namespace ManagementSystem
     public partial class FormReciept : Form
     {
         Bitmap bitmap;
+        DateTime currentDate = DateTime.Now;
 
 
         public FormReciept(string name, string rentType, int? rentBill, int totalBill, int? deposit, int cash, int change, int? balance)
         {
             InitializeComponent();
+            string formattedDate = currentDate.ToString("MM/dd/yyyy");
 
+            lblDate.Text = formattedDate;
             lblName.Text = name;
             lblRentType.Text = rentType;
             lblRentBill.Text = rentBill.ToString();
