@@ -52,9 +52,9 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(39, 57);
+            label8.Location = new Point(48, 65);
             label8.Name = "label8";
-            label8.Size = new Size(69, 25);
+            label8.Size = new Size(85, 32);
             label8.TabIndex = 5;
             label8.Text = "Name:";
             // 
@@ -64,18 +64,20 @@
             textTennantName.BackColor = Color.FromArgb(238, 186, 178);
             textTennantName.BorderStyle = BorderStyle.None;
             textTennantName.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textTennantName.Location = new Point(119, 57);
+            textTennantName.Location = new Point(139, 65);
+            textTennantName.Margin = new Padding(3, 4, 3, 4);
             textTennantName.Name = "textTennantName";
-            textTennantName.Size = new Size(357, 25);
+            textTennantName.Size = new Size(408, 32);
             textTennantName.TabIndex = 7;
             // 
             // panel10
             // 
             panel10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel10.BackColor = Color.FromArgb(245, 243, 231);
-            panel10.Location = new Point(119, 88);
+            panel10.Location = new Point(136, 117);
+            panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(357, 5);
+            panel10.Size = new Size(408, 7);
             panel10.TabIndex = 8;
             // 
             // iconButton1
@@ -94,9 +96,10 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 30;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(119, 236);
+            iconButton1.Location = new Point(109, 280);
+            iconButton1.Margin = new Padding(3, 4, 3, 4);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(120, 36);
+            iconButton1.Size = new Size(164, 48);
             iconButton1.TabIndex = 16;
             iconButton1.Text = "Go Back";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
@@ -109,9 +112,9 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(39, 144);
+            label3.Location = new Point(48, 181);
             label3.Name = "label3";
-            label3.Size = new Size(67, 25);
+            label3.Size = new Size(83, 32);
             label3.TabIndex = 23;
             label3.Text = "Room:";
             label3.Click += label3_Click;
@@ -121,9 +124,9 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(39, 186);
+            label2.Location = new Point(48, 237);
             label2.Name = "label2";
-            label2.Size = new Size(49, 25);
+            label2.Size = new Size(62, 32);
             label2.TabIndex = 26;
             label2.Text = "Bed:";
             label2.Click += label2_Click;
@@ -134,9 +137,10 @@
             cbRoomName.BackColor = Color.FromArgb(238, 186, 178);
             cbRoomName.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             cbRoomName.FormattingEnabled = true;
-            cbRoomName.Location = new Point(119, 141);
+            cbRoomName.Location = new Point(139, 177);
+            cbRoomName.Margin = new Padding(3, 4, 3, 4);
             cbRoomName.Name = "cbRoomName";
-            cbRoomName.Size = new Size(357, 33);
+            cbRoomName.Size = new Size(407, 39);
             cbRoomName.TabIndex = 29;
             cbRoomName.SelectedIndexChanged += cbRoomName_SelectedIndexChanged;
             cbRoomName.DropDownClosed += cbRoomName_DropDownClosed;
@@ -147,9 +151,10 @@
             cbBedName.BackColor = Color.FromArgb(238, 186, 178);
             cbBedName.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             cbBedName.FormattingEnabled = true;
-            cbBedName.Location = new Point(119, 183);
+            cbBedName.Location = new Point(139, 233);
+            cbBedName.Margin = new Padding(3, 4, 3, 4);
             cbBedName.Name = "cbBedName";
-            cbBedName.Size = new Size(357, 33);
+            cbBedName.Size = new Size(407, 39);
             cbBedName.TabIndex = 30;
             cbBedName.SelectedIndexChanged += cbBedName_SelectedIndexChanged;
             cbBedName.Enter += cbBedName_Enter;
@@ -174,17 +179,19 @@
             panel8.Controls.Add(textTennantName);
             panel8.Controls.Add(label8);
             panel8.Location = new Point(0, 0);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(527, 284);
+            panel8.Size = new Size(602, 379);
             panel8.TabIndex = 6;
             // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(245, 243, 231);
-            panel2.Location = new Point(119, 130);
+            panel2.Location = new Point(139, 162);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(357, 5);
+            panel2.Size = new Size(408, 7);
             panel2.TabIndex = 37;
             // 
             // depositTextBox
@@ -193,9 +200,10 @@
             depositTextBox.BackColor = Color.FromArgb(238, 186, 178);
             depositTextBox.BorderStyle = BorderStyle.None;
             depositTextBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            depositTextBox.Location = new Point(119, 99);
+            depositTextBox.Location = new Point(139, 121);
+            depositTextBox.Margin = new Padding(3, 4, 3, 4);
             depositTextBox.Name = "depositTextBox";
-            depositTextBox.Size = new Size(357, 25);
+            depositTextBox.Size = new Size(408, 32);
             depositTextBox.TabIndex = 36;
             // 
             // label4
@@ -203,9 +211,9 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(39, 99);
+            label4.Location = new Point(48, 121);
             label4.Name = "label4";
-            label4.Size = new Size(83, 25);
+            label4.Size = new Size(103, 32);
             label4.TabIndex = 35;
             label4.Text = "Deposit:";
             // 
@@ -225,9 +233,10 @@
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton4.IconSize = 30;
             iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(275, 236);
+            iconButton4.Location = new Point(300, 280);
+            iconButton4.Margin = new Padding(3, 4, 3, 4);
             iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(114, 36);
+            iconButton4.Size = new Size(152, 48);
             iconButton4.TabIndex = 34;
             iconButton4.Text = "Update";
             iconButton4.TextAlign = ContentAlignment.MiddleLeft;
@@ -239,9 +248,10 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(245, 243, 231);
-            panel1.Location = new Point(119, 43);
+            panel1.Location = new Point(139, 46);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(357, 5);
+            panel1.Size = new Size(408, 7);
             panel1.TabIndex = 33;
             // 
             // textTennantID
@@ -250,9 +260,10 @@
             textTennantID.BackColor = Color.FromArgb(238, 186, 178);
             textTennantID.BorderStyle = BorderStyle.None;
             textTennantID.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            textTennantID.Location = new Point(119, 12);
+            textTennantID.Location = new Point(139, 5);
+            textTennantID.Margin = new Padding(3, 4, 3, 4);
             textTennantID.Name = "textTennantID";
-            textTennantID.Size = new Size(357, 25);
+            textTennantID.Size = new Size(408, 32);
             textTennantID.TabIndex = 32;
             // 
             // label1
@@ -260,18 +271,19 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(39, 12);
+            label1.Location = new Point(48, 5);
             label1.Name = "label1";
-            label1.Size = new Size(37, 25);
+            label1.Size = new Size(44, 32);
             label1.TabIndex = 31;
             label1.Text = "ID:";
             // 
             // TennantsUpdate
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(527, 284);
+            ClientSize = new Size(602, 379);
             Controls.Add(panel8);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TennantsUpdate";
             Text = "TennantsUpdate";
             panel8.ResumeLayout(false);
