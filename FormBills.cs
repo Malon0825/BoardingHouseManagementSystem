@@ -201,9 +201,9 @@ namespace ManagementSystem
             rentType = comboBox1.Text;
             tennantName = labelName.Text;
 
-            int depositInt = int.Parse(depositLocal);
+            
 
-            if (!string.IsNullOrEmpty(rentType) && tennantName != "None" && !string.IsNullOrEmpty(rent) && depositNullInt >= depositInt)
+            if (!string.IsNullOrEmpty(rentType) && tennantName != "None" && !string.IsNullOrEmpty(rent))
             {
                 rentInt = int.Parse(rent);
                 total = rentInt;
@@ -215,28 +215,49 @@ namespace ManagementSystem
                     AddTennantBill(changeInt);
                 }
                 else if (!string.IsNullOrEmpty(depositLocal) && string.IsNullOrEmpty(cash))
-                {
+                {                   
+                    int depositInt = int.Parse(depositLocal);
                     int newDepositLocal = depositNullInt - depositInt;
 
-                    if (newDepositLocal < 0)
+                    if (depositNullInt >= depositInt)
                     {
-                        MessageBox.Show("Insufficient deposit amount.");
-                    } 
-                    else
-                    {
-                        newDeposit = newDepositLocal;
-                        cashInt = depositInt;
-                        changeInt = cashInt - rentInt;
-                        AddDepositTennantBill(changeInt);
+                        if (newDepositLocal < 0)
+                        {
+                            MessageBox.Show("Insufficient deposit amount.");
+                        } 
+                        else
+                        {
+                            newDeposit = newDepositLocal;
+                            cashInt = depositInt;
+                            changeInt = cashInt - rentInt;
+                            AddDepositTennantBill(changeInt);
+                        }
                     }
+
+
+
 
                 }
                 else if (!string.IsNullOrEmpty(depositLocal) && !string.IsNullOrEmpty(cash))
                 {
-                    int newCashInt = int.Parse(cash);
-                    cashInt = depositInt + newCashInt;
-                    changeInt = cashInt - rentInt;
-                    AddDepositTennantBill(changeInt);
+                    int depositInt = int.Parse(depositLocal);
+                    int newDepositLocal = depositNullInt - depositInt;
+                    if (depositNullInt >= depositInt)
+                    {
+                        if (newDepositLocal < 0)
+                        {
+                            MessageBox.Show("Insufficient deposit amount.");
+                        }
+                        else
+                        {
+                            int newCashInt = int.Parse(cash);
+                            cashInt = depositInt + newCashInt;
+                            changeInt = cashInt - rentInt;
+                            AddDepositTennantBill(changeInt);
+                        }
+
+                    }
+
                 }
                 else
                 {
